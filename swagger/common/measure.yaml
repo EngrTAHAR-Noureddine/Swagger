@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+
+paths:
+  /api/v1/measure:
+    # [GET] GET MEASURES
+    get:
+      tags:
+        - Measure
+      summary: Fetch measures ✔️
+      description: Fetch measures
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/measure/{id}:
+    # [GET] GET ONE MEASURE
+    get:
+      tags:
+        - Measure
+      summary: Fetch one measure ✔️
+      description: Fetch measure
+      parameters:
+        - name: id
+          in: path
+          description: measure Id
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+  /api/v1/measure/search:
+    # [GET] SEARCH FOR MEASURE
+    get:
+      tags:
+        - Measure
+      summary: search for measure ✔️
+      description: search for measure
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          schema:
+            type: string
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          schema:
+            type: number
+            example: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

@@ -1,0 +1,951 @@
+## definitions
+#definitions:
+#  loginResponse:
+#    type: object
+#    properties:
+#      data:
+#        type: object
+#        properties:
+#          user:
+#            type: object
+#            properties:
+#              id:
+#                type: string
+#                example: 935bf57d-cb0d-4058-ab08-cb86cc888623
+#              first_name:
+#                type: string
+#                example: Abdo
+#              last_name:
+#                type: string
+#                example: DOCTOR
+#              avatar:
+#                type: string
+#                example: https://ca.slack-edge.com/T03PWAS12E8-U03PSJ6F2AH-5ae4ad96f420-512
+#              email:
+#                type: string
+#                example: doctor@docta.io
+#              createdAt:
+#                type: string
+#                example: 2022-08-17T13:51:38.098Z
+#              updatedAt:
+#                type: string
+#                example: 2022-08-17T13:51:38.098Z
+#          doctor:
+#            type: object
+#            properties:
+#              id:
+#                type: string
+#                example: 1d5f846e-0e25-48b1-b1c4-cffa8409ab91
+#              createdAt:
+#                type: string
+#                example: 2022-08-17T13:51:38.112Z
+#              updatedAt:
+#                type: string
+#                example: 2022-08-17T13:51:38.112Z
+#              full_name:
+#                type: string
+#                example: Abdo DOCTOR
+#          token:
+#            type: string
+#            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNWJmNTdkLWNiMGQtNDA1OC1hYjA4LWNiODZjYzg4ODYyMyIsImRpZCI6IjFkNWY4NDZlLTBlMjUtNDhiMS1iMWM0LWNmZmE4NDA5YWI5MSIsImlhdCI6MTY2MDgxMTc2MywiZXhwIjoxNjYwOTg0NTYzfQ.QRg0rSwtZB9HzceZTafHMCD1EaWEZ93WBK__Sjj7-7o
+#          message:
+#            type: string
+#            example: login success
+#
+#  user:
+#    type: object
+#    required:
+#      - email
+#      - password
+#    properties:
+#      id:
+#        type: string
+#        description: user id
+#        example: 66d0d6c2-7a72-48af-9285-529833b40119
+#      first_name:
+#        type: string
+#        description: user first name
+#      last_name:
+#        type: string
+#        description: user last name
+#      email:
+#        type: string
+#        description: user email
+#      password:
+#        type: string
+#        description: user password
+#      createdAt:
+#        type: string
+#        description: date creation
+#        example: "2022-08-02T18:20:14.785Z"
+#      updatedAt:
+#        type: string
+#        description: date update
+#        example: "2022-08-02T18:20:14.785Z"
+#
+#  patient:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 21963985-b95d-4f51-bc0a-d463b4db1302
+#      createdAt:
+#        type: string
+#        example: 2022-08-21T11:05:49.592Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-21T11:05:49.592Z
+#      full_name:
+#        type: string
+#        example: Jose Smitham
+#      blood_type:
+#        type: string
+#        example: A-
+#      gender:
+#        type: string
+#        example: MALE
+#      birth_date:
+#        type: string
+#        example: 1993-04-01T18:27:39.984Z
+#      Social_security_number:
+#        type: string
+#        example: "03436439563456"
+#      national_cardid_number:
+#        type: string
+#        example: "123423"
+#      photo:
+#        type: string
+#        example: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/214.jpg
+#      metadata:
+#        type: array
+#        items:
+#          type: object
+#          $ref: "#/definitions/metadata"
+#      address:
+#        type: object
+#        $ref: "#/definitions/address"
+#
+#  MobileLoginResponse:
+#    data:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 45e0c582-960c-4b7f-9734-8d48563d029e
+#      createdAt:
+#        type: string
+#        example: 2022-09-07T10:04:19.751Z
+#      updatedAt:
+#        type: string
+#        example: 2022-09-07T15:00:28.266Z
+#      full_name:
+#        type: string
+#        example: Abdo PATIENT
+#      first_name:
+#        type: string
+#        example: Abdo
+#      last_name:
+#        type: string
+#        example: PATIENT
+#      phone:
+#        type: string
+#        example: +213668926193
+#      email:
+#        type: string
+#        format: nullable
+#      family_situation:
+#        type: string
+#        example: MARIED
+#      job:
+#        type: string
+#        format: nullable
+#      Social_security_number:
+#        type: string
+#        format: nullable
+#      national_cardid_number:
+#        type: string
+#        format: nullable
+#      blood_type:
+#        type: string
+#        example: O+
+#      gender:
+#        type: string
+#        example: MALE
+#      birth_date:
+#        type: string
+#        format: nullable
+#      photo:
+#        type: string
+#        format: nullable
+#      children:
+#        type: array
+#        items:
+#          type: object
+#          properties:
+#            id:
+#              type: string
+#              example: c858800c-346f-47c8-b7ae-4da567c5ec03
+#            createdAt:
+#              type: string
+#              example: 2022-09-13T08:46:55.013Z
+#            updatedAt:
+#              type: string
+#              example: 2022-09-13T08:46:55.013Z
+#            type:
+#              type: string
+#              example: SON | DAUGHTER
+#            child:
+#              type: object
+#              $ref: "#/definitions/patient"
+#            token:
+#              type: string
+#              example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+#      user:
+#        type: object
+#        $ref: "#/definitions/user"
+#
+#  token:
+#    type: string
+#    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+#  message:
+#    type: string
+#    example: login success
+#
+#  doctor:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: a10bca0a-474e-4429-a997-5e464f55fdf1
+#      createdAt:
+#        type: string
+#        example: 2022-08-21T11:05:45.990Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-21T11:05:45.990Z
+#      full_name:
+#        type: string
+#        example: Jane Fahey III
+#      photo:
+#        type: string
+#        format: nullable
+#
+#  tasklist:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 26a5d7d0-1364-461e-80b4-de2a5b637ed2
+#        description: tasklist id
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:44.179Z
+#        description: createdAt
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:44.179Z
+#        description: updatedAt
+#      name:
+#        type: string
+#        example: Nisi iusto.
+#        description: task list name
+#      description:
+#        type: string
+#        format: nullable
+#        description: a short description about the task
+#      position:
+#        type: number
+#        example: 90
+#        description: list position (order)
+#      count:
+#        type: number
+#        example: 73
+#        description: count of tasks in a list
+#
+#  task:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 0cb864b7-4f64-4152-898b-7a05df3d130f
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:44.283Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:44.283Z
+#      title:
+#        type: string
+#        example: Adipisci perspiciatis officiis.
+#      description:
+#        type: string
+#        format: nullable
+#      content:
+#        type: string
+#        example: Sed sint sit. Qui eum vel iusto vel eveniet qui qui.
+#      status:
+#        type: string
+#        example: DONE
+#      priority:
+#        type: string
+#        example: IMPORTANT
+#      assigned_to:
+#        type: string
+#        format: nullable
+#      assigned_date:
+#        type: string
+#        format: nullable
+#      date:
+#        type: string
+#        format: nullable
+#      deadline:
+#        type: string
+#        format: nullable
+#      list:
+#        type: object
+#        $ref: "#/definitions/tasklist"
+#
+#  contactCategory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      color:
+#        type: string
+#        example: "#00BCC"
+#      name:
+#        type: string
+#        example: Category 0
+#      description:
+#        type: string
+#        example: Description  Category 0
+#
+#  contact:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 1dacd1b4-4de1-4985-9bf0-87dc31a4714d
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.356Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.356Z
+#      name:
+#        type: string
+#        example: Moen and Sons
+#      phone:
+#        type: string
+#        example: 431.607.1802
+#      mobile:
+#        type: string
+#        format: nullable
+#      email:
+#        type: string
+#        example: Wayne56@gmail.com
+#      photo:
+#        type: string
+#        example: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+#      note:
+#        type: string
+#        example: Quod occaecati quis officia soluta debitis.
+#      address:
+#        type: string
+#        example: 6959 Maggio Plain Walnut Creek
+#      lat:
+#        type: string
+#        example: "-80.1127"
+#      lon:
+#        type: string
+#        example: "-125.1860"
+#      favorite:
+#        type: boolean
+#      category:
+#        type: object
+#        $ref: "#/definitions/contactCategory"
+#      # speciality:
+#      #   type: object
+#      #   $ref: "#/definitions/speciality"
+#      # metadata:
+#      #   type: array
+#      #   items:
+#      #     type: object
+#      #     $ref: "#/definitions/metadata"
+#
+#  metadata:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 28a539b4-4ecc-43ad-aa09-d67a656c041a
+#      createdAt:
+#        type: string
+#        example: 2022-08-31T12:56:28.351Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-31T12:56:28.351Z
+#      meta_key:
+#        type: string
+#        example: facebook_account
+#      meta_value:
+#        type: string
+#        example: https://facebook.com/cleverzone
+#
+#  reason:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      name:
+#        type: string
+#        example: reason name
+#      description:
+#        type: string
+#        example: Description of reason
+#
+#  allergy:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+#      createdAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-17T13:51:38.129Z
+#      name:
+#        type: string
+#        example: allergy name
+#      description:
+#        type: string
+#        example: Description of allergy
+#
+#  measure:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: f60b38cf-aa7a-4c3a-8e1f-a6c7381d311a
+#      createdAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      icon:
+#        type: string
+#        format: nullable
+#        example: https://loremflickr.com/640/480/cats
+#      unit:
+#        type: string
+#        format: nullable
+#      name:
+#        type: string
+#        example: Mesure numéro 0
+#      description:
+#        type: string
+#        example: Description  Mesure numéro 0
+#
+#  symptom:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: f60b38cf-aa7a-4c3a-8e1f-a6c7381d311a
+#      createdAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      name:
+#        type: string
+#        example: Symptôme numéro 0
+#      description:
+#        type: string
+#        example: Description Symptôme numéro 0
+#
+#  patientMeasureHistory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 60311c99-eab7-4252-86ff-0c87ce03063b
+#      createdAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      description:
+#        type: string
+#        example: DESGRDB TRSGGSdf
+#      value:
+#        type: number
+#        example: 80
+#      date:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      measure:
+#        type: object
+#        $ref: "#/definitions/measure"
+#
+#  patientSymptomHistory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 60311c99-eab7-4252-86ff-0c87ce03063b
+#      createdAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      note:
+#        type: string
+#        example: DESGRDB TRSGGSdf
+#      date:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      symptom:
+#        type: object
+#        $ref: "#/definitions/symptom"
+#
+#  habit:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: f60b38cf-aa7a-4c3a-8e1f-a6c7381d311a
+#      createdAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      name:
+#        type: string
+#        example: Symptôme numéro 0
+#      description:
+#        type: string
+#        example: Description Symptôme numéro 0
+#
+#  patientHabitHistory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 60311c99-eab7-4252-86ff-0c87ce03063b
+#      createdAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      note:
+#        type: string
+#        example: Notes here ...
+#      date:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      date_end:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      habit:
+#        type: object
+#        $ref: "#/definitions/habit"
+#
+#  patientAllergyHistory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 60311c99-eab7-4252-86ff-0c87ce03063b
+#      createdAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      note:
+#        type: string
+#        example: Notes here ...
+#      date:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      date_end:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      allergy:
+#        type: object
+#        $$ref: "#/definitions/allergy"
+#
+#  appointment:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: ec197beb-1160-4c5f-b74f-a9a6a8310edf
+#      createdAt:
+#        type: string
+#        example: 2022-08-22T08:01:59.836Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-22T08:01:59.836Z
+#      status:
+#        type: string
+#        example: BOOKED | CONFIRMED | CANCELED
+#      date:
+#        type: string
+#        example: 2022-10-30T15:46:42.859Z
+#      note:
+#        type: string
+#        example: XXXXXXXXXXX
+#      channel:
+#        type: string
+#        example: DOCTA | PHONE | CABINET
+#      doctor:
+#        type: object
+#        $ref: "#/definitions/doctor"
+#      patient:
+#        type: object
+#        $ref: "#/definitions/patient"
+#      reason:
+#        type: object
+#        $ref: "#/definitions/reason"
+#
+#  drug:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: fda44be8-8c19-4979-b8db-efd4bccf94d0
+#      createdAt:
+#        type: string
+#        example: 2022-08-28T12:15:14.131Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-28T12:15:14.131Z
+#      reg_number:
+#        type: string
+#        example: 309/ 03 B 088 /07/17
+#      code_dci:
+#        type: string
+#        example: 03 B 088
+#      dci:
+#        type: string
+#        example: PARACETAMOL / CAFEINE
+#      comercial_name:
+#        type: string
+#        example: PANADOL EXTRA
+#      form:
+#        type: string
+#        example: COMPRIME PELLICULE
+#      dosage:
+#        type: string
+#        example: 500MG/65MG
+#      cond:
+#        type: string
+#        example: B/16
+#      list:
+#        type: string
+#        example:
+#      p1:
+#        type: string
+#        example: HOP
+#      p2:
+#        type: string
+#        example: OFF
+#      obs:
+#        type: string
+#        example:
+#      labo_regist:
+#        type: string
+#        example: LABORATOIRES  DE DIAGNOSTICS MAGHREBINS (LDM)
+#      labo_regist_country:
+#        type: string
+#        example: ALGERIE
+#      initial_date_regist:
+#        type: string
+#        example: 06/20/2007
+#      final_date_regist:
+#        type: string
+#        example: 09/25/2017
+#      type:
+#        type: string
+#        example: Ré
+#      status:
+#        type: string
+#        example: Fprémix
+#      stability_duration:
+#        type: string
+#        example: 24 MOIS
+#
+#  speciality:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 17304c77-b00e-4435-a7d6-9ad576f77c9e
+#      createdAt:
+#        type: string
+#        example: 2022-08-29T09:21:16.527Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-29T09:21:16.527Z
+#      active:
+#        type: boolean
+#      icon:
+#        type: string
+#        example: https://docta-pictures.s3.eu-central-1.amazonaws.com/docta-specialty-icon/17304c77-b00e-4435-a7d6-9ad576f77c9e?9ad3a890-b0ff-480a-8280-63283da9ea82
+#      name:
+#        type: string
+#        example: Orthophonie
+#      description:
+#        type: string
+#        example: Traitement des troubles de la parole du langage du bégaiement et de la voix.
+#
+#  disease:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: f60b38cf-aa7a-4c3a-8e1f-a6c7381d311a
+#      createdAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-22T13:36:26.668Z
+#      name:
+#        type: string
+#        example: Allodynie
+#      description:
+#        type: string
+#        example: "Allodynie : définition, causes, traitements"
+#
+#  patientDiseaseHistory:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 60311c99-eab7-4252-86ff-0c87ce03063b
+#      createdAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      updatedAt:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      note:
+#        type: string
+#        example: Notes here ...
+#      date:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      date_end:
+#        type: string
+#        example: 2022-08-23T09:23:16.252Z
+#      disease:
+#        type: object
+#        $ref: "#/definitions/disease"
+#
+#  country:
+#    type: object
+#    properties:
+#      id:
+#        type: integer
+#        format: int32
+#        example: 4
+#      name:
+#        type: string
+#        example: Algeria
+#      iso3:
+#        type: string
+#        example: DZA
+#      iso2:
+#        type: string
+#        example: DZ
+#      numeric_code:
+#        type: string
+#        example: 012
+#      phone_code:
+#        type: string
+#        example: 213
+#      capital:
+#        type: string
+#        example: Algiers
+#      currency:
+#        type: string
+#        example: DZD
+#      currency_name:
+#        type: string
+#        example: Algerian dinar
+#      currency_symbol:
+#        type: string
+#        example: دج
+#      tld:
+#        type: string
+#        example: .dz
+#      native:
+#        type: string
+#        example: الجزائر
+#      region:
+#        type: string
+#        example: Africa
+#      subregion:
+#        type: string
+#        example: Northern Africa
+#      timezones:
+#        type: string
+#        example:
+#          [
+#            zoneName:'Africa\/Algiers'gmtOffset:3600gmtOffsetName:'UTC+01:00'abbreviation:'CET'tzName:'Central European Time',
+#          ]
+#      latitude:
+#        type: string
+#        example: 28
+#      longitude:
+#        type: string
+#        example: 3
+#      emoji:
+#        type: string
+#        example: 🇩🇿
+#      emojiU:
+#        type: string
+#        example: U+1F1E9 U+1F1FF
+#
+#  state:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 2cb84483-82ce-43ab-b3fa-b2052ba7eca9
+#      createdAt:
+#        type: string
+#        example: 2022-09-07T13:05:25.659Z
+#      updatedAt:
+#        type: string
+#        example: 2022-09-07T13:05:25.659Z
+#      name:
+#        type: string
+#        example: Delvinë District
+#      country_id:
+#        type: string
+#        example: 3
+#      country_code:
+#        type: string
+#        example: AL
+#      country_name:
+#        type: string
+#        example: Albania
+#      state_code:
+#        type: string
+#        example: DL
+#      type:
+#        type: string
+#        example:
+#      latitude:
+#        type: string
+#        example: 39.9481364
+#      longitude:
+#        type: string
+#        example: 20.0955891
+#
+#  city:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
+#      createdAt:
+#        type: string
+#        example: 2022-09-07T13:14:00.488Z
+#      updatedAt:
+#        type: string
+#        example: 2022-09-07T13:14:00.488Z
+#      name:
+#        type: string
+#        example: Redford
+#      state_id:
+#        type: string
+#        example: 1426
+#      state_code:
+#        type: string
+#        example: MI
+#      state_name:
+#        type: string
+#        example: Michigan
+#      country_id:
+#        type: integer
+#        format: int32
+#        example: 233
+#      country_code:
+#        type: string
+#        example: US
+#      country_name:
+#        type: string
+#        example: United States
+#      latitude:
+#        type: string
+#        example: 42.38337
+#      longitude:
+#        type: string
+#        example: -83.2966
+#
+#  address:
+#    type: object
+#    properties:
+#      id:
+#        type: string
+#        example: b5442a67-22fc-4335-8996-5788525d6a48
+#      street:
+#        type: string
+#        example: 115 J8 lapproval Kouba
+#      house_number:
+#        type: string
+#        format: nullable
+#      lat:
+#        type: string
+#        format: nullable
+#      lon:
+#        type: string
+#        format: nullable
+#      country:
+#        type: object
+#        $$ref: "#/definitions/country"
+#      state:
+#        type: object
+#        $$ref: "#/definitions/state"
+#      city:
+#        type: object
+#        $$ref: "#/definitions/city"
+#
+#securityDefinitions:
+#  bearerAuth:
+#    type: apiKey
+#    name: Authorization
+#    in: header
+#    scheme: bearer
+#    bearerFormat: JWT
+#
+#schemes:
+#  - https
+#  - http

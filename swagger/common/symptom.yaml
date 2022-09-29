@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+
+paths:
+  /api/v1/symptom:
+    # [GET] GET ALL
+    get:
+      tags:
+        - Symptom
+      summary: Fetch symptoms ✔️
+      description: Fetch symptoms
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/symptom/{id}:
+    # [GET] GET ONE
+    get:
+      tags:
+        - Symptom
+      summary: Fetch one symptom ✔️
+      description: Fetch symptom
+      parameters:
+        - name: id
+          in: path
+          description: symptom Id
+          required: true
+          schema:
+            type: string
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+  /api/v1/symptom/search:
+    # [GET] SEARCH
+    get:
+      tags:
+        - Symptom
+      summary: search for symptom ✔️
+      description: search for symptom
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: string
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

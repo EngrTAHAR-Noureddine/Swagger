@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+
+paths:
+  /api/v1/drug:
+    # [GET] GET ALL
+    get:
+      tags:
+        - Drug
+      summary: Fetch drugs ✔️
+      description: Fetch drugs
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: number
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/drug/{id}:
+    # [GET] GET ONE
+    get:
+      tags:
+        - Drug
+      summary: Fetch one drug ✔️
+      description: Fetch drug
+      parameters:
+        - name: id
+          in: path
+          description: drug Id
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+  /api/v1/drug/search:
+    # [GET] SEARCH
+    get:
+      tags:
+        - Drug
+      summary: search for drug ✔️
+      description: search for drug
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: string
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: number
+
+      security:
+        - bearerAuth: [Authorization]
+
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

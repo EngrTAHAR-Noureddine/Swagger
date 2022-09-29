@@ -1,0 +1,177 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+
+paths:
+  /api/v1/contactcategory:
+    # [GET] GET CATEGORIES
+    get:
+      tags:
+        - ContactCategory
+      summary: Fetch categorie
+      description: Fetch categorie
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example : 1
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: integer
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+    # [POST] CREATE CATEGORY
+    post:
+      tags:
+        - ContactCategory
+      summary: Create new list
+      requestBody:
+        description: category Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/contactCategory'
+            examples:
+              createContact:
+                $ref: '#/components/examples/createContactCategory'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '201':
+          description: 'Created'
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+  /api/v1/contactcategory/{id}:
+    # [GET] GET ONE CATEGORY
+    get:
+      tags:
+        - ContactCategory
+      summary: Fetch one category️
+      description: Fetch category
+      parameters:
+        - name: id
+          in: path
+          description: category Id
+          required: true
+          example: id_ContactCategory
+          schema:
+            type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+    # [PUT] UPDATE CATEGORY
+    put:
+      tags:
+        - ContactCategory
+      summary: Update category
+      parameters:
+        - name: id
+          in: path
+          description: category Id
+          required: true
+          example: id_contactCategory
+          schema:
+            type: string
+      requestBody:
+        description: category Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/contactCategory'
+            examples:
+              createContact:
+                $ref: '#/components/examples/createContactCategory'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: 'OK'
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+      # [DELETE] CATEGORY
+    delete:
+      tags:
+        - ContactCategory
+      summary: Delete category
+
+      parameters:
+        - name: id
+          in: path
+          description: category Id
+          required: true
+          schema:
+            type: string
+
+      security:
+        - bearerAuth: [Authorization]
+
+      responses:
+        '200':
+          description: 'OK'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
+
+  schemas:
+    contactCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        color:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+
+
+  examples:
+    createContactCategory:
+      value:
+        color: Moen and Sons
+        name: 431.607.1802
+        description: Wayne56@gmail.com
+      summary: A sample object of Contact Category

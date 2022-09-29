@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+paths:
+  /api/v1/allergy:
+    # [GET] GET ALLERGIES
+    get:
+      tags:
+        - Allergy
+      summary: Fetch allergies
+      description: Fetch allergies
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example : 1
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: integer
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/allergy/{id}:
+    # [GET] GET ALLERGIES
+    get:
+      tags:
+        - Allergy
+      summary: Fetch one allergy
+      description: Fetch allergy
+      parameters:
+        - name: id
+          in: path
+          description: allergy Id
+          example : 1
+          required: true
+          schema:
+            type: string
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+        '500':
+          description: "Server Error"
+
+  /api/v1/allergy/search:
+    # [GET] GET ALLERGIES
+    get:
+      tags:
+        - Allergy
+      summary: search for allergy
+      description: search for allergy
+      parameters:
+        - name: q
+          in: query
+          description: Pagination page
+          required: true
+          example : "1"
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: string
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: integer
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

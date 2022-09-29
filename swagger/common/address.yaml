@@ -1,0 +1,214 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+paths:
+  /api/v1/country:
+    get:
+      tags:
+        - Address
+      summary: Fetch countries
+      description: Fetch countries
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example : 1
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: integer
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/country/search:
+    # [GET] SEARCH COUNTRIES
+    get:
+      tags:
+        - Address
+      summary: Fetch cities
+      description: Fetch cities
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Pagination page
+          example : 1
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: number of elements per page
+          example : 20
+          schema:
+            type: number
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/state:
+    # [GET] GET STATES
+    get:
+      tags:
+        - Address
+      summary: Fetch states
+      description: Fetch states
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: number
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/city:
+    # [GET] GET STATES
+    get:
+      tags:
+        - Address
+      summary: Fetch cities
+      description: Fetch cities
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: number
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: number
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/city/search:
+    # [GET] GET STATES
+    get:
+      tags:
+        - Address
+      summary: Fetch cities
+      description: Fetch cities
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Pagination page
+          example : 1
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: number of elements per page
+          example: 20
+          schema:
+            type: number
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/city/bystate:
+    # [GET] GET STATES
+    get:
+      tags:
+        - Address
+      summary: Fetch cities
+      description: Fetch cities
+      parameters:
+        - name: state_code
+          in: query
+          description: state code
+          required: true
+          schema:
+            type: string
+          example: 35
+
+        - name: country_code
+          in: query
+          description: country code
+          required: true
+          example: DZ
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          example: 1
+          schema:
+            type: number
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          example : 20
+          schema:
+            type: number
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
+
+

@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+paths:
+  /api/v1/speciality:
+    # [GET] GET ALL
+    get:
+      tags:
+        - Speciality
+      summary: Fetch Specialities ✔️
+      description: Fetch Specialities
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+  /api/v1/speciality/{id}:
+    # [GET] GET ONE
+    get:
+      tags:
+        - Speciality
+      summary: Fetch one Speciality ✔️
+      description: Fetch Speciality
+      parameters:
+        - name: id
+          in: path
+          description: Speciality Id
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+  /api/v1/speciality/search:
+    # [GET] SEARCH
+    get:
+      tags:
+        - Speciality
+      summary: search for Speciality ✔️
+      description: search for Speciality
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: string
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
