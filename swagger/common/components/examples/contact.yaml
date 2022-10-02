@@ -1,0 +1,13 @@
+examples:
+  createContact:
+    value:
+      name: Moen and Sons
+      phone: 431.607.1802
+      email : Wayne56@gmail.com
+      photo : https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+      note: Quod occaecati quis officia soluta debitis.
+      address : 6959 Maggio Plain Walnut Creek
+      lat: "-80.1127"
+      lon: "-125.1860"
+      favorite: false
+    summary: A sample object of Contact

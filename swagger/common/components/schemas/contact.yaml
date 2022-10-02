@@ -1,0 +1,29 @@
+schemas:
+  contact:
+    title: Contact Object
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      mobile:
+        type: string
+        format: nullable
+      email:
+        type: string
+      photo:
+        type: string
+      note:
+        type: string
+      address:
+        type: string
+      lat:
+        type: string
+      lon:
+        type: string
+      favorite:
+        type: boolean
+        default: false
