@@ -27,15 +27,3 @@ schemas:
       favorite:
         type: boolean
         default: false
-
-  contactCategory:
-    type: object
-    properties:
-      id:
-        type: string
-      color:
-        type: string
-      name:
-        type: string
-      description:
-        type: string

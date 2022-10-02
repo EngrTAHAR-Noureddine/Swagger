@@ -11,10 +11,3 @@ examples:
       lon: "-125.1860"
       favorite: false
     summary: A sample object of Contact
-
-  createContactCategory:
-    summary: A sample object of Contact Category
-    value:
-      color: Moen and Sons
-      name: 431.607.1802
-      description: Wayne56@gmail.com
