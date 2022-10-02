@@ -60,6 +60,7 @@ paths:
           description: "Server Error"
 
   /state:
+    # [GET] GET STATES
     get:
       tags:
         - Address
@@ -87,6 +88,7 @@ paths:
           description: "Server Error"
 
   /city:
+    # [GET] GET STATES
     get:
       tags:
         - Address
@@ -116,6 +118,7 @@ paths:
           description: "Server Error"
 
   /citySearch:
+    # [GET] GET STATES
     get:
       tags:
         - Address
@@ -150,6 +153,7 @@ paths:
           description: "Server Error"
 
   /cityByState:
+    # [GET] GET STATES
     get:
       tags:
         - Address

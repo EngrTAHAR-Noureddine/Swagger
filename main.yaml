@@ -5,7 +5,6 @@ info:
   version: 1.1.0
 paths:
   #Address
-
   /api/v1/country:
     $ref: './swagger/common/address.yaml#/paths/~1country'
 
@@ -13,52 +12,45 @@ paths:
     $ref: './swagger/common/address.yaml#/paths/~1countrySearch'
 
   /api/v1/state:
-    # [GET] GET STATES
     $ref: './swagger/common/address.yaml#/paths/~1state'
 
   /api/v1/city:
-    # [GET] GET STATES
     $ref: './swagger/common/address.yaml#/paths/~1city'
 
   /api/v1/city/search:
-    # [GET] GET STATES
     $ref: './swagger/common/address.yaml#/paths/~1citySearch'
 
   /api/v1/city/bystate:
-    # [GET] GET STATES
     $ref: './swagger/common/address.yaml#/paths/~1cityByState'
 
   #Allergy
   /api/v1/allergy:
-    # [GET] GET ALLERGIES
     $ref: './swagger/common/allergy.yaml#/paths/~1allergy'
 
   /api/v1/allergy/{id}:
-    # [GET] GET ALLERGIES
     $ref: './swagger/common/allergy.yaml#/paths/~1allergyId'
 
   /api/v1/allergy/search:
-    # [GET] GET ALLERGIES
     $ref: './swagger/common/allergy.yaml#/paths/~1allergySearch'
 
   #Contact
   /api/v1/contact:
-    # [GET] GET CONTACTS
     $ref: './swagger/common/contact.yaml#/paths/~1contact'
 
   /api/v1/contact/{id}:
-    # [GET] GET ONE CONTACT
     $ref: './swagger/common/contact.yaml#/paths/~1contactId'
 
   /api/v1/contact/search:
-    # [GET] SEARCH FOR CONTACT
     $ref: './swagger/common/contact.yaml#/paths/~1contactSearch'
+
 
   #Contact Category
   /api/v1/contactcategory:
     $ref: './swagger/common/contactCategory.yaml#/paths/~1contactCategory'
+
   /api/v1/contactcategory/{id}:
     $ref: './swagger/common/contactCategory.yaml#/paths/~1contactCategoryId'
+
 
   #Disease
   /api/v1/disease:
@@ -69,6 +61,7 @@ paths:
 
   /api/v1/disease/search:
     $ref: './swagger/common/disease.yaml#/paths/~1diseaseSearch'
+
 
   #Drug
   /api/v1/drug:
@@ -129,6 +122,7 @@ paths:
 
   /api/v1/symptom/search:
     $ref: './swagger/common/symptom.yaml#/paths/~1symptomSearch'
+
 
 
 components:
