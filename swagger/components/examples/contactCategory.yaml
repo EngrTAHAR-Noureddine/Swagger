@@ -1,7 +1,8 @@
-examples:
-  createContactCategory:
-    summary: A sample object of Contact Category
-    value:
-      color: Moen and Sons
-      name: 431.607.1802
-      description: Wayne56@gmail.com
+components:
+  examples:
+    createContactCategory:
+      summary: A sample object of Contact Category
+      value:
+        color: Moen and Sons
+        name: 431.607.1802
+        description: Wayne56@gmail.com

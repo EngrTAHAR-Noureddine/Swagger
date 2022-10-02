@@ -1,12 +1,13 @@
-schemas:
-  contactCategory:
-    type: object
-    properties:
-      id:
-        type: string
-      color:
-        type: string
-      name:
-        type: string
-      description:
-        type: string
+components:
+  schemas:
+    contactCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        color:
+          type: string
+        name:
+          type: string
+        description:
+          type: string

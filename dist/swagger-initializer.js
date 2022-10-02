@@ -11,7 +11,6 @@ window.onload = function() {
       SwaggerUIStandalonePreset
     ],
     plugins: [
-      HideAllErrorsPlugin,
       SwaggerUIBundle.plugins.DownloadUrl
     ],
     layout: "StandaloneLayout"

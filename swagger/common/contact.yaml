@@ -36,12 +36,11 @@ paths:
         required: true
         content:
           application/json:
-            schemas:
-              contact:
-                $ref: './components/schemas/contact.yaml/#/schemas/contact'
+            schema:
+              $ref: '../components/schemas/contact.yaml#/components/schemas/contact'
             examples:
               createContact:
-                $ref: './components/examples/contact.yaml/#/examples/createContact'
+                $ref: '../components/examples/contact.yaml#/components/examples/createContact'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -100,12 +99,11 @@ paths:
         required: true
         content:
           application/json:
-            schemas:
-              contact:
-                $ref: './components/schemas/contact.yaml/#/schemas/contact'
+            schema:
+              $ref: '../components/schemas/contact.yaml#/components/schemas/contact'
             examples:
               createContact:
-                $ref: './components/examples/contact.yaml/#/examples/createContact'
+                $ref: '../components/examples/contact.yaml#/components/examples/createContact'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -178,3 +176,5 @@ paths:
           description: "OK"
         '500':
           description: "Server Error"
+
+
