@@ -1,10 +1,5 @@
-openapi: 3.0.3
-info:
-  title: OPEN API
-  description: this is paths
-  version: 1.1.0
 paths:
-  /api/v1/country:
+  /country:
     get:
       tags:
         - Address
@@ -31,8 +26,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/country/search:
-    # [GET] SEARCH COUNTRIES
+  /countrySearch:
     get:
       tags:
         - Address
@@ -48,25 +42,24 @@ paths:
         - name: page
           in: query
           description: Pagination page
-          example : 1
+          example: 1
           schema:
             type: number
         - name: limit
           in: query
           description: number of elements per page
-          example : 20
+          example: 20
           schema:
             type: number
       security:
-        - bearerAuth: [Authorization]
+        - bearerAuth: [ Authorization ]
       responses:
         '200':
           description: "OK"
         '500':
           description: "Server Error"
 
-  /api/v1/state:
-    # [GET] GET STATES
+  /state:
     get:
       tags:
         - Address
@@ -93,8 +86,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/city:
-    # [GET] GET STATES
+  /city:
     get:
       tags:
         - Address
@@ -123,8 +115,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/city/search:
-    # [GET] GET STATES
+  /citySearch:
     get:
       tags:
         - Address
@@ -158,8 +149,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/city/bystate:
-    # [GET] GET STATES
+  /cityByState:
     get:
       tags:
         - Address
@@ -192,23 +182,16 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example : 20
+          example: 20
           schema:
             type: number
 
       security:
-        - bearerAuth: [Authorization]
+        - bearerAuth: [ Authorization ]
       responses:
         '200':
           description: "OK"
         '500':
           description: "Server Error"
-
-components:
-  securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
-      type: http
-      scheme: bearer
-      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
 
 

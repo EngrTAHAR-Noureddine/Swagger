@@ -1,17 +1,11 @@
-openapi: 3.0.3
-info:
-  title: OPEN API
-  description: this is paths
-  version: 1.1.0
-
 paths:
-  /api/v1/contactcategory:
-    # [GET] GET CATEGORIES
+  /contactCategory:
+    # [GET] GET ALL CATEGORIES
     get:
       tags:
         - ContactCategory
-      summary: Fetch categorie
-      description: Fetch categorie
+      summary: Fetch Category
+      description: Fetch Category
       parameters:
         - name: page
           in: query
@@ -44,10 +38,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/contactCategory'
+              $ref: '../components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
-                $ref: '#/components/examples/createContactCategory'
+                $ref: '../components/examples/contactCategory.yaml#/examples/createContactCategory'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -60,7 +54,7 @@ paths:
         '500':
           description: 'Server Error'
 
-  /api/v1/contactcategory/{id}:
+  /contactCategoryId:
     # [GET] GET ONE CATEGORY
     get:
       tags:
@@ -106,10 +100,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/contactCategory'
+              $ref: '../components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
-                $ref: '#/components/examples/createContactCategory'
+                $ref: '../components/examples/contactCategory.yaml#/examples/createContactCategory'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -122,7 +116,7 @@ paths:
         '500':
           description: 'Server Error'
 
-      # [DELETE] CATEGORY
+    # [DELETE] CATEGORY
     delete:
       tags:
         - ContactCategory
@@ -146,32 +140,3 @@ paths:
           description: 'Conflict'
         '500':
           description: 'Server Error'
-
-components:
-  securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
-      type: http
-      scheme: bearer
-      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
-
-  schemas:
-    contactCategory:
-      type: object
-      properties:
-        id:
-          type: string
-        color:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-
-
-  examples:
-    createContactCategory:
-      value:
-        color: Moen and Sons
-        name: 431.607.1802
-        description: Wayne56@gmail.com
-      summary: A sample object of Contact Category

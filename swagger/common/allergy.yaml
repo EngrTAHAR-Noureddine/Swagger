@@ -1,11 +1,5 @@
-openapi: 3.0.3
-info:
-  title: OPEN API
-  description: this is paths
-  version: 1.1.0
 paths:
-  /api/v1/allergy:
-    # [GET] GET ALLERGIES
+  /allergy:
     get:
       tags:
         - Allergy
@@ -32,8 +26,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/allergy/{id}:
-    # [GET] GET ALLERGIES
+  /allergyId:
     get:
       tags:
         - Allergy
@@ -60,8 +53,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/allergy/search:
-    # [GET] GET ALLERGIES
+  /allergySearch:
     get:
       tags:
         - Allergy
@@ -96,10 +88,3 @@ paths:
           description: "OK"
         '500':
           description: "Server Error"
-
-components:
-  securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
-      type: http
-      scheme: bearer
-      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

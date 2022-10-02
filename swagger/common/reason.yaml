@@ -1,11 +1,5 @@
-openapi: 3.0.3
-info:
-  title: OPEN API
-  description: this is paths
-  version: 1.1.0
-
 paths:
-  /api/v1/reason:
+  /reason:
     # [GET] GET REASONS
     get:
       tags:
@@ -35,7 +29,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/reason/{id}:
+  /reasonId:
     # [GET] GET ONE REASON
     get:
       tags:
@@ -62,7 +56,7 @@ paths:
         '409':
           description: "Conflict"
 
-  /api/v1/reason/search:
+  /reasonSearch:
     # [GET] SEARCH FOR REASON
     get:
       tags:
@@ -98,10 +92,3 @@ paths:
           description: "OK"
         '500':
           description: "Server Error"
-
-components:
-  securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
-      type: http
-      scheme: bearer
-      bearerFormat: JWT  # optional, arbitrary value for documentation purpos

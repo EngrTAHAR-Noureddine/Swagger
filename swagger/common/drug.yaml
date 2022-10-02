@@ -1,11 +1,5 @@
-openapi: 3.0.3
-info:
-  title: OPEN API
-  description: this is paths
-  version: 1.1.0
-
 paths:
-  /api/v1/drug:
+  /drug:
     # [GET] GET ALL
     get:
       tags:
@@ -33,7 +27,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /api/v1/drug/{id}:
+  /drugId:
     # [GET] GET ONE
     get:
       tags:
@@ -59,7 +53,7 @@ paths:
         '409':
           description: "Conflict"
 
-  /api/v1/drug/search:
+  /drugSearch:
     # [GET] SEARCH
     get:
       tags:
@@ -96,10 +90,3 @@ paths:
           description: "OK"
         '500':
           description: "Server Error"
-
-components:
-  securitySchemes:
-    bearerAuth:            # arbitrary name for the security scheme
-      type: http
-      scheme: bearer
-      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
