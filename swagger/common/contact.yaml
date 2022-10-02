@@ -37,10 +37,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/contact.yaml/#/schemas/contact'
+              $ref: '#/components/schemas/Contact'
             examples:
               createContact:
-                $ref: '../components/examples/contact.yaml/#/examples/createContact'
+                $ref: '#/components/examples/createContact'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -100,10 +100,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/contact.yaml/#/schemas/contact'
+              $ref: '#/components/schemas/Contact'
             examples:
               createContact:
-                $ref: '../components/examples/contact.yaml/#/examples/createContact'
+                $ref: '#/components/examples/createContact'
       security:
         - bearerAuth: [Authorization]
       responses:
