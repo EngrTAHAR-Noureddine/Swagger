@@ -37,8 +37,9 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
+            schemas:
+              contactCategory:
+                $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
                 $ref: './components/examples/contactCategory.yaml#/examples/createContactCategory'
@@ -99,8 +100,9 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
+            schemas:
+              contactCategory:
+                $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
                 $ref: './components/examples/contactCategory.yaml#/examples/createContactCategory'

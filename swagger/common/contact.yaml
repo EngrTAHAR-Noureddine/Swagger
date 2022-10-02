@@ -36,8 +36,9 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: './components/schemas/contact.yaml/#/schemas/contact'
+            schemas:
+              contact:
+                $ref: './components/schemas/contact.yaml/#/schemas/contact'
             examples:
               createContact:
                 $ref: './components/examples/contact.yaml/#/examples/createContact'
@@ -99,8 +100,9 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: './components/schemas/contact.yaml/#/schemas/contact'
+            schemas:
+              contact:
+                $ref: './components/schemas/contact.yaml/#/schemas/contact'
             examples:
               createContact:
                 $ref: './components/examples/contact.yaml/#/examples/createContact'

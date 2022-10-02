@@ -134,13 +134,13 @@ components:
 
   examples:
     createContact:
-      $ref: './swagger/components/examples/contact.yaml#/components/examples/createContact'
+      $ref: './swagger/components/examples/contact.yaml#/examples/createContact'
     createContactCategory:
-      $ref: './swagger/components/examples/contactCategory.yaml#/components/examples/createContactCategory'
+      $ref: './swagger/components/examples/contactCategory.yaml#/examples/createContactCategory'
   schemas:
     Contact:
-      $ref: './swagger/components/schemas/contact.yaml#/components/schemas/contact'
+      $ref: './swagger/components/schemas/contact.yaml#/schemas/contact'
     contactCategory:
-      $ref: './swagger/components/schemas/contactCategory.yaml#/components/schemas/contactCategory'
+      $ref: './swagger/components/schemas/contactCategory.yaml#/schemas/contactCategory'
 
 # $ref: './test/main.yaml#/paths/~1drug'
