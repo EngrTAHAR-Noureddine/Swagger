@@ -38,10 +38,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/contactCategory.yaml#/components/schemas/contactCategory'
+              $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
-                $ref: '../components/examples/contactCategory.yaml#/components/examples/createContactCategory'
+                $ref: './components/examples/contactCategory.yaml#/examples/createContactCategory'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -100,10 +100,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/contactCategory.yaml#/components/schemas/contactCategory'
+              $ref: './components/schemas/contactCategory.yaml#/schemas/contactCategory'
             examples:
               createContact:
-                $ref: '../components/examples/contactCategory.yaml#/components/examples/createContactCategory'
+                $ref: './components/examples/contactCategory.yaml#/examples/createContactCategory'
       security:
         - bearerAuth: [Authorization]
       responses:
