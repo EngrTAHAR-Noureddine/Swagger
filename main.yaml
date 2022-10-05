@@ -161,5 +161,7 @@ components:
       $ref: './swagger/components/schemas/reason.yaml#/components/schemas/reason'
     User:
       $ref: './swagger/components/schemas/user.yaml#/components/schemas/user'
-
-# $ref: './test/main.yaml#/paths/~1drug'
+    Disease:
+      $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
+    patientDisease:
+      $ref: './swagger/components/schemas/patientDisease.yaml#/components/schemas/patientDisease'

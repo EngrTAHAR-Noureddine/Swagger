@@ -1,0 +1,10 @@
+components:
+  examples:
+    disease:
+      summary: example about disease
+      value:
+        id: f60b38cf-aa7a-4c3a-8e1f-a6c7381d311a
+        name: Allodynie
+        description: "Allodynie : définition, causes, traitements"
+        createdAt: 2022-08-22T13:36:26.668Z
+        updatedAt: 2022-08-22T13:36:26.668Z

@@ -22,6 +22,14 @@ paths:
   /api/v1/m/patient/allergy/{id}:
     $ref: './swagger/mobile/patientAllergy.yaml#/paths/~1patientAllergyId'
 
+  #patient Disease
+  /api/v1/m/patient/disease:
+    $ref: './swagger/mobile/patientDisease.yaml#/paths/~1patientDisease'
+  /api/v1/m/patient/disease/{id}:
+    $ref: './swagger/mobile/patientDisease.yaml#/paths/~1patientDiseaseId'
+
+
+
   # Appointment
   /api/v1/m/appointment:
     $ref: './swagger/mobile/appointment.yaml#/paths/~1appointment'
@@ -69,3 +77,7 @@ components:
       $ref: './swagger/components/schemas/reason.yaml#/components/schemas/reason'
     User:
       $ref: './swagger/components/schemas/user.yaml#/components/schemas/user'
+    Disease:
+      $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
+    patientDisease:
+      $ref: './swagger/components/schemas/patientDisease.yaml#/components/schemas/patientDisease'

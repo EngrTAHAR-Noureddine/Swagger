@@ -1,0 +1,33 @@
+components:
+  schemas:
+    #Object
+    patientDisease:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        disease:
+          $ref: "./disease.yaml#/components/schemas/disease"
+
+    #RequestBody
+    patientDiseaseRequest:
+      type: object
+      properties:
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        disease:
+          type: string

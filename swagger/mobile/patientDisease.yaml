@@ -1,127 +1,136 @@
-/api/v1/m/patient/disease:
-  # [GET] GET MEASURE HISTORY
-  get:
-    tags:
-      - PatientDisease
-    summary: Fetch disease ✔️
-    description: Fetch disease
-    parameters:
-      - name: page
-        in: query
-        description: Pagination page
-        required: false
-        type: number
-        default: 1
-      - name: limit
-        in: query
-        description: number of elements per page
-        required: false
-        type: number
-        default: 20
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: "OK"
-      500:
-        description: "Server Error"
+paths:
+  /patientDisease:
+    # [GET] GET MEASURE HISTORY
+    get:
+      tags:
+        - PatientDisease
+      summary: Fetch disease ✔️
+      description: Fetch disease
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: number
+          default: 1
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
 
-  post:
-    tags:
-      - PatientDisease
-    summary: add new disease to history
-    description: add new disease to history
-    parameters:
-    - name: body
-      in: body
-      description: appointment Data
-      required: true
-      schema:
-        $ref: '#/definitions/patientPatientDisease'
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      201:
-        description: 'Created'
-      400:
-        description: 'Bad Request'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
-
-
-/api/v1/m/patient/disease/{id}:
-  # [GET] GET ONE 
-  get:
-    tags:
-      - PatientDisease
-    summary: Fetch one disease ✔️
-    description: Fetch disease
-    parameters:
-      - name: id
-        in: path
-        description: disease Id
+    post:
+      tags:
+        - PatientDisease
+      summary: add new disease to history
+      description: add new disease to history
+      requestBody:
+        description: appointment Data
         required: true
-        type: string
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: "OK"
-      500:
-        description: "Server Error"
-      400:
-        description: "Bad Request"
-      409:
-        description: "Conflict"
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+            examples:
+              patientDiseaseRequest:
+                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequest'
 
-  # [PUT] UPDATE TASK
-  put:
-    tags:
-    - PatientDisease
-    summary: Update disease history ✔️
-    parameters:
-    - name: id
-      in: path
-      description: disease history Id
-      required: true
-      type: string
-    - name: body
-      in: body
-      description: disease history Data
-      required: true
-      schema:
-        $ref: '#/definitions/patientPatientDisease'
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: 'OK'
-      400:
-        description: 'Bad Request'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        201:
+          description: 'Created'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
 
 
-  delete:
-    tags:
-    - PatientDisease
-    summary: Delete disease history ✔️
-    parameters:
-    - name: id
-      in: path
-      description: disease history Id
-      required: true
-      type: string
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: 'OK'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
+  /patientDiseaseId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - PatientDisease
+      summary: Fetch one disease ✔️
+      description: Fetch disease
+      parameters:
+        - name: id
+          in: path
+          description: disease Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+
+    # [PUT] UPDATE TASK
+    put:
+      tags:
+        - PatientDisease
+      summary: Update disease history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: medical Act Id
+          required: true
+          type: string
+      requestBody:
+        description: appointment Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+            examples:
+              patientDiseaseRequest:
+                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequest'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+
+    delete:
+      tags:
+        - PatientDisease
+      summary: Delete disease history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: disease history Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
