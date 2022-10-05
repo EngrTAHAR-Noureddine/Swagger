@@ -3,7 +3,7 @@ components:
     #Request
     patientAllergyRequest:
       summary: A sample example of patientAllergy
-      properties:
+      value:
         note: Notes here ...
         date: 2022-08-23T09:23:16.252Z
         date_end: 2022-08-23T09:23:16.252Z
@@ -15,7 +15,7 @@ components:
     #Response
     patientAllergy:
       summary: A sample example of patientAllergy
-      properties:
+      value:
         id: 60311c99-eab7-4252-86ff-0c87ce03063b
         createdAt: 2022-08-23T09:23:16.252Z
         updatedAt: 2022-08-23T09:23:16.252Z
