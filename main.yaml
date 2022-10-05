@@ -46,10 +46,10 @@ paths:
 
   #Contact Category
   /api/v1/contactcategory:
-    $ref: './swagger/common/contactCategory.yaml#/paths/~1contactCategory'
+    $ref: './swagger/common/contactcategory.yaml#/paths/~1contactCategory'
 
   /api/v1/contactcategory/{id}:
-    $ref: './swagger/common/contactCategory.yaml#/paths/~1contactCategoryId'
+    $ref: './swagger/common/contactcategory.yaml#/paths/~1contactCategoryId'
 
 
   #Disease
