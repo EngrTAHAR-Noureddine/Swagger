@@ -1,0 +1,12 @@
+components:
+  examples:
+    #RequestBody Example
+    PatientHabitRequest:
+      summary: Example Patient Habit
+      value:
+        note: Labore accusamus repudiandae occaecati.
+        date: '2006-06-17T12:58:45.638Z'
+        date_end: '2019-12-03T21:33:41.671Z'
+        habit: be54a00b-1896-4cde-b77c-28fe05a8e76c
+#        createdAt: '2022-09-26T14:22:35.372Z'
+#        updatedAt: '2022-09-26T14:22:35.372Z'

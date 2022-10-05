@@ -1,127 +1,135 @@
-/api/v1/m/patient/habit:
-  # [GET] GET MEASURE HISTORY
-  get:
-    tags:
-      - PatientHabit
-    summary: Fetch habit ✔️
-    description: Fetch habit
-    parameters:
-      - name: page
-        in: query
-        description: Pagination page
-        required: false
-        type: number
-        default: 1
-      - name: limit
-        in: query
-        description: number of elements per page
-        required: false
-        type: number
-        default: 20
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: "OK"
-      500:
-        description: "Server Error"
+paths:
+  /patientHabit:
+    # [GET] GET MEASURE HISTORY
+    get:
+      tags:
+        - PatientHabit
+      summary: Fetch habit ✔️
+      description: Fetch habit
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: number
+          default: 1
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
 
-  post:
-    tags:
-      - PatientHabit
-    summary: add new habit to history
-    description: add new habit to history
-    parameters:
-    - name: body
-      in: body
-      description: appointment Data
-      required: true
-      schema:
-        $ref: '#/definitions/patientPatientHabit'
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      201:
-        description: 'Created'
-      400:
-        description: 'Bad Request'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
-
-
-/api/v1/m/patient/habit/{id}:
-  # [GET] GET ONE 
-  get:
-    tags:
-      - PatientHabit
-    summary: Fetch one habit ✔️
-    description: Fetch habit
-    parameters:
-      - name: id
-        in: path
-        description: habit Id
+    post:
+      tags:
+        - PatientHabit
+      summary: add new habit to history
+      description: add new habit to history
+      requestBody:
+        description: appointment Data
         required: true
-        type: string
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: "OK"
-      500:
-        description: "Server Error"
-      400:
-        description: "Bad Request"
-      409:
-        description: "Conflict"
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
+            examples:
+              PatientHabitRequest:
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequest'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        201:
+          description: 'Created'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
 
-  # [PUT] UPDATE TASK
-  put:
-    tags:
-    - PatientHabit
-    summary: Update habit history ✔️
-    parameters:
-    - name: id
-      in: path
-      description: habit history Id
-      required: true
-      type: string
-    - name: body
-      in: body
-      description: habit history Data
-      required: true
-      schema:
-        $ref: '#/definitions/patientPatientHabit'
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: 'OK'
-      400:
-        description: 'Bad Request'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
+  /patientHabitId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - PatientHabit
+      summary: Fetch one habit ✔️
+      description: Fetch habit
+      parameters:
+        - name: id
+          in: path
+          description: habit Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+
+    # [PUT] UPDATE TASK
+    put:
+      tags:
+        - PatientHabit
+      summary: Update habit history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: habit history Id
+          required: true
+          type: string
+      requestBody:
+        description: habit history Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
+            examples:
+              PatientHabitRequest:
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequest'
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
 
 
-  delete:
-    tags:
-    - PatientHabit
-    summary: Delete habit history ✔️
-    parameters:
-    - name: id
-      in: path
-      description: habit history Id
-      required: true
-      type: string
-    security:
-      - bearerAuth: [Authorization]
-    responses:
-      200:
-        description: 'OK'
-      409:
-        description: 'Conflict'
-      500:
-        description: 'Server Error'
+    delete:
+      tags:
+        - PatientHabit
+      summary: Delete habit history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: habit history Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'

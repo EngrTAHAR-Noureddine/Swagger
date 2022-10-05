@@ -165,3 +165,7 @@ components:
       $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
     patientDisease:
       $ref: './swagger/components/schemas/patientDisease.yaml#/components/schemas/patientDisease'
+    patientHabit:
+      $ref: './swagger/components/schemas/patientHabit.yaml#/components/schemas/PatientHabit'
+    Habit:
+      $ref: './swagger/components/schemas/habit.yaml#/components/schemas/Habit'

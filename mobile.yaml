@@ -28,6 +28,11 @@ paths:
   /api/v1/m/patient/disease/{id}:
     $ref: './swagger/mobile/patientDisease.yaml#/paths/~1patientDiseaseId'
 
+  #patient Habit
+  /api/v1/m/patient/habit:
+    $ref: './swagger/mobile/patientHabit.yaml#/paths/~1patientHabit'
+  /api/v1/m/patient/habit/{id}:
+    $ref: './swagger/mobile/patientHabit.yaml#/paths/~1patientHabitId'
 
 
   # Appointment
@@ -81,3 +86,7 @@ components:
       $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
     patientDisease:
       $ref: './swagger/components/schemas/patientDisease.yaml#/components/schemas/patientDisease'
+    patientHabit:
+      $ref: './swagger/components/schemas/patientHabit.yaml#/components/schemas/PatientHabit'
+    Habit:
+      $ref: './swagger/components/schemas/habit.yaml#/components/schemas/Habit'

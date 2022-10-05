@@ -1,0 +1,33 @@
+components:
+  schemas:
+    #Object
+    PatientHabit:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        habit:
+          $ref: "./habit.yaml#/components/schemas/Habit"
+
+    #RequestBody
+    PatientHabitRequest:
+      type: object
+      properties:
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        habit:
+          type: string
