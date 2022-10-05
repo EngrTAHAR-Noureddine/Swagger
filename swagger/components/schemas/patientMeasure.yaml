@@ -1,0 +1,29 @@
+components:
+  schemas:
+    #Object
+    PatientMeasure:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        note:
+          type: string
+        value:
+          type: string
+        measure:
+          $ref: "./measure.yaml#/components/schemas/Measure"
+
+    #RequestBody
+    PatientMeasureRequest:
+      type: object
+      properties:
+        note:
+          type: string
+        value:
+          type: string
+        measure:
+          type: string

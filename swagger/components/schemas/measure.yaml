@@ -1,0 +1,35 @@
+components:
+  schemas:
+    #Object
+    Measure:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        unit:
+          type: string
+        icon:
+          type: string
+          format: nullable
+        name:
+          type: string
+        description:
+          type: string
+
+    #RequestBody
+    MeasureRequest:
+      type: object
+      properties:
+        unit:
+          type: string
+        icon:
+          type: string
+          format: nullable
+        name:
+          type: string
+        description:
+          type: string
