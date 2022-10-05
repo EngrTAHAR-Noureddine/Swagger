@@ -1,0 +1,27 @@
+components:
+  schemas:
+    patient:
+      type: object
+      properties:
+        id:
+          type: string
+        full_name:
+          type: string
+        blood_type:
+          type: string
+        gender:
+          type: string
+        birth_date:
+          type: string
+        Social_security_number:
+          type: string
+        national_cardid_number:
+          type: string
+        photo:
+          type: string
+        metadata:
+          type: array
+          items:
+            $ref: "./metadata.yaml#/components/schemas/metadata"
+        address:
+          $ref: "./address.yaml#/components/schemas/address"

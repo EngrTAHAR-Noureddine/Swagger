@@ -1,0 +1,135 @@
+paths:
+  /patientAllergy:
+    # [GET] GET ALL
+    get:
+      tags:
+        - PatientAllergy
+      summary: Fetch allergy ✔️
+      description: Fetch allergy
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: number
+          default: 1
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+    post:
+      tags:
+        - PatientAllergy
+      summary: add new allergy to history
+      description: add new allergy to history
+      requestBody:
+        description: patient Allergy request body
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientAllergy.yaml#/components/schemas/patientAllergyRequest'
+            examples:
+              patientAllergy:
+                $ref: '../components/examples/patientAllergy.yaml#/components/examples/patientAllergyRequest'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '201':
+          description: 'Created'
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+
+  /patientAllergyId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - PatientAllergy
+      summary: Fetch one allergy ✔️
+      description: Fetch allergy
+      parameters:
+        - name: id
+          in: path
+          description: allergy Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+        '400':
+          description: "Bad Request"
+        '409':
+          description: "Conflict"
+
+    # [PUT] UPDATE TASK
+    put:
+      tags:
+      - PatientAllergy
+      summary: Update allergy history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: allergy history Id
+          required: true
+          type: string
+      requestBody:
+        description: patient Allergy request body
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/patientAllergy.yaml#/components/schemas/patientAllergyRequest'
+            examples:
+              patientAllergy:
+                $ref: '../components/examples/patientAllergy.yaml#/components/examples/patientAllergyRequest'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: 'OK'
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+
+    delete:
+      tags:
+      - PatientAllergy
+      summary: Delete allergy history ✔️
+      parameters:
+        - name: id
+          in: path
+          description: allergy history Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: 'OK'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'

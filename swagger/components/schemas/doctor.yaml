@@ -1,0 +1,12 @@
+components:
+  schemas:
+    doctor:
+      type: object
+      properties:
+        id:
+          type: string
+        full_name:
+          type: string
+        photo:
+          type: string
+          format: nullable

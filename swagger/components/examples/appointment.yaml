@@ -1,0 +1,15 @@
+components:
+  examples:
+
+    #RequestBody
+    appointmentRequestBody:
+      summary: A sample object of Appointment
+      value:
+        status: BOOKED
+        date: 2022-10-30T15:46:42.859Z
+        note: XXXXXXXXXXX
+        channel: DOCTA
+        doctor: a10bca0a-474e-4429-a997-5e464f55fdf1
+        patient: a10bca0a-474e-4429-a997-5e464f55fdf1
+        reason: a10bca0a-474e-4429-a997-5e464f55fdf1
+

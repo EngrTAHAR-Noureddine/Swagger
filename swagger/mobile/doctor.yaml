@@ -1,0 +1,65 @@
+paths:
+  /Doctor:
+    # [GET] ALL DOCTORS
+    get:
+      tags:
+        - Doctor
+      summary: all doctors ✔️
+      description: all doctors
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+  
+  
+  /doctorSearch:
+    # [GET] SEARCH FOR DOCTOR
+    get:
+      tags:
+        - Doctor
+      summary: search for doctor ✔️
+      description: search for doctor
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"

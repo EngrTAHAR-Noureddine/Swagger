@@ -1,0 +1,9 @@
+components:
+  examples:
+    country:
+      summary: A sample object of Country
+      value:
+        id: "4"
+        name: Algeria
+        iso2: DZ
+        phone_code: '213'

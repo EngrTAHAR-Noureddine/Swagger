@@ -1,0 +1,24 @@
+components:
+  schemas:
+    address:
+      type: object
+      properties:
+        id:
+          type: string
+        street:
+          type: string
+        house_number:
+          type: string
+          format: nullable
+        lat:
+          type: string
+          format: nullable
+        lon:
+          type: string
+          format: nullable
+        country:
+          $ref: "./country.yaml#/components/schemas/country"
+        state:
+          $ref: "./state.yaml#/components/schemas/state"
+        city:
+          $ref: "./city.yaml#/components/schemas/city"

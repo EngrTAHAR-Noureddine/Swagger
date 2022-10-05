@@ -1,0 +1,68 @@
+paths:
+  /SignUp:
+    post:
+      tags:
+        - Auth
+      summary: Register a new user
+      description: Register a new user
+      requestBody:
+        description: User information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/user.yaml#/components/schemas/userSignUp"
+            examples:
+              userSignUp:
+                $ref: "../components/examples/user.yaml#/components/examples/userSignUp"
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "../components/schemas/user.yaml#/components/schemas/userSignUpResponse"
+              examples:
+                userSignUpResponse:
+                  $ref: "../components/examples/user.yaml#/components/examples/userSignUpResponse"
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
+        '500':
+          description: "Server Error"
+
+  /LogIn:
+    post:
+      tags:
+        - Auth
+      summary: Login a user
+      description: Login a user
+      requestBody:
+        description: User credentials
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/user.yaml#/components/schemas/userLogIn"
+            examples:
+              userLogin:
+                $ref: "../components/examples/user.yaml#/components/examples/userLogin"
+
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/user.yaml#/components/schemas/userLoginResponse'
+              examples:
+                userLoginResponse:
+                  $ref: '../components/examples/user.yaml#/components/examples/userLoginResponse'
+
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: "Server Error"

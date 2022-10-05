@@ -1,0 +1,127 @@
+/api/v1/m/patient/measure:
+  # [GET] GET MEASURE HISTORY
+  get:
+    tags:
+      - PatientMeasure
+    summary: Fetch measures ✔️
+    description: Fetch measures
+    parameters:
+      - name: page
+        in: query
+        description: Pagination page
+        required: false
+        type: number
+        default: 1
+      - name: limit
+        in: query
+        description: number of elements per page
+        required: false
+        type: number
+        default: 20
+    security:
+      - bearerAuth: [Authorization]
+    responses:
+      200:
+        description: "OK"
+      500:
+        description: "Server Error"
+
+  post:
+    tags:
+      - PatientMeasure
+    summary: add new measure to history
+    description: add new measure to history
+    parameters:
+    - name: body
+      in: body
+      description: appointment Data
+      required: true
+      schema:
+        $ref: '#/definitions/patientPatientMeasure'
+    security:
+      - bearerAuth: [Authorization]
+    responses:
+      201:
+        description: 'Created'
+      400:
+        description: 'Bad Request'
+      409:
+        description: 'Conflict'
+      500:
+        description: 'Server Error'
+
+
+/api/v1/m/patient/measure/{id}:
+  # [GET] GET ONE 
+  get:
+    tags:
+      - PatientMeasure
+    summary: Fetch one measure ✔️
+    description: Fetch measure
+    parameters:
+      - name: id
+        in: path
+        description: measure Id
+        required: true
+        type: string
+    security:
+      - bearerAuth: [Authorization]
+    responses:
+      200:
+        description: "OK"
+      500:
+        description: "Server Error"
+      400:
+        description: "Bad Request"
+      409:
+        description: "Conflict"
+
+  # [PUT] UPDATE TASK
+  put:
+    tags:
+    - PatientMeasure
+    summary: Update measure history ✔️
+    parameters:
+    - name: id
+      in: path
+      description: measure history Id
+      required: true
+      type: string
+    - name: body
+      in: body
+      description: measure history Data
+      required: true
+      schema:
+        $ref: '#/definitions/patientPatientMeasure'
+    security:
+      - bearerAuth: [Authorization]
+    responses:
+      200:
+        description: 'OK'
+      400:
+        description: 'Bad Request'
+      409:
+        description: 'Conflict'
+      500:
+        description: 'Server Error'
+
+
+  delete:
+    tags:
+    - PatientMeasure
+    summary: Delete measure history ✔️
+    parameters:
+    - name: id
+      in: path
+      description: measure history Id
+      required: true
+      type: string
+    security:
+      - bearerAuth: [Authorization]
+    responses:
+      200:
+        description: 'OK'
+      409:
+        description: 'Conflict'
+      500:
+        description: 'Server Error'

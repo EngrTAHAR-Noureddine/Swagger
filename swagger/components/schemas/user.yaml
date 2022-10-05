@@ -1,0 +1,111 @@
+components:
+  schemas:
+    #Object
+    user:
+      type: object
+      description: user object
+      properties:
+        id:
+          type: string
+          description: user id
+        first_name:
+          type: string
+          description: user first name
+        last_name:
+          type: string
+          description: user last name
+        email:
+          type: string
+          description: user email
+        password:
+          type: string
+          description: user password
+        createdAt:
+          type: string
+          description: date creation
+        updatedAt:
+          type: string
+          description: date update
+
+    #Request
+    userLogIn:
+      type: object
+      description: requestBody of user signup
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+
+    userSignUp:
+      type: object
+      description: requestBody of user signup
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+
+
+    #Response
+    userLoginResponse:
+      type: object
+      description: user object with token
+      properties:
+        id:
+          type: string
+          description: user id
+        first_name:
+          type: string
+          description: user first name
+        last_name:
+          type: string
+          description: user last name
+        email:
+          type: string
+          description: user email
+        password:
+          type: string
+          description: user password
+        createdAt:
+          type: string
+          description: date creation
+        updatedAt:
+          type: string
+          description: date update
+        token:
+          type: string
+          description: token
+
+    userSignUpResponse:
+      type: object
+      description: user object with message
+      properties:
+        id:
+          type: string
+          description: user id
+        first_name:
+          type: string
+          description: user first name
+        last_name:
+          type: string
+          description: user last name
+        email:
+          type: string
+          description: user email
+        password:
+          type: string
+          description: user password
+        createdAt:
+          type: string
+          description: date creation
+        updatedAt:
+          type: string
+          description: date update
+        message:
+          type: string
+          description: response message

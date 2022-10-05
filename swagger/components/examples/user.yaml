@@ -1,0 +1,47 @@
+components:
+  examples:
+    #Object
+    user:
+      summary: user object
+      value:
+        id: sakajkfd-kjhajkdfnda-knajkcbksc
+        first_name: abdo
+        last_name: abdo
+        email: patient@docta.io
+        password: abdo@123
+
+    #Request
+    userLogin:
+      summary: request body when user login
+      value:
+        email: patient@docta.io
+        password: abdo@123
+
+    userSignUp:
+      summary: user example when sign up
+      value:
+        first_name: abdo
+        last_name: abdo
+        email: patient@docta.io
+        password: abdo@123
+
+    #Response
+    userLoginResponse:
+      summary: Response for user login
+      value:
+        id: sakajkfd-kjhajkdfnda-knajkcbksc
+        first_name: abdo
+        last_name: abdo
+        email: patient@docta.io
+        password: abdo@123
+        token: kajsadsnchjbscjshhjsbjhsvkjscjks
+
+    userSignUpResponse:
+      summary: Response to user sign up
+      value:
+        id: sakajkfd-kjhajkdfnda-knajkcbksc
+        first_name: abdo
+        last_name: abdo
+        email: patient@docta.io
+        password: abdo@123
+        token: kajsadsnchjbscjshhjsbjhsvkjscjks

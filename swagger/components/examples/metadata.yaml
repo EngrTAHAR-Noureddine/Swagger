@@ -1,0 +1,8 @@
+components:
+  examples:
+    metadata:
+      summary: A sample object of MetaData
+      value:
+        id: 28a539b4-4ecc-43ad-aa09-d67a656c041a
+        meta_key: facebook_account
+        meta_value: https://facebook.com/cleverzone

@@ -1,0 +1,15 @@
+components:
+  schemas:
+    allergy:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        name:
+          type: string
+        description:
+          type: string

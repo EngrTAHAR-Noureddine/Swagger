@@ -1,0 +1,11 @@
+components:
+  schemas:
+    metadata:
+      type: object
+      properties:
+        id:
+          type: string
+        meta_key:
+          type: string
+        meta_value:
+          type: string

@@ -1,0 +1,36 @@
+components:
+  schemas:
+    #Object
+    patientAllergy:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        allergy:
+          $ref: "./allergy.yaml#/components/schemas/allergy"
+
+
+     #RequestBody
+
+    #RequestBody
+    patientAllergyRequest:
+      type: object
+      properties:
+        note:
+          type: string
+        date:
+          type: string
+        date_end:
+          type: string
+        allergy:
+          type: string

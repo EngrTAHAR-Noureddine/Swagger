@@ -1,0 +1,8 @@
+components:
+  examples:
+    doctor:
+      summary: A sample object of Doctor
+      value:
+        id: a10bca0a-474e-4429-a997-5e464f55fdf1
+        full_name: Jane Fahey III
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg

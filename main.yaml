@@ -132,15 +132,34 @@ components:
       scheme: bearer
       bearerFormat: JWT  # optional, arbitrary value for documentation purpos
 
-  examples:
-    createContact:
-      $ref: './swagger/components/examples/contact.yaml#/components/examples/createContact'
-    createContactCategory:
-      $ref: './swagger/components/examples/contactCategory.yaml#/components/examples/createContactCategory'
   schemas:
+    Doctor:
+      $ref: './swagger/components/schemas/doctor.yaml#/components/schemas/doctor'
+    Patient:
+      $ref: './swagger/components/schemas/patient.yaml#/components/schemas/patient'
     Contact:
       $ref: './swagger/components/schemas/contact.yaml#/components/schemas/contact'
-    contactCategory:
+    ContactCategory:
       $ref: './swagger/components/schemas/contactCategory.yaml#/components/schemas/contactCategory'
+    Appointment:
+      $ref: './swagger/components/schemas/appointment.yaml#/components/schemas/appointment'
+    Address:
+      $ref: './swagger/components/schemas/address.yaml#/components/schemas/address'
+    Country:
+      $ref: './swagger/components/schemas/country.yaml#/components/schemas/country'
+    State:
+      $ref: './swagger/components/schemas/state.yaml#/components/schemas/state'
+    City:
+      $ref: './swagger/components/schemas/city.yaml#/components/schemas/city'
+    Metadata:
+      $ref: './swagger/components/schemas/metadata.yaml#/components/schemas/metadata'
+    Allergy:
+      $ref: './swagger/components/schemas/allergy.yaml#/components/schemas/allergy'
+    patientAllergy:
+      $ref: './swagger/components/schemas/patientAllergy.yaml#/components/schemas/patientAllergy'
+    Reason:
+      $ref: './swagger/components/schemas/reason.yaml#/components/schemas/reason'
+    User:
+      $ref: './swagger/components/schemas/user.yaml#/components/schemas/user'
 
 # $ref: './test/main.yaml#/paths/~1drug'

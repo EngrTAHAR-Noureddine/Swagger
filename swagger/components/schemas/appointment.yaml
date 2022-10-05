@@ -1,0 +1,53 @@
+components:
+  schemas:
+    #Object
+    appointment:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [ BOOKED, CONFIRMED, CANCELED, RESCHEDULED ]
+        date:
+          type: string
+        note:
+          type: string
+        channel:
+          type: string
+          enum: [ DOCTA , PHONE , CABINET ]
+
+        doctor:
+          $ref: "./doctor.yaml#/components/schemas/doctor"
+
+        patient:
+          $ref: "./patient.yaml#/components/schemas/patient"
+
+        reason:
+          $ref: "./reason.yaml#/components/schemas/reason"
+    #RequestBody
+    appointmentRequestBody:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [ BOOKED, CONFIRMED, CANCELED, RESCHEDULED ]
+        date:
+          type: string
+        note:
+          type: string
+        channel:
+          type: string
+          enum: [ DOCTA , PHONE , CABINET ]
+
+        doctor:
+          description: ID of Doctor
+          type: string
+
+        patient:
+          description: ID of Patient
+          type: string
+
+        reason:
+          description: ID of Reason
+          type: string

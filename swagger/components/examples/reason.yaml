@@ -1,0 +1,8 @@
+components:
+  examples:
+    reason:
+      summary: A sample object of Reason
+      value:
+        id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+        name: reason name
+        description: reason Description

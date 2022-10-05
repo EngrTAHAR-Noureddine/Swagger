@@ -1,0 +1,10 @@
+components:
+  examples:
+    state:
+      summary: A sample object of State
+      value:
+        id: 2cb84483-82ce-43ab-b3fa-b2052ba7eca9
+        name: Algiers
+        country_code: DZ
+        country_name: Algeria
+        state_code: '16'

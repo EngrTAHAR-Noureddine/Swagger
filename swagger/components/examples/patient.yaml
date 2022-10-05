@@ -1,0 +1,17 @@
+components:
+  examples:
+    patient:
+      summary: A sample object of Patient
+      value:
+        id: 21963985-b95d-4f51-bc0a-d463b4db1302
+        full_name: Jose Smitham
+        blood_type: A-
+        gender: MALE
+        birth_date: 1993-04-01T18:27:39.984Z
+        Social_security_number: "03436439563456"
+        national_cardid_number: "1234232361576"
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/214.jpg
+        metadata:
+          $ref: './metadata.yaml#/components/examples/metadata'
+        address:
+          $ref: './address.yaml#/components/examples/address'
