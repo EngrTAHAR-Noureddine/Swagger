@@ -40,6 +40,12 @@ paths:
   /api/v1/m/patient/measure/{id}:
     $ref: './swagger/mobile/patientMeasure.yaml#/paths/~1patientMeasureId'
 
+  #patient Symptom
+  /api/v1/m/patient/symptom:
+    $ref: './swagger/mobile/patientSymptom.yaml#/paths/~1patientSymptom'
+  /api/v1/m/patient/symptom/{id}:
+    $ref: './swagger/mobile/patientSymptom.yaml#/paths/~1patientSymptomId'
+
   # Appointment
   /api/v1/m/appointment:
     $ref: './swagger/mobile/appointment.yaml#/paths/~1appointment'
@@ -93,6 +99,8 @@ components:
       $ref: './swagger/components/schemas/patientHabit.yaml#/components/schemas/PatientHabit'
     patientMeasure:
       $ref: './swagger/components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasure'
+    patientSymptom:
+      $ref: './swagger/components/schemas/patientSymptom.yaml#/components/schemas/PatientSymptom'
 
     Disease:
       $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
@@ -100,4 +108,6 @@ components:
       $ref: './swagger/components/schemas/habit.yaml#/components/schemas/Habit'
     Measure:
       $ref: './swagger/components/schemas/measure.yaml#/components/schemas/Measure'
+    Symptom:
+      $ref: './swagger/components/schemas/symptom.yaml#/components/schemas/Symptom'
 

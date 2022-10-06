@@ -167,9 +167,14 @@ components:
       $ref: './swagger/components/schemas/patientHabit.yaml#/components/schemas/PatientHabit'
     patientMeasure:
       $ref: './swagger/components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasure'
+    patientSymptom:
+      $ref: './swagger/components/schemas/patientSymptom.yaml#/components/schemas/PatientSymptom'
+
     Disease:
       $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
     Habit:
       $ref: './swagger/components/schemas/habit.yaml#/components/schemas/Habit'
     Measure:
       $ref: './swagger/components/schemas/measure.yaml#/components/schemas/Measure'
+    Symptom:
+      $ref: './swagger/components/schemas/symptom.yaml#/components/schemas/Symptom'
