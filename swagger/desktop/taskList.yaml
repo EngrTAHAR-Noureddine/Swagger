@@ -7,6 +7,20 @@ paths:
         - TaskList
       summary: Fetch lists ✔️
       description: Fetch lists
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 10
       security:
         - bearerAuth: [Authorization]
       responses:

@@ -18,7 +18,7 @@ paths:
           description: number of elements per page
           required: false
           type: number
-          default: 20
+          default: 10
       security:
         - bearerAuth: [Authorization]
       responses:

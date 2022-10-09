@@ -10,8 +10,10 @@ paths:
         - name: patient
           in: path
           description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
           required: true
-          type: string
+          schema:
+            type: string
 
         - name: page
           in: query
@@ -25,7 +27,7 @@ paths:
           description: number of elements per page
           required: false
           type: number
-          default: 20
+          default: 10
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -43,6 +45,13 @@ paths:
       summary: Fetch one PatientConsultation  ✔️
       description: Fetch PatientConsultation ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: PatientConsultation Id

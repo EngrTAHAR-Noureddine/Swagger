@@ -15,7 +15,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: integer
       security:
@@ -48,7 +48,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: number
       security:
@@ -76,7 +76,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: number
       security:
@@ -105,7 +105,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: number
 
@@ -140,7 +140,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: number
 
@@ -186,7 +186,7 @@ paths:
         - name: limit
           in: query
           description: number of elements per page
-          example: 20
+          example: 10
           schema:
             type: number
 

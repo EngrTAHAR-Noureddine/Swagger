@@ -10,6 +10,7 @@ paths:
         - name: patient
           in: path
           description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
           required: true
           schema:
             type: string
@@ -24,7 +25,7 @@ paths:
           description: number of elements per page
           required: false
           type: number
-          default: 20
+          default: 10
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -38,6 +39,14 @@ paths:
         - PatientAllergy
       summary: add new allergy to history
       description: add new allergy to history
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
       requestBody:
         description: patient Allergy request body
         required: true
@@ -69,6 +78,13 @@ paths:
       summary: Fetch one allergy ✔️
       description: Fetch allergy
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default : 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: allergy Id
@@ -92,6 +108,13 @@ paths:
       - PatientAllergy
       summary: Update patient allergy ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: patient allergy Id
@@ -125,6 +148,13 @@ paths:
       - PatientAllergy
       summary: Delete patient allergy ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: patient allergy Id

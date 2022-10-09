@@ -9,9 +9,23 @@ paths:
         - name: patient
           in: path
           description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
           required: true
           schema:
             type: string
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 10
       responses:
         '200':
           description: OK
@@ -22,6 +36,13 @@ paths:
         - PatientDocument
       summary:  Get One PatientDocument By MedicalActId ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          default: 'c4939a73-0e22-49b8-ba04-93016aa27e86'
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: MedicalActId

@@ -18,7 +18,7 @@ paths:
           description: number of elements per page
           schema:
             type: number
-            example: 20
+            example: 10
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -82,7 +82,7 @@ paths:
           required: false
           schema:
             type: number
-            example: 20
+            example: 10
       security:
         - bearerAuth: [Authorization]
       responses:
