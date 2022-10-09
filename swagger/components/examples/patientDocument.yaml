@@ -1,0 +1,12 @@
+components:
+  examples:
+    #Object Example
+    PatientDocument:
+      summary: PatientDocument object
+      value:
+        id: d9ac7138-f0bd-4017-b899-44b869a4475c
+        title: aliquam quaerat
+        content: Vitae esse maxime aut quo rem est non. ...
+        type:  MEDICAL_REPORT
+#        createdAt: '2022-09-26T14:22:37.574Z'
+#        updatedAt: '2022-09-26T14:22:37.574Z'

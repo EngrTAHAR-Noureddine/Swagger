@@ -1,0 +1,67 @@
+paths:
+  # PATIENT MEDICAL ACTS
+  /patientPrescriptions:
+    get:
+      tags:
+        - PatientPrescription
+      summary: get PatientPrescriptions ✔️
+      description:  get PatientPrescriptions
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+
+  /prescriptionId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - PatientPrescription
+      summary: Fetch one PatientPrescription  ✔️
+      description: Fetch PatientPrescription ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: PatientPrescription Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"

@@ -1,0 +1,66 @@
+components:
+  schemas:
+    #Object
+    PatientConsultation:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        conclusion:
+          type: string
+        exams:
+          type: string
+        anamnesis:
+          type: string
+        synthesis:
+          type: string
+        notes:
+          type: string
+        patient_measures:
+          type: array
+          items:
+            $ref: "./patientMeasure.yaml#/components/schemas/PatientMeasure"
+        patient_prescriptions:
+          type: array
+          items:
+            $ref: "./patientPrescription.yaml#/components/schemas/PatientPrescription"
+        patient_bilans:
+          type: array
+          items:
+            $ref: "./patientBilan.yaml#/components/schemas/PatientBilan"
+        patient_symptoms:
+          type: array
+          items:
+            $ref: "./patientSymptom.yaml#/components/schemas/PatientSymptom"
+        patient_allergies:
+          type: array
+          items:
+            $ref: "./patientAllergy.yaml#/components/schemas/patientAllergy"
+        patient_habits:
+          type: array
+          items:
+            $ref: "./patientHabit.yaml#/components/schemas/PatientHabit"
+        patient_diseases:
+          type: array
+          items:
+            $ref: "./patientDisease.yaml#/components/schemas/patientDisease"
+        patient_documents:
+          type: array
+          items:
+            $ref: "./patientDocument.yaml#/components/schemas/PatientDocument"
+        patient_treatments:
+          type: array
+          items:
+            $ref: "./patientTreatment.yaml#/components/schemas/PatientTreatment"
+        patient_vaccines:
+          type: array
+          items:
+            $ref: "./patientVaccine.yaml#/components/schemas/PatientVaccine"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

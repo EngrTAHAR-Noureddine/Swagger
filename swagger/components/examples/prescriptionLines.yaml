@@ -1,0 +1,20 @@
+components:
+  examples:
+    #Object Example
+    PrescriptionLines:
+      summary: PrescriptionLines object
+      value:
+        id: 9a706374-2575-478c-b88e-c8cf5260ff33
+        drug_name: drug_name
+        quantity: 2
+        time:  '07:55:14'
+        frequency_value: 9
+        frequency_unit: 9
+        duration_value: 9
+        duration_unit: 3
+        notes: Non veniam iusto eos voluptatibus. Ipsum non nihil id possimus quia.
+        relation_type: relation_type
+        drug:
+          $ref: "./drug.yaml#/components/examples/Drug"
+#        createdAt: '2022-09-26T14:22:36.368Z'
+#        updatedAt: '2022-09-26T14:22:36.368Z'

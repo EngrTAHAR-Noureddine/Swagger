@@ -1,0 +1,17 @@
+components:
+  schemas:
+    PatientVaccine:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        date:
+          type: string
+        vaccine:
+          $ref: "./vaccine.yaml#/components/schemas/Vaccine"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

@@ -4,5 +4,14 @@ components:
       summary: A sample object of Doctor
       value:
         id: a10bca0a-474e-4429-a997-5e464f55fdf1
-        full_name: Jane Fahey III
-        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+        full_name: Brooke Okuneva IV
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg
+        first_name: Bradford
+        last_name: Kling
+        phone: +213 668 735 756
+        mobile: +213 667 506 941
+        email: Leanna_Haley20@hotmail.com
+        bio: Numquam et incidunt dicta at...
+        speciality: Dentiste
+#        createdAt: '2022-09-26T14:22:25.076Z'
+#        updatedAt: '2022-09-26T14:22:25.076Z'

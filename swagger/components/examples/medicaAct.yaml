@@ -1,0 +1,40 @@
+components:
+  examples:
+    #Object Example
+    MedicalAct:
+      summary: MedicalAct object
+      value:
+        id: c6ce5a57-c454-40ce-a597-c33a391f81f3
+        type: patient_disease
+        date: '2022-09-13T15:45:01.042Z'
+        title: veritatis qui cum
+        note: Aliquam inventore aliquid saepe aut non nihil. Repellendus atque nisi nemo dolor porro. Repellendus repellat delectus vel quas iste modi eum. Ea molestiae nihil voluptatem recusandae. Fugiat ut est.
+        patient:
+          $ref: "./patient.yaml#/components/examples/patient"
+        doctor:
+          $ref: "./doctor.yaml#/components/examples/doctor"
+        establishment:
+          $ref: "./establishment.yaml#/components/examples/Establishment"
+        patient_measure:
+          $ref: "./patientMeasure.yaml#/components/examples/PatientMeasure"
+        patient_symptom:
+          $ref: "./patientSymptom.yaml#/components/examples/PatientSymptom"
+        patient_treatment:
+          $ref: "./patientTreatment.yaml#/components/examples/PatientTreatment"
+        patient_vaccine:
+          $ref: "./patientVaccine.yaml#/components/examples/PatientVaccine"
+        patient_bilan:
+          $ref: "./patientBilan.yaml#/components/examples/PatientBilan"
+        patient_consultation: patient_consultation
+        patient_prescription:
+          $ref: "./patientPrescription.yaml#/components/examples/PatientPrescription"
+        patient_blood_donation:
+          $ref: "./patientBloodDonation.yaml#/components/examples/PatientBloodDonation"
+        patient_allergy:
+          $ref: "./patientAllergy.yaml#/components/examples/PatientAllergy"
+        patient_disease:
+          $ref: "./PatientDisease.yaml#/components/examples/PatientDisease"
+        patient_habit:
+          $ref: "#/components/schemas/PatientHabit"
+#        createdAt: '2022-09-26T14:22:35.094Z'
+#        updatedAt: '2022-09-26T14:22:35.202Z'

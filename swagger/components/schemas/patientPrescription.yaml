@@ -1,0 +1,20 @@
+components:
+  schemas:
+    #Object
+    PatientPrescription:
+      type: object
+      properties:
+        id:
+          type: string
+        date:
+          type: string
+        description:
+          type: string
+        lines:
+          type: array
+          items:
+            $ref: "./prescriptionLines.yaml#/components/schemas/PrescriptionLines"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

@@ -1,0 +1,142 @@
+paths:
+  /appointment:
+    # [GET] GET APPOINTMENTS
+    get:
+      tags:
+        - Appointment
+      summary: Fetch appointments ✔️
+      description: Fetch appointments
+      parameters:
+        - name: status
+          in: query
+          description: appointment status
+          schema:
+            type: string
+            default: BOOKED
+            enum: [BOOKED, CONFIRMED, CANCELED, RESCHEDULED]
+
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"
+
+    # [POST] CREATE APPOINTMENT
+    post:
+      tags:
+        - Appointment
+      summary: Create new appointment ✔️
+      requestBody:
+        description: appointment Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/appointment.yaml#/components/schemas/appointmentRequestBody'
+            examples:
+              appointment:
+                $ref: '../components/examples/appointment.yaml#/components/examples/appointmentRequestBody'
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        201:
+          description: 'Created'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+  /appointmentId:
+    # [PUT] UPDATE APPOINTMENT
+    put:
+      tags:
+        - Appointment
+      summary: Update appointment ✔️
+      parameters:
+        - name: id
+          in: path
+          description: appointment Id
+          required: true
+          schema:
+            type: string
+
+      requestBody:
+        description: appointment Data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/appointment.yaml#/components/schemas/appointmentRequestBody'
+            examples:
+              appointment:
+                $ref: '../components/examples/appointment.yaml#/components/examples/appointmentRequestBody'
+
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        '200':
+          description: 'OK'
+        '400':
+          description: 'Bad Request'
+        '409':
+          description: 'Conflict'
+        '500':
+          description: 'Server Error'
+
+  /appointmentSearch:
+    # [GET] SEARCH FOR APPOINTMENT
+    get:
+      tags:
+        - Appointment
+      summary: search for appointment by doctor ✔️
+      description: search for appointment  by doctor
+      parameters:
+        - name: q
+          in: query
+          description: doctor name
+          required: true
+          schema:
+            type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: string
+            example: 1
+
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+
+
+      security:
+        - bearerAuth: [Authorization]
+
+      responses:
+        '200':
+          description: "OK"
+        '500':
+          description: "Server Error"

@@ -1,0 +1,70 @@
+components:
+  schemas:
+    #Object
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          format: nullable
+        content:
+          type: string
+        status:
+          type: string
+        priority:
+          type: string
+        assigned_to:
+          type: string
+          format: nullable
+        assigned_date:
+          type: string
+          format: nullable
+        date:
+          type: string
+          format: nullable
+        deadline:
+          type: string
+          format: nullable
+        list:
+          type: array
+          items:
+            $ref: "./taskList.yaml#/components/schemas/TaskList"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string
+    #Object
+    TaskRequestBody:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+          format: nullable
+        content:
+          type: string
+        status:
+          type: string
+        priority:
+          type: string
+        assigned_to:
+          type: string
+          format: nullable
+        assigned_date:
+          type: string
+          format: nullable
+        date:
+          type: string
+          format: nullable
+        deadline:
+          type: string
+          format: nullable
+        list:
+          type: array
+          items:
+            $ref: "./taskList.yaml#/components/schemas/TaskList"

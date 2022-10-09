@@ -1,0 +1,33 @@
+paths:
+
+  /patientDocument:
+    get:
+      tags:
+        - PatientDocument
+      summary: Get All PatientDocuments By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /patientDocumentId:
+    get:
+      tags:
+        - PatientDocument
+      summary:  Get One PatientDocument By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

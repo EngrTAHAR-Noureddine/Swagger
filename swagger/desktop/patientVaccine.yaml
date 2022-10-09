@@ -1,0 +1,31 @@
+paths:
+  /patientVaccine:
+    get:
+      tags:
+        - PatientVaccine
+      summary: Get All PatientVaccines By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /patientVaccineId:
+    get:
+      tags:
+        - PatientVaccine
+      summary: Get One PatientVaccine By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

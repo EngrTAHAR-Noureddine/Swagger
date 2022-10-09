@@ -1,0 +1,61 @@
+paths:
+  # PATIENT MEDICAL ACTS
+  /consultationPatient:
+    get:
+      tags:
+        - PatientConsultation
+      summary: get PatientConsultations ✔️
+      description:  get PatientConsultations
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+
+  /consultationId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - PatientConsultation
+      summary: Fetch one PatientConsultation  ✔️
+      description: Fetch PatientConsultation ✔️
+      parameters:
+        - name: id
+          in: path
+          description: PatientConsultation Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"

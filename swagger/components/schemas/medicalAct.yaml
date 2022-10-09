@@ -1,0 +1,50 @@
+components:
+  schemas:
+    #Object
+    MedicalAct:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        date:
+          type: string
+        title:
+          type: string
+        note:
+          type: string
+        patient:
+          $ref: "./patient.yaml#/components/schemas/patient"
+        doctor:
+          $ref: "./doctor.yaml#/components/schemas/doctor"
+        establishment:
+          $ref: "./establishment.yaml#/components/schemas/Establishment"
+        patient_measure:
+          $ref: "./patientMeasure.yaml#/components/schemas/PatientMeasure"
+        patient_symptom:
+          $ref: "./patientSymptom.yaml#/components/schemas/PatientSymptom"
+        patient_treatment:
+          $ref: "./patientTreatment.yaml#/components/schemas/PatientTreatment"
+        patient_vaccine:
+          $ref: "./patientVaccine.yaml#/components/schemas/PatientVaccine"
+        patient_bilan:
+          $ref: "./patientBilan.yaml#/components/schemas/PatientBilan"
+        patient_consultation:
+          type: string
+          format: nullable
+        patient_prescription:
+          $ref: "./patientPrescription.yaml#/components/schemas/PatientPrescription"
+        patient_blood_donation:
+          $ref: "./patientBloodDonation.yaml#/components/schemas/PatientBloodDonation"
+        patient_allergy:
+          $ref: "./patientAllergy.yaml#/components/schemas/patientAllergy"
+        patient_disease:
+          $ref: "./patientDisease.yaml#/components/schemas/patientDisease"
+        patient_habit:
+          $ref: "./patientHabit.yaml#/components/schemas/PatientHabit"
+
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

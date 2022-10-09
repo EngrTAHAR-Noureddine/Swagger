@@ -101,6 +101,42 @@ components:
       $ref: './swagger/components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasure'
     patientSymptom:
       $ref: './swagger/components/schemas/patientSymptom.yaml#/components/schemas/PatientSymptom'
+    BilanLine:
+      $ref: './swagger/components/schemas/bilanLine.yaml#/components/schemas/BilanLine'
+    BioAnalyse:
+      $ref: './swagger/components/schemas/bioAnalyse.yaml#/components/schemas/BioAnalyse'
+    BioAnalyseCategory:
+      $ref: './swagger/components/schemas/bioAnalyseCategory.yaml#/components/schemas/BioAnalyseCategory'
+    Drug:
+      $ref: './swagger/components/schemas/drug.yaml#/components/schemas/Drug'
+    Establishment:
+      $ref: './swagger/components/schemas/establishment.yaml#/components/schemas/Establishment'
+    MedicalAct:
+      $ref: './swagger/components/schemas/medicalAct.yaml#/components/schemas/MedicalAct'
+    PatientAntecedent:
+      $ref: './swagger/components/schemas/patientAntecedent.yaml#/components/schemas/PatientAntecedent'
+    PatientBilan:
+      $ref: './swagger/components/schemas/patientBilan.yaml#/components/schemas/PatientBilan'
+    PatientBloodDonation:
+      $ref: './swagger/components/schemas/patientBloodDonation.yaml#/components/schemas/PatientBloodDonation'
+    PatientConsultation:
+      $ref: './swagger/components/schemas/patientConsultation.yaml#/components/schemas/PatientConsultation'
+    PatientDocument:
+      $ref: './swagger/components/schemas/patientDocument.yaml#/components/schemas/PatientDocument'
+    PatientPrescription:
+      $ref: './swagger/components/schemas/patientPrescription.yaml#/components/schemas/PatientPrescription'
+    PatientTreatment:
+      $ref: './swagger/components/schemas/patientTreatment.yaml#/components/schemas/PatientTreatment'
+    PatientVaccine:
+      $ref: './swagger/components/schemas/patientVaccine.yaml#/components/schemas/PatientVaccine'
+    PrescriptionLines:
+      $ref: './swagger/components/schemas/prescriptionLines.yaml#/components/schemas/PrescriptionLines'
+    Vaccine:
+      $ref: './swagger/components/schemas/vaccine.yaml#/components/schemas/Vaccine'
+    task:
+      $ref: './swagger/components/schemas/task.yaml#/components/schemas/Task'
+    taskList:
+      $ref: './swagger/components/schemas/taskList.yaml#/components/schemas/TaskList'
 
     Disease:
       $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'

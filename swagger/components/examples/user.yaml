@@ -14,7 +14,13 @@ components:
     userLogin:
       summary: request body when user login
       value:
-        email: patient@docta.io
+        email: doctor@docta.io
+        password: abdo@123
+
+    doctorLogin:
+      summary: request body when user login
+      value:
+        email: abdo@mgh.io
         password: abdo@123
 
     userSignUp:
@@ -23,6 +29,14 @@ components:
         first_name: abdo
         last_name: abdo
         email: patient@docta.io
+        password: abdo@123
+
+    doctorSignUp:
+      summary: user example when sign up
+      value:
+        first_name: Abdo
+        last_name: MGH
+        email: doctor@docta.io
         password: abdo@123
 
     #Response
@@ -43,5 +57,25 @@ components:
         first_name: abdo
         last_name: abdo
         email: patient@docta.io
+        password: abdo@123
+        token: kajsadsnchjbscjshhjsbjhsvkjscjks
+
+    doctorLoginResponse:
+      summary: Response for doctor login
+      value:
+        id: sakajkfd-kjhajkdfnda-knajkcbksc
+        first_name: Abdo
+        last_name: MGH
+        email: doctor@docta.io
+        password: abdo@123
+        token: kajsadsnchjbscjshhjsbjhsvkjscjks
+
+    doctorSignUpResponse:
+      summary: Response to doctor sign up
+      value:
+        id: sakajkfd-kjhajkdfnda-knajkcbksc
+        first_name: Abdo
+        last_name: MGH
+        email: doctor@docta.io
         password: abdo@123
         token: kajsadsnchjbscjshhjsbjhsvkjscjks

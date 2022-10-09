@@ -1,0 +1,125 @@
+paths:
+
+  /taskList:
+    # [GET] GET LISTS
+    get:
+      tags:
+        - TaskList
+      summary: Fetch lists ✔️
+      description: Fetch lists
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+
+    # [POST] CREATE LIST
+    post:
+        tags:
+        - TaskList
+        summary: Create new list ✔️
+        requestBody:
+          description: taskList Data
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/taskList.yaml#/components/schemas/TaskListRequestBody'
+              examples:
+                TaskList:
+                  $ref: '../components/examples/taskList.yaml#/components/examples/TaskListRequestBody'
+
+        security:
+          - bearerAuth: [Authorization]
+        responses:
+          201:
+            description: 'Created'
+          400:
+            description: 'Bad Request'
+          409:
+            description: 'Conflict'
+          500:
+            description: 'Server Error'
+
+
+  /taskListId:
+    # [GET] GET ONE LIST
+    get:
+      tags:
+        - TaskList
+      summary: Fetch one list ✔️
+      description: Fetch list
+      parameters:
+        - name: id
+          in: path
+          description: list Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+
+    # [PUT] UPDATE LIST
+    put:
+        tags:
+        - TaskList
+        summary: Update list ✔️
+        parameters:
+          - name: id
+            in: path
+            description: list Id
+            required: true
+            type: string
+        requestBody:
+          description: list Data
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/taskList.yaml#/components/schemas/TaskListRequestBody'
+              examples:
+                TaskList:
+                  $ref: '../components/examples/taskList.yaml#/components/examples/TaskListRequestBody'
+        security:
+          - bearerAuth: [Authorization]
+        responses:
+          200:
+            description: 'OK'
+          400:
+            description: 'Bad Request'
+          409:
+            description: 'Conflict'
+          500:
+            description: 'Server Error'
+
+
+    delete:
+      tags:
+      - TaskList
+      summary: Delete list ✔️
+      parameters:
+      - name: id
+        in: path
+        description: list Id
+        required: true
+        type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'

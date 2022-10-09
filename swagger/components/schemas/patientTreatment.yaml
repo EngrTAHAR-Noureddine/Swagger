@@ -1,0 +1,39 @@
+components:
+  schemas:
+    #Object
+    PatientTreatment:
+      type: object
+      properties:
+        id:
+          type: string
+        drug_name:
+          type: string
+          format: nullable
+        quantity:
+          type: number
+        time:
+          type: string
+          enum: [ MORNING, AFTERNOON, NIGHT, MIDNIGHT, NOON, DAY]
+        repas:
+          type: string
+          enum: [ BEFORE, AFTER, DURING]
+        frequency_value:
+          type: number
+        frequency_unit:
+          type: string
+        duration_value:
+          type: number
+        duration_unit:
+          type: string
+          enum: [ DAY, WEEK, MONTH, HALF_DAY, HALF_MONTH]
+        notes:
+          type: string
+        relation_type:
+          type: string
+          enum: [AND, AFTER]
+        drug:
+          $ref: "./drug.yaml#/components/schemas/Drug"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

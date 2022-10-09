@@ -1,12 +1,18 @@
 paths:
-  /patientDisease:
+  /patientHabit:
     # [GET] GET MEASURE HISTORY
     get:
       tags:
-        - PatientDisease
-      summary: Fetch disease ✔️
-      description: Fetch disease
+        - PatientHabit
+      summary: Fetch habit ✔️
+      description: Fetch habit
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: page
           in: query
           description: Pagination page
@@ -29,20 +35,26 @@ paths:
 
     post:
       tags:
-        - PatientDisease
-      summary: add new disease to history
-      description: add new disease to history
+        - PatientHabit
+      summary: add new habit to history
+      description: add new habit to history
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
       requestBody:
         description: appointment Data
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
-
+              PatientHabitRequest:
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequestBody'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -55,18 +67,23 @@ paths:
         500:
           description: 'Server Error'
 
-
-  /patientDiseaseId:
+  /patientHabitId:
     # [GET] GET ONE
     get:
       tags:
-        - PatientDisease
-      summary: Fetch one disease ✔️
-      description: Fetch disease
+        - PatientHabit
+      summary: Fetch one habit ✔️
+      description: Fetch habit
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: disease Id
+          description: habit Id
           required: true
           type: string
       security:
@@ -84,24 +101,31 @@ paths:
     # [PUT] UPDATE TASK
     put:
       tags:
-        - PatientDisease
-      summary: Update disease history ✔️
+        - PatientHabit
+      summary: Update habit history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: medical Act Id
+          description: habit history Id
           required: true
           type: string
       requestBody:
-        description: appointment Data
+        description: habit history Data
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
+              PatientHabitRequest:
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequestBody'
+
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -117,12 +141,18 @@ paths:
 
     delete:
       tags:
-        - PatientDisease
-      summary: Delete disease history ✔️
+        - PatientHabit
+      summary: Delete habit history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: disease history Id
+          description: habit history Id
           required: true
           type: string
       security:

@@ -1,0 +1,55 @@
+components:
+  schemas:
+    #Object
+    TaskList:
+      type: object
+      properties:
+        id:
+          type: string
+          description: taskList id
+        name:
+          type: string
+          description: task list name
+        description:
+          type: string
+          format: nullable
+          description: a short description about the task
+        position:
+          type: number
+          description: list position (order)
+        count:
+          type: number
+          description: count of tasks in a list
+#        createdAt:
+#          type: string
+#          description: createdAt
+#        updatedAt:
+#          type: string
+#          description: updatedAt
+
+    #RequestBody
+    TaskListRequestBody:
+      type: object
+      properties:
+        id:
+          type: string
+          description: taskList id
+        name:
+          type: string
+          description: task list name
+        description:
+          type: string
+          format: nullable
+          description: a short description about the task
+        position:
+          type: number
+          description: list position (order)
+        count:
+          type: number
+          description: count of tasks in a list
+#        createdAt:
+#          type: string
+#          description: createdAt
+#        updatedAt:
+#          type: string
+#          description: updatedAt

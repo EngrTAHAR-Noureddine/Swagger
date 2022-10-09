@@ -1,0 +1,22 @@
+components:
+  schemas:
+    #Object
+    BilanLine:
+      type: object
+      properties:
+        id:
+          type: string
+        value:
+          type: number
+        note:
+          type: string
+        min:
+          type: number
+        max:
+          type: number
+        bioanalyse:
+          $ref: "./bioAnalyse.yaml#/components/schemas/BioAnalyse"
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

@@ -1,12 +1,18 @@
 paths:
-  /patientDisease:
-    # [GET] GET MEASURE HISTORY
+  /patientAllergy:
+    # [GET] GET ALL
     get:
       tags:
-        - PatientDisease
-      summary: Fetch disease ✔️
-      description: Fetch disease
+        - PatientAllergy
+      summary: Fetch allergy ✔️
+      description: Fetch allergy
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: page
           in: query
           description: Pagination page
@@ -22,115 +28,114 @@ paths:
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
+        '200':
           description: "OK"
-        500:
+        '500':
           description: "Server Error"
 
     post:
       tags:
-        - PatientDisease
-      summary: add new disease to history
-      description: add new disease to history
+        - PatientAllergy
+      summary: add new allergy to history
+      description: add new allergy to history
       requestBody:
-        description: appointment Data
+        description: patient Allergy request body
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientAllergy.yaml#/components/schemas/patientAllergyRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
-
+              patientAllergy:
+                $ref: '../components/examples/patientAllergy.yaml#/components/examples/patientAllergyRequest'
       security:
         - bearerAuth: [Authorization]
       responses:
-        201:
+        '201':
           description: 'Created'
-        400:
+        '400':
           description: 'Bad Request'
-        409:
+        '409':
           description: 'Conflict'
-        500:
+        '500':
           description: 'Server Error'
 
 
-  /patientDiseaseId:
+  /patientAllergyId:
     # [GET] GET ONE
     get:
       tags:
-        - PatientDisease
-      summary: Fetch one disease ✔️
-      description: Fetch disease
+        - PatientAllergy
+      summary: Fetch one allergy ✔️
+      description: Fetch allergy
       parameters:
         - name: id
           in: path
-          description: disease Id
+          description: allergy Id
           required: true
           type: string
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
+        '200':
           description: "OK"
-        500:
+        '500':
           description: "Server Error"
-        400:
+        '400':
           description: "Bad Request"
-        409:
+        '409':
           description: "Conflict"
 
     # [PUT] UPDATE TASK
     put:
       tags:
-        - PatientDisease
-      summary: Update disease history ✔️
+      - PatientAllergy
+      summary: Update allergy history ✔️
       parameters:
         - name: id
           in: path
-          description: medical Act Id
+          description: allergy history Id
           required: true
           type: string
       requestBody:
-        description: appointment Data
+        description: patient Allergy request body
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientAllergy.yaml#/components/schemas/patientAllergyRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
+              patientAllergy:
+                $ref: '../components/examples/patientAllergy.yaml#/components/examples/patientAllergyRequest'
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
+        '200':
           description: 'OK'
-        400:
+        '400':
           description: 'Bad Request'
-        409:
+        '409':
           description: 'Conflict'
-        500:
+        '500':
           description: 'Server Error'
 
 
     delete:
       tags:
-        - PatientDisease
-      summary: Delete disease history ✔️
+      - PatientAllergy
+      summary: Delete allergy history ✔️
       parameters:
         - name: id
           in: path
-          description: disease history Id
+          description: allergy history Id
           required: true
           type: string
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
+        '200':
           description: 'OK'
-        409:
+        '409':
           description: 'Conflict'
-        500:
+        '500':
           description: 'Server Error'

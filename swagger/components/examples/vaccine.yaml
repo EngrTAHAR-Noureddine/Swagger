@@ -1,0 +1,11 @@
+components:
+  examples:
+    #Object Example
+    Vaccine:
+      summary: Vaccine object
+      value:
+        id: 520a9b27-080e-4951-8bab-afe13a4a796e
+        name: AdCOVID
+        description: Vaccin recombinant non réplicatif intégré à un vecteur viral (Adénovirus) exprimant la protéine RBD du SARS-CoV-2.
+#        createdAt: '2022-09-26T14:22:32.323Z'
+#        updatedAt: '2022-09-26T14:22:32.323Z'

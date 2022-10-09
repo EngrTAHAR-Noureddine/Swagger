@@ -1,0 +1,33 @@
+paths:
+
+  /patientTreatment:
+    get:
+      tags:
+        - PatientTreatment
+      summary: Get All PatientTreatments By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /patientTreatmentId:
+    get:
+      tags:
+        - PatientTreatment
+      summary:  Get One PatientTreatment By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

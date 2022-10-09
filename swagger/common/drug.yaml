@@ -32,12 +32,12 @@ paths:
     get:
       tags:
         - Drug
-      summary: Fetch one drug ✔️
-      description: Fetch drug
+      summary: Fetch one drug.yaml ✔️
+      description: Fetch drug.yaml
       parameters:
         - name: id
           in: path
-          description: drug Id
+          description: drug.yaml Id
           required: true
           schema:
             type: string
@@ -58,8 +58,8 @@ paths:
     get:
       tags:
         - Drug
-      summary: search for drug ✔️
-      description: search for drug
+      summary: search for drug.yaml ✔️
+      description: search for drug.yaml
       parameters:
         - name: q
           in: query

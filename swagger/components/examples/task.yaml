@@ -1,0 +1,39 @@
+components:
+  examples:
+
+    #Object
+    Task:
+      summary: task example
+      value:
+        id: 0cb864b7-4f64-4152-898b-7a05df3d130f
+#        createdAt: '2022-08-17T13:51:44.283Z'
+#        updatedAt: '2022-08-17T13:51:44.283Z'
+        title: Adipisci perspiciatis officiis.
+        description: Description
+        content: Sed sint sit. Qui eum vel iusto vel eveniet qui qui.
+        status: DONE
+        priority: IMPORTANT
+        assigned_to: assigned_to
+        assigned_date: assigned_date
+        date: '2022-08-17T13:51:44.283Z'
+        deadline: deadline
+        list:
+          - $ref: "./taskList.yaml#/components/examples/TaskList"
+          - $ref: "./taskList.yaml#/components/examples/TaskList"
+
+    #RequestBody
+    TaskRequestBody:
+      summary: task example
+      value:
+        title: Adipisci perspiciatis officiis.
+        description: Description
+        content: Sed sint sit. Qui eum vel iusto vel eveniet qui qui.
+        status: DONE
+        priority: IMPORTANT
+        assigned_to: assigned_to
+        assigned_date: assigned_date
+        date: '2022-08-17T13:51:44.283Z'
+        deadline: deadline
+        list:
+          - $ref: "./taskList.yaml#/components/examples/TaskListRequestBody"
+          - $ref: "./taskList.yaml#/components/examples/TaskListRequestBody"

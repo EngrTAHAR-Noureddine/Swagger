@@ -1,5 +1,6 @@
 components:
   schemas:
+    #Object
     patient:
       type: object
       properties:
@@ -7,13 +8,29 @@ components:
           type: string
         full_name:
           type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+          format: nullable
+        family_situation:
+          type: string
+          enum: [MARRIED,WIDOWED,SEPARATED,DIVORCED,SINGLE]
+        job:
+          type: string
         blood_type:
           type: string
+          enum: [ O-, O+, A-, A+, B-, B+, AB-, AB+ ]
         gender:
           type: string
+          enum: [ FEMALE, MALE ]
         birth_date:
           type: string
-        Social_security_number:
+        social_security_number:
           type: string
         national_cardid_number:
           type: string
@@ -25,3 +42,8 @@ components:
             $ref: "./metadata.yaml#/components/schemas/metadata"
         address:
           $ref: "./address.yaml#/components/schemas/address"
+
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

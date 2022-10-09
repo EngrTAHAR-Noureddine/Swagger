@@ -1,12 +1,18 @@
 paths:
-  /patientDisease:
+  /patientMeasure:
     # [GET] GET MEASURE HISTORY
     get:
       tags:
-        - PatientDisease
-      summary: Fetch disease ✔️
-      description: Fetch disease
+        - PatientMeasure
+      summary: Fetch measures ✔️
+      description: Fetch measures
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: page
           in: query
           description: Pagination page
@@ -29,20 +35,26 @@ paths:
 
     post:
       tags:
-        - PatientDisease
-      summary: add new disease to history
-      description: add new disease to history
+        - PatientMeasure
+      summary: add new measure to history
+      description: add new measure to history
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
       requestBody:
         description: appointment Data
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasureRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
-
+              PatientMeasureRequest:
+                $ref: '../components/examples/patientMeasure.yaml#/components/examples/PatientMeasureRequest'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -55,18 +67,23 @@ paths:
         500:
           description: 'Server Error'
 
-
-  /patientDiseaseId:
+  /patientMeasureId:
     # [GET] GET ONE
     get:
       tags:
-        - PatientDisease
-      summary: Fetch one disease ✔️
-      description: Fetch disease
+        - PatientMeasure
+      summary: Fetch one measure ✔️
+      description: Fetch measure
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: disease Id
+          description: measure Id
           required: true
           type: string
       security:
@@ -84,24 +101,30 @@ paths:
     # [PUT] UPDATE TASK
     put:
       tags:
-        - PatientDisease
-      summary: Update disease history ✔️
+        - PatientMeasure
+      summary: Update measure history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: medical Act Id
+          description: measure history Id
           required: true
           type: string
       requestBody:
-        description: appointment Data
+        description: measure history Data
         required: true
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/patientDisease.yaml#/components/schemas/patientDiseaseRequest'
+              $ref: '../components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasureRequest'
             examples:
-              patientDiseaseRequest:
-                $ref: '../components/examples/patientDisease.yaml#/components/examples/patientDiseaseRequestBody'
+              PatientMeasureRequest:
+                $ref: '../components/examples/patientMeasure.yaml#/components/examples/PatientMeasureRequest'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -114,15 +137,20 @@ paths:
         500:
           description: 'Server Error'
 
-
     delete:
       tags:
-        - PatientDisease
-      summary: Delete disease history ✔️
+        - PatientMeasure
+      summary: Delete measure history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
-          description: disease history Id
+          description: measure history Id
           required: true
           type: string
       security:

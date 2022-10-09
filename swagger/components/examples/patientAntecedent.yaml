@@ -1,0 +1,12 @@
+components:
+  examples:
+    #Object Example
+    PatientAntecedent:
+      summary: PatientAntecedent object
+      value:
+        id: 0f98b353-0e53-4a36-a649-a98054108cb1
+        note: Deleniti sunt quas eveniet.
+        date: '2015-12-24T12:34:28.398Z'
+        type: MEDICAL
+#        createdAt: '2022-09-28T15:24:29.145Z'
+#        updatedAt: '2022-09-28T15:24:29.145Z'

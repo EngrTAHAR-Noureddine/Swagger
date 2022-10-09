@@ -1,0 +1,23 @@
+components:
+  examples:
+
+    #Object
+    TaskList:
+      type: object
+      value:
+        id: 26a5d7d0-1364-461e-80b4-de2a5b637ed2
+        name: Nisi iusto.
+        description: a short description about the task
+        position: 90
+        count: 73
+#        createdAt: '2022-08-17T13:51:44.179Z'
+#        updatedAt: '2022-08-17T13:51:44.179Z'
+
+    #request body
+    TaskListRequestBody:
+      type: object
+      value:
+        name: Nisi iusto.
+        description: a short description about the task
+        position: 90
+        count: 73

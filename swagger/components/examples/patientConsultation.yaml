@@ -1,0 +1,46 @@
+components:
+  examples:
+    #Object Example
+    PatientConsultation:
+      summary: PatientConsultation object
+      properties:
+        id: 982101ca-5b29-4c66-894c-510d21031a14
+        title: Fuga fugiat quisquam.
+        description: Aspernatur architecto corporis sit repudiandae molestias.
+        conclusion: Modi dolores aliquid quas eveniet. Est repellat magni et quis et libero laboriosam recusandae. In et sapiente quia.
+        exams: Incidunt fuga non quisquam dicta non enim sapiente. Dolores harum voluptate nesciunt voluptatum. Dignissimos ea nam quibusdam.
+        anamnesis: Iste veniam eligendi corrupti expedita sunt rem velit. Officiis consequatur et a ea qui autem corporis. Reiciendis molestiae officia.
+        synthesis: Culpa excepturi quia possimus occaecati. Qui voluptatem quidem id itaque. Quis alias ut sed velit adipisci perferendis.
+        notes: Ex voluptas molestiae.
+        patient_measures:
+          - $ref: "./patientMeasure.yaml#/components/examples/PatientMeasure"
+          - $ref: "./patientMeasure.yaml#/components/examples/PatientMeasure"
+        patient_prescriptions:
+          - $ref: "./patientPrescription.yaml#/components/examples/PatientPrescription"
+          - $ref: "./patientPrescription.yaml#/components/examples/PatientPrescription"
+        patient_bilans:
+          - $ref: "./patientBilan.yaml#/components/examples/PatientBilan"
+          - $ref: "./patientBilan.yaml#/components/examples/PatientBilan"
+        patient_symptoms:
+          - $ref: "./patientSymptom.yaml#/components/examples/PatientSymptom"
+          - $ref: "./patientSymptom.yaml#/components/examples/PatientSymptom"
+        patient_allergies:
+          - $ref: "./patientAllergy.yaml#/components/examples/patientAllergy"
+          - $ref: "./patientAllergy.yaml#/components/examples/patientAllergy"
+        patient_habits:
+          - $ref: "./patientHabit.yaml#/components/examples/PatientHabit"
+          - $ref: "./patientHabit.yaml#/components/examples/PatientHabit"
+        patient_diseases:
+          - $ref: "./patientDisease.yaml#/components/examples/patientDisease"
+          - $ref: "./patientDisease.yaml#/components/examples/patientDisease"
+        patient_documents:
+          - $ref: "./patientDocument.yaml#/components/examples/PatientDocument"
+          - $ref: "./patientDocument.yaml#/components/examples/PatientDocument"
+        patient_treatments:
+          - $ref: "./patientTreatment.yaml#/components/examples/PatientTreatment"
+          - $ref: "./patientTreatment.yaml#/components/examples/PatientTreatment"
+        patient_vaccines:
+          - $ref: "./patientVaccine.yaml#/components/schemas/PatientVaccine"
+          - $ref: "./patientVaccine.yaml#/components/schemas/PatientVaccine"
+#        createdAt: '2022-09-26T14:22:37.372Z'
+#        updatedAt: '2022-09-26T14:22:37.372Z'

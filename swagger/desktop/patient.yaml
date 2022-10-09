@@ -1,0 +1,113 @@
+paths:
+  /Patient:
+    # [GET] GET MY PATIENTS
+    get:
+      tags:
+        - Patient
+      summary: get my patients ✔️
+      description: get my patients
+      parameters:
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+    # [GET] CREATE PATIENT
+    post:
+      tags:
+        - Patient
+      summary: Create new patient ✔️
+      parameters:
+        - name: body
+          in: body
+          description: patient Data
+          required: true
+          schema:
+            $ref: "../components/schemas/patient.yaml#/components/schemas/patient"
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  /patientSearch:
+    # [GET] SEARCH FOR PATIENT
+    get:
+      tags:
+        - Patient
+      summary: search for patient ✔️
+      description: search for patient
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  /patientId:
+    # [GET] GET ONE
+    get:
+      tags:
+        - Patient
+      summary: Fetch one patient ✔️
+      description: Fetch patient
+      parameters:
+        - name: id
+          in: path
+          description: patient Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"

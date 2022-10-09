@@ -41,7 +41,7 @@ paths:
               $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
             examples:
               PatientHabitRequest:
-                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequest'
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequestBody'
       security:
         - bearerAuth: [Authorization]
       responses:
@@ -99,7 +99,7 @@ paths:
               $ref: '../components/schemas/patientHabit.yaml#/components/schemas/PatientHabitRequest'
             examples:
               PatientHabitRequest:
-                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequest'
+                $ref: '../components/examples/patientHabit.yaml#/components/examples/PatientHabitRequestBody'
 
       security:
         - bearerAuth: [Authorization]

@@ -1,0 +1,33 @@
+paths:
+
+  /patientBilan:
+    get:
+      tags:
+        - PatientBilan
+      summary: Get All PatientBilans By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /patientBilanId:
+    get:
+      tags:
+        - PatientBilan
+      summary:  Get One PatientBilan By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

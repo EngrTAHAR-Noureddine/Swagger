@@ -1,0 +1,34 @@
+components:
+  schemas:
+    #Object
+    PrescriptionLines:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        drug_name:
+          type: string
+          format: nullable
+        quantity:
+          type: number
+        time:
+          type: string
+        frequency_value:
+          type: number
+        frequency_unit:
+          type: string
+        duration_value:
+          type: number
+        duration_unit:
+          type: string
+        notes:
+          type: string
+        relation_type:
+          type: string
+          format: nullable
+        drug:
+          $ref: "./drug.yaml#/components/schemas/Drug"

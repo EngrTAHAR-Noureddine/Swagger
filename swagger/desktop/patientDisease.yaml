@@ -7,6 +7,12 @@ paths:
       summary: Fetch disease ✔️
       description: Fetch disease
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: page
           in: query
           description: Pagination page
@@ -32,6 +38,13 @@ paths:
         - PatientDisease
       summary: add new disease to history
       description: add new disease to history
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
       requestBody:
         description: appointment Data
         required: true
@@ -64,6 +77,12 @@ paths:
       summary: Fetch one disease ✔️
       description: Fetch disease
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: disease Id
@@ -87,6 +106,12 @@ paths:
         - PatientDisease
       summary: Update disease history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: medical Act Id
@@ -120,6 +145,12 @@ paths:
         - PatientDisease
       summary: Delete disease history ✔️
       parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
         - name: id
           in: path
           description: disease history Id

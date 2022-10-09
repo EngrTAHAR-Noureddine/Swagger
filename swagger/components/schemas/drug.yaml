@@ -1,0 +1,48 @@
+components:
+    schemas:
+      #Object
+      Drug:
+        type: object
+        properties:
+          id:
+            type: string
+          createdAt:
+            type: string
+          updatedAt:
+            type: string
+          reg_number:
+            type: string
+          code_dci:
+            type: string
+          dci:
+            type: string
+          comercial_name:
+            type: string
+          form:
+            type: string
+          dosage:
+            type: string
+          cond:
+            type: string
+          list:
+            type: string
+          p1:
+            type: string
+          p2:
+            type: string
+          obs:
+            type: string
+          labo_regist:
+            type: string
+          labo_regist_country:
+            type: string
+          initial_date_regist:
+            type: string
+          final_date_regist:
+            type: string
+          type:
+            type: string
+          status:
+            type: string
+          stability_duration:
+            type: string

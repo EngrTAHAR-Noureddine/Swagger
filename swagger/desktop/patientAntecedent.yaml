@@ -1,0 +1,33 @@
+paths:
+
+  /patientAntecedent:
+    get:
+      tags:
+        - PatientAntecedent
+      summary: Get All PatientAntecedents By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /patientAntecedentId:
+    get:
+      tags:
+        - PatientAntecedent
+      summary: Get One PatientAntecedent By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

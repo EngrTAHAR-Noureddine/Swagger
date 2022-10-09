@@ -1,0 +1,15 @@
+components:
+  schemas:
+    #Object
+    PatientBloodDonation:
+      type: object
+      properties:
+        id:
+          type: string
+        notes:
+          type: string
+
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

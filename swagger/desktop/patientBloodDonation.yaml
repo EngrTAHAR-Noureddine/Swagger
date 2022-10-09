@@ -1,0 +1,33 @@
+paths:
+
+  /patientBloodDonation:
+    get:
+      tags:
+        - PatientBloodDonation
+      summary: Get All PatientBloodDonations By Patient ✔️
+      parameters:
+        - name: patient
+          in: path
+          description: Patient Id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /patientBloodDonationId:
+    get:
+      tags:
+        - PatientBloodDonation
+      summary:  Get One PatientBloodDonation By MedicalActId ✔️
+      parameters:
+        - name: id
+          in: path
+          description: MedicalActId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

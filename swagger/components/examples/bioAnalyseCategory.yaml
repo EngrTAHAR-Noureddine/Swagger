@@ -1,0 +1,11 @@
+components:
+  examples:
+    #Object Example
+    BioAnalyseCategory:
+      summary: BioAnalyseCategory object
+      value:
+        id: 037bae63-276b-4ba3-89a5-23afeb8e4e22
+        name: Bilan lipidique
+        description: Description Bilan lipidique
+#        createdAt: '2022-09-26T14:22:35.372Z'
+#        updatedAt: '2022-09-26T14:22:35.372Z'

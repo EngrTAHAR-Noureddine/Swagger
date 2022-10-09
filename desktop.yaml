@@ -1,0 +1,221 @@
+openapi: 3.0.3
+info:
+  title: OPEN API
+  description: this is paths
+  version: 1.1.0
+paths:
+  #Auth
+  /api/v1/auth/signup:
+    $ref: './swagger/desktop/auth.yaml#/paths/~1SignUp'
+  /api/v1/auth/login:
+    $ref: './swagger/desktop/auth.yaml#/paths/~1LogIn'
+
+  #consultation
+  /api/v1/d/profile/patient/{patient}/consultation:
+    $ref: './swagger/desktop/patientConsultation.yaml#/paths/~1consultationPatient'
+  /api/v1/d/profile/patient/{patient}/consultation/{id}:
+    $ref: './swagger/desktop/patientConsultation.yaml#/paths/~1consultationId'
+
+  #Medical Act
+  /api/v1/d/medicalacts/p/{patient}:
+    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/~1medicalActsPatient'
+  /api/v1/d/medicalacts/{id}:
+    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/~1medicalActsId'
+
+  #Prescriptions
+  /api/v1/d/profile/patient/{patient}/prescription:
+    $ref: './swagger/desktop/patientPrescription.yaml#/paths/~1patientPrescriptions'
+  /api/v1/d/profile/patient/{patient}/prescription/{id}:
+    $ref: './swagger/desktop/patientPrescription.yaml#/paths/~1prescriptionId'
+
+  # Appointment
+  /api/v1/d/appointment:
+    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointment'
+
+  /api/v1/d/appointment/{id}:
+    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointmentId'
+
+  /api/v1/d/appointment/search:
+    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointmentSearch'
+
+  #task
+  /api/v1/task:
+    $ref: './swagger/desktop/task.yaml#/paths/~1task'
+  /api/v1/task/{id}:
+    $ref: './swagger/desktop/task.yaml#/paths/~1taskId'
+  /api/v1/task/counts:
+    $ref: './swagger/desktop/task.yaml#/paths/~1taskCounts'
+  /api/v1/task/search:
+    $ref: './swagger/desktop/task.yaml#/paths/~1taskSearch'
+
+  #task list
+  /api/v1/tasklist:
+    $ref: './swagger/desktop/taskList.yaml#/paths/~1taskList'
+  /api/v1/tasklist/{id}:
+    $ref: './swagger/desktop/taskList.yaml#/paths/~1taskListId'
+
+  #Patient
+  /api/v1/d/patient:
+    $ref: './swagger/desktop/patient.yaml#/paths/~1Patient'
+  /api/v1/d/patient/search:
+    $ref: './swagger/desktop/patient.yaml#/paths/~1patientSearch'
+  /api/v1/d/patient/{id}:
+    $ref: './swagger/desktop/patient.yaml#/paths/~1patientId'
+
+  #patient Allergy
+  /api/v1/d/profile/patient/{patient}/allergy:
+    $ref: './swagger/desktop/patientAllergy.yaml#/paths/~1patientAllergy'
+  /api/v1/d/profile/patient/{patient}/allergy/{id}:
+    $ref: './swagger/desktop/patientAllergy.yaml#/paths/~1patientAllergyId'
+
+  #patient Antecedents
+  /api/v1/d/profile/patient/{patient}/antecedent:
+    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/~1patientAntecedent'
+  /api/v1/d/profile/patient/{patient}/antecedent/{id}:
+    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/~1patientAntecedentId'
+
+  #Patient Bilan
+  /api/v1/d/profile/patient/{patient}/bilan:
+    $ref: './swagger/desktop/patientBilan.yaml#/paths/~1patientBilan'
+  /api/v1/d/profile/patient/{patient}/bilan/{id}:
+    $ref: './swagger/desktop/patientBilan.yaml#/paths/~1patientBilanId'
+
+  #Patient Blood Donation
+  /api/v1/d/profile/patient/{patient}/blooddonation:
+    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/~1patientBloodDonation'
+  /api/v1/d/profile/patient/{patient}/blooddonation/{id}:
+    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/~1patientBloodDonationId'
+
+  #Patient Document
+  /api/v1/d/profile/patient/{patient}/document:
+    $ref: './swagger/desktop/patientDocument.yaml#/paths/~1patientDocument'
+  /api/v1/d/profile/patient/{patient}/document/{id}:
+    $ref: './swagger/desktop/patientDocument.yaml#/paths/~1patientDocumentId'
+
+  #patient Disease
+  /api/v1/d/profile/patient/{patient}/disease:
+    $ref: './swagger/desktop/patientDisease.yaml#/paths/~1patientDisease'
+  /api/v1/d/profile/patient/{patient}/disease/{id}:
+    $ref: './swagger/desktop/patientDisease.yaml#/paths/~1patientDiseaseId'
+
+  #patient Habit
+  /api/v1/d/profile/patient/{patient}/habit:
+    $ref: './swagger/desktop/patientHabit.yaml#/paths/~1patientHabit'
+  /api/v1/d/profile/patient/{patient}/habit/{id}:
+    $ref: './swagger/desktop/patientHabit.yaml#/paths/~1patientHabitId'
+
+  #patient Measure
+  /api/v1/d/profile/patient/{patient}/measure:
+    $ref: './swagger/desktop/patientMeasure.yaml#/paths/~1patientMeasure'
+  /api/v1/d/profile/patient/{patient}/measure/{id}:
+    $ref: './swagger/desktop/patientMeasure.yaml#/paths/~1patientMeasureId'
+
+  #patient Symptom
+  /api/v1/d/profile/patient/{patient}/symptom:
+    $ref: './swagger/desktop/patientSymptom.yaml#/paths/~1patientSymptom'
+  /api/v1/d/profile/patient/{patient}/symptom/{id}:
+    $ref: './swagger/desktop/patientSymptom.yaml#/paths/~1patientSymptomId'
+
+  #patient Treatments
+  /api/v1/d/profile/patient/{patient}/treatment:
+    $ref: './swagger/desktop/patientTreatment.yaml#/paths/~1patientTreatment'
+  /api/v1/d/profile/patient/{patient}/treatment/{id}:
+    $ref: './swagger/desktop/patientTreatment.yaml#/paths/~1patientTreatmentId'
+
+  #patient Vaccines
+  /api/v1/d/profile/patient/{patient}/vaccine:
+    $ref: './swagger/desktop/patientVaccine.yaml#/paths/~1patientVaccine'
+  /api/v1/d/profile/patient/{patient}/vaccine/{id}:
+    $ref: './swagger/desktop/patientVaccine.yaml#/paths/~1patientVaccineId'
+
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # optional, arbitrary value for documentation purpos
+
+  schemas:
+    Doctor:
+      $ref: './swagger/components/schemas/doctor.yaml#/components/schemas/doctor'
+    Patient:
+      $ref: './swagger/components/schemas/patient.yaml#/components/schemas/patient'
+    Contact:
+      $ref: './swagger/components/schemas/contact.yaml#/components/schemas/contact'
+    ContactCategory:
+      $ref: './swagger/components/schemas/contactCategory.yaml#/components/schemas/contactCategory'
+    Appointment:
+      $ref: './swagger/components/schemas/appointment.yaml#/components/schemas/appointment'
+    Address:
+      $ref: './swagger/components/schemas/address.yaml#/components/schemas/address'
+    Country:
+      $ref: './swagger/components/schemas/country.yaml#/components/schemas/country'
+    State:
+      $ref: './swagger/components/schemas/state.yaml#/components/schemas/state'
+    City:
+      $ref: './swagger/components/schemas/city.yaml#/components/schemas/city'
+    Metadata:
+      $ref: './swagger/components/schemas/metadata.yaml#/components/schemas/metadata'
+    Allergy:
+      $ref: './swagger/components/schemas/allergy.yaml#/components/schemas/allergy'
+    patientAllergy:
+      $ref: './swagger/components/schemas/patientAllergy.yaml#/components/schemas/patientAllergy'
+    Reason:
+      $ref: './swagger/components/schemas/reason.yaml#/components/schemas/reason'
+    User:
+      $ref: './swagger/components/schemas/user.yaml#/components/schemas/user'
+    patientDisease:
+      $ref: './swagger/components/schemas/patientDisease.yaml#/components/schemas/patientDisease'
+    patientHabit:
+      $ref: './swagger/components/schemas/patientHabit.yaml#/components/schemas/PatientHabit'
+    patientMeasure:
+      $ref: './swagger/components/schemas/patientMeasure.yaml#/components/schemas/PatientMeasure'
+    patientSymptom:
+      $ref: './swagger/components/schemas/patientSymptom.yaml#/components/schemas/PatientSymptom'
+    BilanLine:
+      $ref: './swagger/components/schemas/bilanLine.yaml#/components/schemas/BilanLine'
+    BioAnalyse:
+      $ref: './swagger/components/schemas/bioAnalyse.yaml#/components/schemas/BioAnalyse'
+    BioAnalyseCategory:
+      $ref: './swagger/components/schemas/bioAnalyseCategory.yaml#/components/schemas/BioAnalyseCategory'
+    Drug:
+      $ref: './swagger/components/schemas/drug.yaml#/components/schemas/Drug'
+    Establishment:
+      $ref: './swagger/components/schemas/establishment.yaml#/components/schemas/Establishment'
+    MedicalAct:
+      $ref: './swagger/components/schemas/medicalAct.yaml#/components/schemas/MedicalAct'
+    PatientAntecedent:
+      $ref: './swagger/components/schemas/patientAntecedent.yaml#/components/schemas/PatientAntecedent'
+    PatientBilan:
+      $ref: './swagger/components/schemas/patientBilan.yaml#/components/schemas/PatientBilan'
+    PatientBloodDonation:
+      $ref: './swagger/components/schemas/patientBloodDonation.yaml#/components/schemas/PatientBloodDonation'
+    PatientConsultation:
+      $ref: './swagger/components/schemas/patientConsultation.yaml#/components/schemas/PatientConsultation'
+    PatientDocument:
+      $ref: './swagger/components/schemas/patientDocument.yaml#/components/schemas/PatientDocument'
+    PatientPrescription:
+      $ref: './swagger/components/schemas/patientPrescription.yaml#/components/schemas/PatientPrescription'
+    PatientTreatment:
+      $ref: './swagger/components/schemas/patientTreatment.yaml#/components/schemas/PatientTreatment'
+    PatientVaccine:
+      $ref: './swagger/components/schemas/patientVaccine.yaml#/components/schemas/PatientVaccine'
+    PrescriptionLines:
+      $ref: './swagger/components/schemas/prescriptionLines.yaml#/components/schemas/PrescriptionLines'
+    Vaccine:
+      $ref: './swagger/components/schemas/vaccine.yaml#/components/schemas/Vaccine'
+    task:
+      $ref: './swagger/components/schemas/task.yaml#/components/schemas/Task'
+    taskList:
+      $ref: './swagger/components/schemas/taskList.yaml#/components/schemas/TaskList'
+
+    Disease:
+      $ref: './swagger/components/schemas/disease.yaml#/components/schemas/disease'
+    Habit:
+      $ref: './swagger/components/schemas/habit.yaml#/components/schemas/Habit'
+    Measure:
+      $ref: './swagger/components/schemas/measure.yaml#/components/schemas/Measure'
+    Symptom:
+      $ref: './swagger/components/schemas/symptom.yaml#/components/schemas/Symptom'
+

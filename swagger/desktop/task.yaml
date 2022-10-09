@@ -1,0 +1,218 @@
+paths:
+  /task:
+    # [GET] GET TASKS
+    get:
+      tags:
+        - Task
+      summary: Fetch tasks ✔️
+      description: Fetch tasks
+      parameters:
+        - name: status
+          in: query
+          description: task status
+          schema:
+            type: string
+            enum: [ TODO, DOiNG, DONE ]
+        - name: priority
+          in: query
+          description: task priority
+          schema:
+            type: string
+            enum: [ NORMAL, IMPORTANT ]
+
+        - name: today
+          in: query
+          description: today tasks
+          schema:
+            type: number
+            enum: [ 0, 1 ]
+
+        - name: nolist
+          in: query
+          description: tasks with no list
+          schema:
+            type: number
+            enum: [ 0, 1 ]
+
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            example: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          schema:
+            type: number
+            example: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+
+    # [POST] CREATE TASK
+    post:
+        tags:
+        - Task
+        summary: Create new task ✔️
+        requestBody:
+          description: task Data
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/task.yaml#/components/schemas/TaskRequestBody'
+              examples:
+                Task:
+                  $ref: '../components/examples/task.yaml#/components/examples/TaskRequestBody'
+        security:
+          - bearerAuth: [Authorization]
+        responses:
+          201:
+            description: 'Created'
+          400:
+            description: 'Bad Request'
+          409:
+            description: 'Conflict'
+          500:
+            description: 'Server Error'
+
+
+  /taskId:
+    # [GET] GET ONE TASK
+    get:
+      tags:
+        - Task
+      summary: Fetch one task ✔️
+      description: Fetch task
+      parameters:
+        - name: id
+          in: path
+          description: task Id
+          required: true
+          type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+
+    # [PUT] UPDATE TASK
+    put:
+        tags:
+        - Task
+        summary: Update task ✔️
+        parameters:
+        - name: id
+          in: path
+          description: task Id
+          required: true
+          type: string
+        requestBody:
+          description: task Data
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas/task.yaml#/components/schemas/TaskRequestBody'
+              examples:
+                Task:
+                  $ref: '../components/examples/task.yaml#/components/examples/TaskRequestBody'
+
+
+        security:
+          - bearerAuth: [Authorization]
+        responses:
+          200:
+            description: 'OK'
+          400:
+            description: 'Bad Request'
+          409:
+            description: 'Conflict'
+          500:
+            description: 'Server Error'
+
+
+    delete:
+      tags:
+      - Task
+      summary: Delete task ✔️
+      parameters:
+      - name: id
+        in: path
+        description: task Id
+        required: true
+        type: string
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+
+  /taskCounts:
+    # [GET] GET COUNTS
+    get:
+      tags:
+        - Task
+      summary: get countings of tasks ✔️
+      description: get countings of tasks
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+
+  /taskSearch:
+    # [GET] SEARCH FOR TASK
+    get:
+      tags:
+        - Task
+      summary: search for tasks ✔️
+      description: search for of tasks
+      parameters:
+        - name: q
+          in: query
+          description: search query
+          required: true
+          type: string
+
+        - name: page
+          in: query
+          description: Pagination page
+          required: false
+          type: string
+          default: 1
+
+        - name: limit
+          in: query
+          description: number of elements per page
+          required: false
+          type: number
+          default: 20
+      security:
+        - bearerAuth: [Authorization]
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"

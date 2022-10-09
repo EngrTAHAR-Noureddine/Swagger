@@ -1,0 +1,25 @@
+components:
+  schemas:
+    #Object
+    PatientBilan:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        conclusion:
+          type: string
+        notes:
+          type: string
+        lines:
+          type: array
+          items:
+            $ref: "./bilanLine.yaml#/components/schemas/BilanLine"
+
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

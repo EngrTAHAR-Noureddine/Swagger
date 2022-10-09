@@ -1,0 +1,19 @@
+components:
+  schemas:
+    #Object
+    PatientDocument:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        type:
+          type: string
+          enum: [ MEDICAL_REPORT, MEDICAL_CERTIFICATE, IMAGERY_PRESCRIPTION]

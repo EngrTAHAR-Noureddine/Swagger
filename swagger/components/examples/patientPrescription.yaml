@@ -1,0 +1,15 @@
+components:
+  examples:
+    #Object Example
+    PatientPrescription:
+      summary: PatientPrescription object
+      value:
+        id: 484c6e3c-0984-4ddc-848d-65aadbfbee51
+        date: '2022-09-26T14:22:36.053Z'
+        description: '2022-09-26T14:22:36.053Z'
+        lines:
+          - $ref: "./prescriptionLines.yaml#/components/schemas/PrescriptionLines"
+          - $ref: "./prescriptionLines.yaml#/components/schemas/PrescriptionLines"
+          - $ref: "./prescriptionLines.yaml#/components/schemas/PrescriptionLines"
+#        createdAt: '2022-09-26T14:22:36.053Z'
+#        updatedAt: '2022-09-26T14:22:36.053Z'

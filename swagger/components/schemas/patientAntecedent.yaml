@@ -1,0 +1,19 @@
+components:
+  schemas:
+    #Object
+    PatientAntecedent:
+      type: object
+      properties:
+        id:
+          type: string
+        note:
+          type: string
+        date:
+          type: string
+        type:
+          type: string
+          enum: [MEDICAL, SURGICAL, FAMILY]
+#        createdAt:
+#          type: string
+#        updatedAt:
+#          type: string

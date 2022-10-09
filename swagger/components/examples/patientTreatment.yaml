@@ -1,0 +1,22 @@
+components:
+  examples:
+    #Object Example
+    PatientTreatment:
+      summary: PatientTreatment object
+      value:
+        id: d1902e12-df65-4ad3-9e20-3cfd27dac78b
+        drug_name: drug_name
+        quantity: 2
+        time: MORNING
+        repas: BEFORE
+        frequency_value: 8
+        frequency_unit: MONTH
+        duration_value: 9
+        duration_unit: DAY
+        notes:
+        relation_type: AND
+        drug:
+          - $ref: "./drug.yaml#/components/examples/Drug"
+          - $ref: "./drug.yaml#/components/examples/Drug"
+#          createdAt: '2022-09-26T14:22:27.962Z'
+#          updatedAt: '2022-09-26T14:22:27.962Z'
