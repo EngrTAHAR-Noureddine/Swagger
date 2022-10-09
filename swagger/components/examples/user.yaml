@@ -14,13 +14,13 @@ components:
     userLogin:
       summary: request body when user login
       value:
-        email: doctor@docta.io
+        email: patient@docta.io
         password: abdo@123
 
     doctorLogin:
       summary: request body when user login
       value:
-        email: abdo@mgh.io
+        email: doctor@docta.io
         password: abdo@123
 
     userSignUp:

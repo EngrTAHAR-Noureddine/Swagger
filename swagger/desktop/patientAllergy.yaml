@@ -90,11 +90,11 @@ paths:
     put:
       tags:
       - PatientAllergy
-      summary: Update allergy history ✔️
+      summary: Update patient allergy ✔️
       parameters:
         - name: id
           in: path
-          description: allergy history Id
+          description: patient allergy Id
           required: true
           type: string
       requestBody:
@@ -123,11 +123,11 @@ paths:
     delete:
       tags:
       - PatientAllergy
-      summary: Delete allergy history ✔️
+      summary: Delete patient allergy ✔️
       parameters:
         - name: id
           in: path
-          description: allergy history Id
+          description: patient allergy Id
           required: true
           type: string
       security:

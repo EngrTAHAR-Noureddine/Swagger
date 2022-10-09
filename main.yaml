@@ -3,6 +3,10 @@ info:
   title: OPEN API
   description: this is paths
   version: 1.1.0
+  
+
+servers:
+  - url: http://38.242.155.165:4000
 paths:
   #Address
   /api/v1/country:

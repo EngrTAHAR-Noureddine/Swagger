@@ -11,6 +11,8 @@ paths:
           required: true
           schema:
             type: string
+      security:
+        - bearerAuth: [Authorization]
       responses:
         '200':
           description: OK
@@ -26,6 +28,8 @@ paths:
           required: true
           schema:
             type: string
+      security:
+        - bearerAuth: [Authorization]
       responses:
         '200':
           description: OK
