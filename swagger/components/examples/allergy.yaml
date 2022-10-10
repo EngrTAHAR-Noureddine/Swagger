@@ -1,10 +1,8 @@
 components:
   examples:
     allergy:
-      summary: A sample example of allergy
-      properties:
-        id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
-        createdAt: '2022-08-17T13:51:38.129Z'
-        updatedAt: '2022-08-17T13:51:38.129Z'
-        name: allergy name
-        description: Description of allergy
+      id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+      createdAt: '2022-08-17T13:51:38.129Z'
+      updatedAt: '2022-08-17T13:51:38.129Z'
+      name: allergy name
+      description: Description of allergy
