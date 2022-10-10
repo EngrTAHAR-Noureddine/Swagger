@@ -1,9 +1,22 @@
 components:
   examples:
     country:
-      summary: A sample object of Country
-      value:
-        id: "4"
-        name: Algeria
-        iso2: DZ
-        phone_code: '213'
+      id: 501
+      name: Afghanistan
+      iso3: AFG
+      iso2: AF
+      numeric_code: '004'
+      phone_code: '93'
+      capital: Kabul
+      currency: AFN
+      currency_name: Afghan afghani
+      currency_symbol: "؋"
+      tld: '.af'
+      native: افغانستان
+      region: Asia
+      subregion: Southern Asia
+      timezones: "[{zoneName:'Asia\\/Kabul',gmtOffset:16200,gmtOffsetName:'UTC+04:30',abbreviation:'AFT',tzName:'Afghanistan Time'}]"
+      latitude: 33
+      longitude: 65
+      emoji: 🇦🇫
+      emojiU: U+1F1E6 U+1F1EB

@@ -1,10 +1,14 @@
 components:
   examples:
     state:
-      summary: A sample object of State
-      value:
-        id: 2cb84483-82ce-43ab-b3fa-b2052ba7eca9
-        name: Algiers
-        country_code: DZ
-        country_name: Algeria
-        state_code: '16'
+      id: 3ba454e1-04cb-4e50-9393-a82d671a1ca4
+      createdAt: '2022-10-04T14:35:26.078Z'
+      updatedAt: '2022-10-04T14:35:26.078Z'
+      name: Béni Abbès
+      country_id: 4
+      country_code: DZ
+      country_name: Algeria
+      state_code: 53
+      type: 'type'
+      latitude: '30.0831042'
+      longitude: '-2.8345052'

@@ -1,0 +1,20 @@
+components:
+  examples:
+
+    #Good Response +200 && <300
+    goodResponseCountryFindAll: "findAll Countrys"
+    goodResponseSearchCountry: "search Countrys"
+    goodResponseFindAllState: "findAll States"
+    goodResponseFindAllCities: "findAll Citys"
+    goodResponseSearchCities: "search Citys"
+    goodResponseFindAllergies: "findAll Allergys"
+    goodResponseFindOneAllergy: "findOne Allergy"
+
+
+    #Bad Responses 400
+    BadResponse400: "Bad Response 400"
+    ErrorUnauthorized401: "Authentication token missing"
+
+
+
+    #Bad Responses 500

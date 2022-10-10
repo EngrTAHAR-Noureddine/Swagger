@@ -1,0 +1,13 @@
+components:
+  schemas:
+    pagination:
+      type: object
+      properties:
+        current_page:
+          type: integer
+        per_page:
+          type: integer
+        count:
+          type: integer
+        total_pages:
+          type: integer

@@ -1,10 +1,8 @@
 components:
   examples:
     address:
-      summary: A sample object of Address
-      value:
-        id: b5442a67-22fc-4335-8996-5788525d6a48
-        street: J8 lapproval Kouba
-        house_number: "115"
-        lat: "11.11111"
-        lon: "32.3233"
+      id: b5442a67-22fc-4335-8996-5788525d6a48
+      street: J8 lapproval Kouba
+      house_number: "115"
+      lat: "11.11111"
+      lon: "32.3233"
