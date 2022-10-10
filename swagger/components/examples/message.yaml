@@ -14,7 +14,16 @@ components:
     #Bad Responses 400
     BadResponse400: "Bad Response 400"
     ErrorUnauthorized401: "Authentication token missing"
-
-
+    ErrorConflict409: "You're not allergy"
+    ErrorNotFound404: '<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    </head>
+    <body>
+    <pre>Cannot GET /api/v1/allergy/00438e10-b84f-4c9c-9b5e-bff93c4b</pre>
+    </body>
+    </html>'
 
     #Bad Responses 500

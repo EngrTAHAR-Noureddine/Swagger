@@ -30,7 +30,9 @@ paths:
                 type: object
                 properties:
                   data:
-                    $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
+                    type: array
+                    items:
+                      $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
                   pagination:
                     $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
                   message:
@@ -85,16 +87,14 @@ paths:
                 type: object
                 properties:
                   data:
-                    type: array
-                    items:
-                      - $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
+                    $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
                   pagination:
                     $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
                   message:
                     $ref: "../components/schemas/message.yaml#/components/schemas/message"
               example:
                 data:
-                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
+                  $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
                 pagination:
                   $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
                 message:
@@ -111,8 +111,26 @@ paths:
               example:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '404':
+          description: "Error: Conflict"
+          content:
+            text/html:
+              schema:
+                type: string
+              example:
+                $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
         '409':
-          description: "Conflict"
+          description: "Error: Conflict"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflict409"
         '500':
           description: "Server Error"
 
@@ -126,9 +144,9 @@ paths:
       parameters:
         - name: q
           in: query
-          description: Pagination page
+          description: Query
           required: true
-          example : "1"
+          example : "0438e10-b84f-4c9c-9b5e-bff93c4b5aab"
           schema:
             type: string
 
@@ -149,6 +167,27 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Search Allergy by query"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
+                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllergies"
         '500':
           description: "Server Error"
