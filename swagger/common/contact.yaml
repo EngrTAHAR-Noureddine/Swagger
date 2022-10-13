@@ -23,7 +23,40 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Contacts"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllContacts"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
       # [POST] CREATE CONTACT
@@ -44,14 +77,50 @@ paths:
       security:
         - bearerAuth: [Authorization]
       responses:
-        '201':
-          description: 'Created'
+        '200':
+          description: "Response of the create contact"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCreated"
         '400':
-          description: 'Bad Request'
-        '409':
-          description: 'Conflict'
+          description: 'Error: Bad Request'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/BadJSONe400"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
-          description: 'Server Error'
+          description: "Server Error"
 
   /contactId:
     # [GET] GET ONE CONTACT
@@ -71,14 +140,60 @@ paths:
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
-          description: "OK"
-        500:
+        '200':
+          description: "Response of the get one contact"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneContact"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '404':
+          description: 'Error: Not Found'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
+        '409':
+          description: 'Wrong ID'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
+        '500':
           description: "Server Error"
-        400:
-          description: "Bad Request"
-        409:
-          description: "Conflict"
 
       # [PUT] UPDATE CONTACT
 
@@ -108,13 +223,59 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: 'OK'
-        '400':
-          description: 'Bad Request'
+          description: "Response of the update contact"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCreated"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '404':
+          description: 'Error: Not Found'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
         '409':
-          description: 'Conflict'
+          description: 'Wrong ID'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
         '500':
-          description: 'Server Error'
+          description: "Server Error"
 
     delete:
       tags:
@@ -134,11 +295,59 @@ paths:
 
       responses:
         '200':
-          description: 'OK'
+          description: "Response of the delete contact"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseDeleted"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '404':
+          description: 'Error: Not Found'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
         '409':
-          description: 'Conflict'
+          description: 'Wrong ID'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
         '500':
-          description: 'Server Error'
+          description: "Server Error"
 
   /contactSearch:
     # [GET] SEARCH FOR CONTACT
@@ -155,25 +364,66 @@ paths:
           required: true
           schema:
             type: string
-        - name: page
-          in: query
-          description: Pagination page
-          example: 1
-          schema:
-            type: string
-        - name: limit
-          in: query
-          description: number of elements per page
-          example: 10
-          schema:
-            type: string
+#        - name: page
+#          in: query
+#          description: Pagination page
+#          example: 1
+#          schema:
+#            type: string
+#        - name: limit
+#          in: query
+#          description: number of elements per page
+#          example: 10
+#          schema:
+#            type: string
 
       security:
         - bearerAuth: [Authorization]
 
       responses:
         '200':
-          description: "OK"
+          description: "Response of the search contacts"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchContact"
+        '400':
+          description: 'Error: Bad Request'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/BadJSONe400"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 

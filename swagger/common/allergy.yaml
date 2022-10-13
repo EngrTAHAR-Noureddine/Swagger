@@ -130,7 +130,8 @@ paths:
                     $ref: "../components/schemas/message.yaml#/components/schemas/message"
               example:
                 message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflict409"
+                  $ref: "../components/examples/message.yaml#/components/examples/Erro\
+                        rConflictAllergy409"
         '500':
           description: "Server Error"
 

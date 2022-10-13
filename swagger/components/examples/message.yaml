@@ -1,20 +1,36 @@
 components:
   examples:
 
-    #Good Response +200 && <300
+  #Good Response +200 && <300
+    #Find ALL
     goodResponseCountryFindAll: "findAll Countrys"
-    goodResponseSearchCountry: "search Countrys"
     goodResponseFindAllState: "findAll States"
     goodResponseFindAllCities: "findAll Citys"
-    goodResponseSearchCities: "search Citys"
     goodResponseFindAllergies: "findAll Allergys"
+    goodResponseFindAllContacts: "find All Contacts"
+    #Find ONE
     goodResponseFindOneAllergy: "findOne Allergy"
+    goodResponseFindOneContact: "findOne Contact"
+    #Search
+    goodResponseSearchCountry: "search Countrys"
+    goodResponseSearchCities: "search Citys"
+    goodResponseSearchContact: "search Contacts"
+    #Created
+    goodResponseCreated: "created"
+
+    #Deleted
+    goodResponseDeleted: "deleted"
 
 
     #Bad Responses 400
     BadResponse400: "Bad Response 400"
+    BadJSONe400: "Unexpected token f in JSON at position 347"
+    #Bad Responses 401
     ErrorUnauthorized401: "Authentication token missing"
-    ErrorConflict409: "You're not allergy"
+    #Bad Responses 409
+    ErrorConflictAllergy409: "You're not allergy"
+    ErrorConflictContact409: "You're not Contact"
+    #Bad Responses 404
     ErrorNotFound404: '<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -22,7 +38,7 @@ components:
     <title>Error</title>
     </head>
     <body>
-    <pre>Cannot GET /api/v1/allergy/00438e10-b84f-4c9c-9b5e-bff93c4b</pre>
+    <pre>Cannot GET /api/v1/................</pre>
     </body>
     </html>'
 
