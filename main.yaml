@@ -8,124 +8,130 @@ info:
 servers:
   - url: http://38.242.155.165:4000
 paths:
+  #Auth for Desktop
+  /api/v1/d/auth/signup:
+    $ref: './swagger/desktop/auth.yaml#/paths/SignUp'
+  /api/v1/d/auth/login:
+    $ref: './swagger/desktop/auth.yaml#/paths/LogIn'
+
   #Address
   /api/v1/country:
-    $ref: './swagger/common/address.yaml#/paths/~1country'
+    $ref: './swagger/common/address.yaml#/paths/country'
 
   /api/v1/country/search:
-    $ref: './swagger/common/address.yaml#/paths/~1countrySearch'
+    $ref: './swagger/common/address.yaml#/paths/countrySearch'
 
   /api/v1/state:
-    $ref: './swagger/common/address.yaml#/paths/~1state'
+    $ref: './swagger/common/address.yaml#/paths/state'
 
   /api/v1/city:
-    $ref: './swagger/common/address.yaml#/paths/~1city'
+    $ref: './swagger/common/address.yaml#/paths/city'
 
   /api/v1/city/search:
-    $ref: './swagger/common/address.yaml#/paths/~1citySearch'
+    $ref: './swagger/common/address.yaml#/paths/citySearch'
 
   /api/v1/city/bystate:
-    $ref: './swagger/common/address.yaml#/paths/~1cityByState'
+    $ref: './swagger/common/address.yaml#/paths/cityByState'
 
   #Allergy
   /api/v1/allergy:
-    $ref: './swagger/common/allergy.yaml#/paths/~1allergy'
+    $ref: './swagger/common/allergy.yaml#/paths/allergy'
 
   /api/v1/allergy/{id}:
-    $ref: './swagger/common/allergy.yaml#/paths/~1allergyId'
+    $ref: './swagger/common/allergy.yaml#/paths/allergyId'
 
   /api/v1/allergy/search:
-    $ref: './swagger/common/allergy.yaml#/paths/~1allergySearch'
+    $ref: './swagger/common/allergy.yaml#/paths/allergySearch'
 
   #Contact
   /api/v1/contact:
-    $ref: './swagger/common/contact.yaml#/paths/~1contact'
+    $ref: './swagger/common/contact.yaml#/paths/contact'
 
   /api/v1/contact/{id}:
-    $ref: './swagger/common/contact.yaml#/paths/~1contactId'
+    $ref: './swagger/common/contact.yaml#/paths/contactId'
 
   /api/v1/contact/search:
-    $ref: './swagger/common/contact.yaml#/paths/~1contactSearch'
+    $ref: './swagger/common/contact.yaml#/paths/contactSearch'
 
 
   #Contact Category
   /api/v1/contactcategory:
-    $ref: './swagger/common/contactcategory.yaml#/paths/~1contactCategory'
+    $ref: './swagger/common/contactcategory.yaml#/paths/contactCategory'
 
   /api/v1/contactcategory/{id}:
-    $ref: './swagger/common/contactcategory.yaml#/paths/~1contactCategoryId'
+    $ref: './swagger/common/contactcategory.yaml#/paths/contactCategoryId'
 
 
   #Disease
   /api/v1/disease:
-    $ref: './swagger/common/disease.yaml#/paths/~1disease'
+    $ref: './swagger/common/disease.yaml#/paths/disease'
 
   /api/v1/disease/{id}:
-    $ref: './swagger/common/disease.yaml#/paths/~1diseaseId'
+    $ref: './swagger/common/disease.yaml#/paths/diseaseId'
 
   /api/v1/disease/search:
-    $ref: './swagger/common/disease.yaml#/paths/~1diseaseSearch'
+    $ref: './swagger/common/disease.yaml#/paths/diseaseSearch'
 
 
   #Drug
   /api/v1/drug:
-    $ref: './swagger/common/drug.yaml#/paths/~1drug'
+    $ref: './swagger/common/drug.yaml#/paths/drug'
 
   /api/v1/drug/{id}:
-    $ref: './swagger/common/drug.yaml#/paths/~1drugId'
+    $ref: './swagger/common/drug.yaml#/paths/drugId'
 
   /api/v1/drug/search:
-    $ref: './swagger/common/drug.yaml#/paths/~1drugSearch'
+    $ref: './swagger/common/drug.yaml#/paths/drugSearch'
 
   #Habit
   /api/v1/habit:
-    $ref: './swagger/common/habit.yaml#/paths/~1habit'
+    $ref: './swagger/common/habit.yaml#/paths/habit'
 
   /api/v1/habit/{id}:
-    $ref: './swagger/common/habit.yaml#/paths/~1habitId'
+    $ref: './swagger/common/habit.yaml#/paths/habitId'
 
   /api/v1/habit/search:
-    $ref: './swagger/common/habit.yaml#/paths/~1habitSearch'
+    $ref: './swagger/common/habit.yaml#/paths/habitSearch'
 
   #Measure
   /api/v1/measure:
-    $ref: './swagger/common/measure.yaml#/paths/~1measure'
+    $ref: './swagger/common/measure.yaml#/paths/measure'
 
   /api/v1/measure/{id}:
-    $ref: './swagger/common/measure.yaml#/paths/~1measureId'
+    $ref: './swagger/common/measure.yaml#/paths/measureId'
 
   /api/v1/measure/search:
-    $ref: './swagger/common/measure.yaml#/paths/~1measureSearch'
+    $ref: './swagger/common/measure.yaml#/paths/measureSearch'
 
   #Reason
   /api/v1/reason:
-    $ref: './swagger/common/reason.yaml#/paths/~1reason'
+    $ref: './swagger/common/reason.yaml#/paths/reason'
 
   /api/v1/reason/{id}:
-    $ref: './swagger/common/reason.yaml#/paths/~1reasonId'
+    $ref: './swagger/common/reason.yaml#/paths/reasonId'
 
   /api/v1/reason/search:
-    $ref: './swagger/common/reason.yaml#/paths/~1reasonSearch'
+    $ref: './swagger/common/reason.yaml#/paths/reasonSearch'
 
   #Speciality
   /api/v1/speciality:
-    $ref: './swagger/common/speciality.yaml#/paths/~1speciality'
+    $ref: './swagger/common/speciality.yaml#/paths/speciality'
 
   /api/v1/speciality/{id}:
-    $ref: './swagger/common/speciality.yaml#/paths/~1specialityId'
+    $ref: './swagger/common/speciality.yaml#/paths/specialityId'
 
   /api/v1/speciality/search:
-    $ref: './swagger/common/speciality.yaml#/paths/~1specialitySearch'
+    $ref: './swagger/common/speciality.yaml#/paths/specialitySearch'
 
   #Symptom
   /api/v1/symptom:
-    $ref: './swagger/common/symptom.yaml#/paths/~1symptom'
+    $ref: './swagger/common/symptom.yaml#/paths/symptom'
 
   /api/v1/symptom/{id}:
-    $ref: './swagger/common/symptom.yaml#/paths/~1symptomId'
+    $ref: './swagger/common/symptom.yaml#/paths/symptomId'
 
   /api/v1/symptom/search:
-    $ref: './swagger/common/symptom.yaml#/paths/~1symptomSearch'
+    $ref: './swagger/common/symptom.yaml#/paths/symptomSearch'
 
 
 

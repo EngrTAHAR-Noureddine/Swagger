@@ -1,5 +1,5 @@
 paths:
-  /task:
+  task:
     # [GET] GET TASKS
     get:
       tags:
@@ -84,7 +84,7 @@ paths:
             description: 'Server Error'
 
 
-  /taskId:
+  taskId:
     # [GET] GET ONE TASK
     get:
       tags:
@@ -166,7 +166,7 @@ paths:
           description: 'Server Error'
 
 
-  /taskCounts:
+  taskCounts:
     # [GET] GET COUNTS
     get:
       tags:
@@ -182,7 +182,7 @@ paths:
           description: "Server Error"
 
 
-  /taskSearch:
+  taskSearch:
     # [GET] SEARCH FOR TASK
     get:
       tags:

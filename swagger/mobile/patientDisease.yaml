@@ -1,5 +1,5 @@
 paths:
-  /patientDisease:
+  patientDisease:
     # [GET] GET MEASURE HISTORY
     get:
       tags:
@@ -56,7 +56,7 @@ paths:
           description: 'Server Error'
 
 
-  /patientDiseaseId:
+  patientDiseaseId:
     # [GET] GET ONE
     get:
       tags:

@@ -2,26 +2,24 @@ components:
     examples:
       #Object Example
       Drug:
-        summary: Drug object
-        value:
-          id: e830a631-d294-415f-a89c-84578b570b84
-          reg_number: '289/16 A 099/16'
-          code_dci: '16 A 099'
-          dci: SERTRALINE CHLORHYDRATE EXPRIME EN SERTRALINE
-          comercial_name: SERLOFT
-          form: GLES
-          dosage: '50MG'
-          cond: 'B/30'
-          list: Liste I
-          p1: HOP
-          p2: OFF
-          obs: OBS
-          labo_regist: FRATER RAZES form SECHE
-          labo_regist_country: ALGERIE
-          initial_date_regist: '11/09/2016'
-          final_date_regist: '11/09/2016'
-          type: Gé
-          status: F
-          stability_duration: 24MOIS
-#          createdAt: '2022-09-26T14:22:27.962Z'
-#          updatedAt: '2022-09-26T14:22:27.962Z'
+        id: e830a631-d294-415f-a89c-84578b570b84
+        reg_number: '289/16 A 099/16'
+        code_dci: '16 A 099'
+        dci: SERTRALINE CHLORHYDRATE EXPRIME EN SERTRALINE
+        comercial_name: SERLOFT
+        form: GLES
+        dosage: '50MG'
+        cond: 'B/30'
+        list: Liste I
+        p1: HOP
+        p2: OFF
+        obs: OBS
+        labo_regist: FRATER RAZES form SECHE
+        labo_regist_country: ALGERIE
+        initial_date_regist: '11/09/2016'
+        final_date_regist: '11/09/2016'
+        type: Gé
+        status: F
+        stability_duration: 24MOIS
+        createdAt: '2022-09-26T14:22:27.962Z'
+        updatedAt: '2022-09-26T14:22:27.962Z'

@@ -1,5 +1,5 @@
 paths:
-  /Patient:
+  Patient:
     # [GET] GET MY PATIENTS
     get:
       tags:
@@ -52,7 +52,7 @@ paths:
         500:
           description: "Server Error"
 
-  /patientSearch:
+  patientSearch:
     # [GET] SEARCH FOR PATIENT
     get:
       tags:
@@ -87,7 +87,7 @@ paths:
         500:
           description: "Server Error"
 
-  /patientId:
+  patientId:
     # [GET] GET ONE
     get:
       tags:

@@ -1,5 +1,5 @@
 paths:
-  /habit:
+  habit:
     # [GET] GET ALL
     get:
       tags:
@@ -25,11 +25,44 @@ paths:
 
       responses:
         '200':
-          description: "OK"
+          description: "Get All Habits"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/habit.yaml#/components/schemas/Habit"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/habit.yaml#/components/examples/Habit"
+                  - $ref: "../components/examples/habit.yaml#/components/examples/Habit"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllHabits"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
-  /habitId:
+  habitId:
     # [GET] GET ONE
     get:
       tags:
@@ -46,16 +79,50 @@ paths:
       security:
         - bearerAuth: [Authorization]
       responses:
-        200:
-          description: "OK"
-        500:
+        '200':
+          description: "Get ONE Habit"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/habit.yaml#/components/schemas/Habit"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/habit.yaml#/components/examples/Habit"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneHabit"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictHabit409"
+        '500':
           description: "Server Error"
-        400:
-          description: "Bad Request"
-        409:
-          description: "Conflict"
 
-  /habitSearch:
+  habitSearch:
     # [GET] SEARCH
     get:
       tags:
@@ -70,25 +137,54 @@ paths:
           schema:
             type: string
 
-        - name: page
-          in: query
-          description: Pagination page
-          required: false
-          example: 1
-          schema:
-            type: string
-
-        - name: limit
-          in: query
-          description: number of elements per page
-          example: 10
-          schema:
-            type: number
+#        - name: page
+#          in: query
+#          description: Pagination page
+#          required: false
+#          example: 1
+#          schema:
+#            type: string
+#
+#        - name: limit
+#          in: query
+#          description: number of elements per page
+#          example: 10
+#          schema:
+#            type: number
 
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Search Habits"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/habit.yaml#/components/schemas/Habit"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/habit.yaml#/components/examples/Habit"
+                  - $ref: "../components/examples/habit.yaml#/components/examples/Habit"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchHabits"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"

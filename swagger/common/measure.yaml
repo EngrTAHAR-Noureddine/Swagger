@@ -1,5 +1,5 @@
 paths:
-  /measure:
+  measure:
     # [GET] GET MEASURES
     get:
       tags:
@@ -23,11 +23,44 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Measures"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/measure.yaml#/components/schemas/Measure"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/measure.yaml#/components/examples/Measure"
+                  - $ref: "../components/examples/measure.yaml#/components/examples/Measure"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllMeasures"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
-  /measureId:
+  measureId:
     # [GET] GET ONE MEASURE
     get:
       tags:
@@ -45,15 +78,49 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get ONE Measure"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/measure.yaml#/components/schemas/Measure"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/measure.yaml#/components/examples/Measure"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneMeasure"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictMeasure409"
         '500':
           description: "Server Error"
-        '400':
-          description: "Bad Request"
-        '409':
-          description: "Conflict"
 
-  /measureSearch:
+  measureSearch:
     # [GET] SEARCH FOR MEASURE
     get:
       tags:
@@ -68,26 +135,55 @@ paths:
           schema:
             type: string
 
-        - name: page
-          in: query
-          description: Pagination page
-          required: false
-          schema:
-            type: string
-            example: 1
-
-        - name: limit
-          in: query
-          description: number of elements per page
-          required: false
-          schema:
-            type: number
-            example: 10
+#        - name: page
+#          in: query
+#          description: Pagination page
+#          required: false
+#          schema:
+#            type: string
+#            example: 1
+#
+#        - name: limit
+#          in: query
+#          description: number of elements per page
+#          required: false
+#          schema:
+#            type: number
+#            example: 10
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Search Measures"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/measure.yaml#/components/schemas/Measure"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/measure.yaml#/components/examples/Measure"
+                  - $ref: "../components/examples/measure.yaml#/components/examples/Measure"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllMeasures"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 

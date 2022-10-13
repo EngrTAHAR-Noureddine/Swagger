@@ -8,127 +8,127 @@ servers:
 paths:
   #Auth
   /api/v1/d/auth/signup:
-    $ref: './swagger/desktop/auth.yaml#/paths/~1SignUp'
+    $ref: './swagger/desktop/auth.yaml#/paths/SignUp'
   /api/v1/d/auth/login:
-    $ref: './swagger/desktop/auth.yaml#/paths/~1LogIn'
+    $ref: './swagger/desktop/auth.yaml#/paths/LogIn'
 
   #consultation
   /api/v1/d/profile/patient/{patient}/consultation:
-    $ref: './swagger/desktop/patientConsultation.yaml#/paths/~1consultationPatient'
+    $ref: './swagger/desktop/patientConsultation.yaml#/paths/consultationPatient'
   /api/v1/d/profile/patient/{patient}/consultation/{id}:
-    $ref: './swagger/desktop/patientConsultation.yaml#/paths/~1consultationId'
+    $ref: './swagger/desktop/patientConsultation.yaml#/paths/consultationId'
 
   #Medical Act
   /api/v1/d/medicalacts/p/{patient}:
-    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/~1medicalActsPatient'
+    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/medicalActsPatient'
   /api/v1/d/medicalacts/{id}:
-    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/~1medicalActsId'
+    $ref: './swagger/desktop/patientMedicalAct.yaml#/paths/medicalActsId'
 
   #Prescriptions
   /api/v1/d/profile/patient/{patient}/prescription:
-    $ref: './swagger/desktop/patientPrescription.yaml#/paths/~1patientPrescriptions'
+    $ref: './swagger/desktop/patientPrescription.yaml#/paths/patientPrescriptions'
   /api/v1/d/profile/patient/{patient}/prescription/{id}:
-    $ref: './swagger/desktop/patientPrescription.yaml#/paths/~1prescriptionId'
+    $ref: './swagger/desktop/patientPrescription.yaml#/paths/prescriptionId'
 
   # Appointment
   /api/v1/d/appointment:
-    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointment'
+    $ref: './swagger/desktop/appointment.yaml#/paths/appointment'
 
   /api/v1/d/appointment/{id}:
-    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointmentId'
+    $ref: './swagger/desktop/appointment.yaml#/paths/appointmentId'
 
   /api/v1/d/appointment/search:
-    $ref: './swagger/desktop/appointment.yaml#/paths/~1appointmentSearch'
+    $ref: './swagger/desktop/appointment.yaml#/paths/appointmentSearch'
 
   #task
   /api/v1/task:
-    $ref: './swagger/desktop/task.yaml#/paths/~1task'
+    $ref: './swagger/desktop/task.yaml#/paths/task'
   /api/v1/task/{id}:
-    $ref: './swagger/desktop/task.yaml#/paths/~1taskId'
+    $ref: './swagger/desktop/task.yaml#/paths/taskId'
   /api/v1/task/counts:
-    $ref: './swagger/desktop/task.yaml#/paths/~1taskCounts'
+    $ref: './swagger/desktop/task.yaml#/paths/taskCounts'
   /api/v1/task/search:
-    $ref: './swagger/desktop/task.yaml#/paths/~1taskSearch'
+    $ref: './swagger/desktop/task.yaml#/paths/taskSearch'
 
   #task list
   /api/v1/tasklist:
-    $ref: './swagger/desktop/taskList.yaml#/paths/~1taskList'
+    $ref: './swagger/desktop/taskList.yaml#/paths/taskList'
   /api/v1/tasklist/{id}:
-    $ref: './swagger/desktop/taskList.yaml#/paths/~1taskListId'
+    $ref: './swagger/desktop/taskList.yaml#/paths/taskListId'
 
   #Patient
   /api/v1/d/patient:
-    $ref: './swagger/desktop/patient.yaml#/paths/~1Patient'
+    $ref: './swagger/desktop/patient.yaml#/paths/Patient'
   /api/v1/d/patient/search:
-    $ref: './swagger/desktop/patient.yaml#/paths/~1patientSearch'
+    $ref: './swagger/desktop/patient.yaml#/paths/patientSearch'
   /api/v1/d/patient/{id}:
-    $ref: './swagger/desktop/patient.yaml#/paths/~1patientId'
+    $ref: './swagger/desktop/patient.yaml#/paths/patientId'
 
   #patient Allergy
   /api/v1/d/profile/patient/{patient}/allergy:
-    $ref: './swagger/desktop/patientAllergy.yaml#/paths/~1patientAllergy'
+    $ref: './swagger/desktop/patientAllergy.yaml#/paths/patientAllergy'
   /api/v1/d/profile/patient/{patient}/allergy/{id}:
-    $ref: './swagger/desktop/patientAllergy.yaml#/paths/~1patientAllergyId'
+    $ref: './swagger/desktop/patientAllergy.yaml#/paths/patientAllergyId'
 
   #patient Antecedents
   /api/v1/d/profile/patient/{patient}/antecedent:
-    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/~1patientAntecedent'
+    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/patientAntecedent'
   /api/v1/d/profile/patient/{patient}/antecedent/{id}:
-    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/~1patientAntecedentId'
+    $ref: './swagger/desktop/patientAntecedent.yaml#/paths/patientAntecedentId'
 
   #Patient Bilan
   /api/v1/d/profile/patient/{patient}/bilan:
-    $ref: './swagger/desktop/patientBilan.yaml#/paths/~1patientBilan'
+    $ref: './swagger/desktop/patientBilan.yaml#/paths/patientBilan'
   /api/v1/d/profile/patient/{patient}/bilan/{id}:
-    $ref: './swagger/desktop/patientBilan.yaml#/paths/~1patientBilanId'
+    $ref: './swagger/desktop/patientBilan.yaml#/paths/patientBilanId'
 
   #Patient Blood Donation
   /api/v1/d/profile/patient/{patient}/blooddonation:
-    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/~1patientBloodDonation'
+    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/patientBloodDonation'
   /api/v1/d/profile/patient/{patient}/blooddonation/{id}:
-    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/~1patientBloodDonationId'
+    $ref: './swagger/desktop/patientBloodDonation.yaml#/paths/patientBloodDonationId'
 
   #Patient Document
   /api/v1/d/profile/patient/{patient}/document:
-    $ref: './swagger/desktop/patientDocument.yaml#/paths/~1patientDocument'
+    $ref: './swagger/desktop/patientDocument.yaml#/paths/patientDocument'
   /api/v1/d/profile/patient/{patient}/document/{id}:
-    $ref: './swagger/desktop/patientDocument.yaml#/paths/~1patientDocumentId'
+    $ref: './swagger/desktop/patientDocument.yaml#/paths/patientDocumentId'
 
   #patient Disease
   /api/v1/d/profile/patient/{patient}/disease:
-    $ref: './swagger/desktop/patientDisease.yaml#/paths/~1patientDisease'
+    $ref: './swagger/desktop/patientDisease.yaml#/paths/patientDisease'
   /api/v1/d/profile/patient/{patient}/disease/{id}:
-    $ref: './swagger/desktop/patientDisease.yaml#/paths/~1patientDiseaseId'
+    $ref: './swagger/desktop/patientDisease.yaml#/paths/patientDiseaseId'
 
   #patient Habit
   /api/v1/d/profile/patient/{patient}/habit:
-    $ref: './swagger/desktop/patientHabit.yaml#/paths/~1patientHabit'
+    $ref: './swagger/desktop/patientHabit.yaml#/paths/patientHabit'
   /api/v1/d/profile/patient/{patient}/habit/{id}:
-    $ref: './swagger/desktop/patientHabit.yaml#/paths/~1patientHabitId'
+    $ref: './swagger/desktop/patientHabit.yaml#/paths/patientHabitId'
 
   #patient Measure
   /api/v1/d/profile/patient/{patient}/measure:
-    $ref: './swagger/desktop/patientMeasure.yaml#/paths/~1patientMeasure'
+    $ref: './swagger/desktop/patientMeasure.yaml#/paths/patientMeasure'
   /api/v1/d/profile/patient/{patient}/measure/{id}:
-    $ref: './swagger/desktop/patientMeasure.yaml#/paths/~1patientMeasureId'
+    $ref: './swagger/desktop/patientMeasure.yaml#/paths/patientMeasureId'
 
   #patient Symptom
   /api/v1/d/profile/patient/{patient}/symptom:
-    $ref: './swagger/desktop/patientSymptom.yaml#/paths/~1patientSymptom'
+    $ref: './swagger/desktop/patientSymptom.yaml#/paths/patientSymptom'
   /api/v1/d/profile/patient/{patient}/symptom/{id}:
-    $ref: './swagger/desktop/patientSymptom.yaml#/paths/~1patientSymptomId'
+    $ref: './swagger/desktop/patientSymptom.yaml#/paths/patientSymptomId'
 
   #patient Treatments
   /api/v1/d/profile/patient/{patient}/treatment:
-    $ref: './swagger/desktop/patientTreatment.yaml#/paths/~1patientTreatment'
+    $ref: './swagger/desktop/patientTreatment.yaml#/paths/patientTreatment'
   /api/v1/d/profile/patient/{patient}/treatment/{id}:
-    $ref: './swagger/desktop/patientTreatment.yaml#/paths/~1patientTreatmentId'
+    $ref: './swagger/desktop/patientTreatment.yaml#/paths/patientTreatmentId'
 
   #patient Vaccines
   /api/v1/d/profile/patient/{patient}/vaccine:
-    $ref: './swagger/desktop/patientVaccine.yaml#/paths/~1patientVaccine'
+    $ref: './swagger/desktop/patientVaccine.yaml#/paths/patientVaccine'
   /api/v1/d/profile/patient/{patient}/vaccine/{id}:
-    $ref: './swagger/desktop/patientVaccine.yaml#/paths/~1patientVaccineId'
+    $ref: './swagger/desktop/patientVaccine.yaml#/paths/patientVaccineId'
 
 
 components:

@@ -1,5 +1,5 @@
 paths:
-  /patientAllergy:
+  patientAllergy:
     # [GET] GET ALL
     get:
       tags:
@@ -55,7 +55,7 @@ paths:
           description: 'Server Error'
 
 
-  /patientAllergyId:
+  patientAllergyId:
     # [GET] GET ONE
     get:
       tags:

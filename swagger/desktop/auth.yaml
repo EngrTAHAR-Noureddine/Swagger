@@ -1,5 +1,5 @@
 paths:
-  /SignUp:
+  SignUp:
     post:
       tags:
         - Auth
@@ -32,7 +32,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /LogIn:
+  LogIn:
     post:
       tags:
         - Auth

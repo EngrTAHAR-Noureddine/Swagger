@@ -1,5 +1,5 @@
 paths:
-  /allergy:
+  allergy:
     # [GET] GET ALLERGIES
     get:
       tags:
@@ -60,7 +60,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /allergyId:
+  allergyId:
     # [GET] GET ALLERGIES
     get:
       tags:
@@ -112,7 +112,7 @@ paths:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '404':
-          description: "Error: Conflict"
+          description: "Error: Not Found"
           content:
             text/html:
               schema:
@@ -135,7 +135,7 @@ paths:
         '500':
           description: "Server Error"
 
-  /allergySearch:
+  allergySearch:
     # [GET] GET ALLERGIES
     get:
       tags:

@@ -1,6 +1,6 @@
 paths:
 
-  /patientBloodDonation:
+  patientBloodDonation:
     get:
       tags:
         - PatientBloodDonation
@@ -30,7 +30,7 @@ paths:
         '200':
           description: OK
 
-  /patientBloodDonationId:
+  patientBloodDonationId:
     get:
       tags:
         - PatientBloodDonation

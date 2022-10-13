@@ -6,3 +6,11 @@ components:
         color: Moen and Sons
         name: 431.607.1802
         description: Wayne56@gmail.com
+
+    contactCategory:
+      id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+      color: Moen and Sons
+      name: 431.607.1802
+      description: Wayne56@gmail.com
+      createdAt: "2022-10-11T13:27:26.736Z"
+      updatedAt: "2022-10-11T13:27:26.736Z"

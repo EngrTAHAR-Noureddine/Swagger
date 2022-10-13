@@ -8,28 +8,67 @@ components:
     goodResponseFindAllCities: "findAll Citys"
     goodResponseFindAllergies: "findAll Allergys"
     goodResponseFindAllContacts: "find All Contacts"
+    goodResponseFindAllContactCategories: "find All Contact Categories"
+    goodResponseFindAllDiseases: "find All Diseases"
+    goodResponseFindAllDrugs: "find All Drugs"
+    goodResponseFindAllHabits: "find All Habits"
+    goodResponseFindAllMeasures: "find All Measures"
+    goodResponseFindAllReasons: "find All Reasons"
+    goodResponseFindAllSpecialities: "find All Specialities"
+    goodResponseFindAllSymptoms: "find All Symptoms"
+
     #Find ONE
     goodResponseFindOneAllergy: "findOne Allergy"
     goodResponseFindOneContact: "findOne Contact"
+    goodResponseFindOneContactCategory: "findOne Contactcategory"
+    goodResponseFindOneDisease: "findOne Disease"
+    goodResponseFindOneDrug: "findOne Drug"
+    goodResponseFindOneHabit: "findOne Habit"
+    goodResponseFindOneMeasure: "findOne Measure"
+    goodResponseFindOneReason: "findOne Reason"
+    goodResponseFindOneSpeciality: "findOne Speciality"
+    goodResponseFindOneSymptom: "findOne Symptom"
+
     #Search
     goodResponseSearchCountry: "search Countrys"
     goodResponseSearchCities: "search Citys"
     goodResponseSearchContact: "search Contacts"
+    goodResponseSearchDisease: "search Diseases"
+    goodResponseSearchDrugs: "search Drugs"
+    goodResponseSearchHabits: "search Habits"
+    goodResponseSearchReasons: "search Reasons"
+    goodResponseSearchSpeciality: "search Speciality"
+    goodResponseSearchSymptom: "search Symptom"
+
+
     #Created
     goodResponseCreated: "created"
 
     #Deleted
     goodResponseDeleted: "deleted"
 
+    #Updated
+    goodResponseUpdated: "updated"
 
     #Bad Responses 400
     BadResponse400: "Bad Response 400"
     BadJSONe400: "Unexpected token f in JSON at position 347"
+
     #Bad Responses 401
     ErrorUnauthorized401: "Authentication token missing"
+
     #Bad Responses 409
-    ErrorConflictAllergy409: "You're not allergy"
-    ErrorConflictContact409: "You're not Contact"
+    ErrorConflictAllergy409: "You're not an allergy"
+    ErrorConflictContact409: "You're not a Contact"
+    ErrorConflictContactCategory409: "You're not a ContactCategory"
+    ErrorConflictDisease409: "You're not a Disease"
+    ErrorConflictDrug409: "You're not a Drug"
+    ErrorConflictHabit409: "You're not a Habit"
+    ErrorConflictMeasure409: "You're not a Measure"
+    ErrorConflictReason409: "You're not a Reason"
+    ErrorConflictSpeciality409: "You're not a Speciality"
+    ErrorConflictSymptom409: "You're not a Symptom"
+
     #Bad Responses 404
     ErrorNotFound404: '<!DOCTYPE html>
     <html lang="en">

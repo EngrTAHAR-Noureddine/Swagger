@@ -1,5 +1,5 @@
 paths:
-  /Doctor:
+  Doctor:
     # [GET] ALL DOCTORS
     get:
       tags:
@@ -29,7 +29,7 @@ paths:
           description: "Server Error"
   
   
-  /doctorSearch:
+  doctorSearch:
     # [GET] SEARCH FOR DOCTOR
     get:
       tags:

@@ -1,6 +1,6 @@
 paths:
 
-  /taskList:
+  taskList:
     # [GET] GET LISTS
     get:
       tags:
@@ -59,7 +59,7 @@ paths:
             description: 'Server Error'
 
 
-  /taskListId:
+  taskListId:
     # [GET] GET ONE LIST
     get:
       tags:

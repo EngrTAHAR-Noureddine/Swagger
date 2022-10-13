@@ -1,0 +1,10 @@
+components:
+  examples:
+    speciality:
+      id: 17304c77-b00e-4435-a7d6-9ad576f77c9e
+      createdAt: 2022-08-29T09:21:16.527Z
+      updatedAt: 2022-08-29T09:21:16.527Z
+      active: true
+      icon: https://docta-pictures.s3.eu-central-1.amazonaws.com/docta-specialty-icon/17304c77-b00e-4435-a7d6-9ad576f77c9e?9ad3a890-b0ff-480a-8280-63283da9ea82
+      name: Orthophonie
+      description: Traitement des troubles de la parole du langage du bégaiement et de la voix.

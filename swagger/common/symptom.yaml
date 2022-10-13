@@ -1,5 +1,5 @@
 paths:
-  /symptom:
+  symptom:
     # [GET] GET ALL
     get:
       tags:
@@ -25,11 +25,41 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Symptoms"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/symptom.yaml#/components/schemas/Symptom"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/symptom.yaml#/components/examples/Symptom"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllSymptoms"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
-  /symptomId:
+  symptomId:
     # [GET] GET ONE
     get:
       tags:
@@ -48,15 +78,49 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get ONE Symptom"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/symptom.yaml#/components/schemas/Symptom"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/symptom.yaml#/components/examples/Symptom"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneSymptom"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictSymptom409"
         '500':
           description: "Server Error"
-        '400':
-          description: "Bad Request"
-        '409':
-          description: "Conflict"
 
-  /symptomSearch:
+  symptomSearch:
     # [GET] SEARCH
     get:
       tags:
@@ -71,25 +135,54 @@ paths:
           schema:
             type: string
 
-        - name: page
-          in: query
-          description: Pagination page
-          schema:
-            type: string
-            example: 1
-
-        - name: limit
-          in: query
-          description: number of elements per page
-          schema:
-            type: number
-            example: 10
+#        - name: page
+#          in: query
+#          description: Pagination page
+#          schema:
+#            type: string
+#            example: 1
+#
+#        - name: limit
+#          in: query
+#          description: number of elements per page
+#          schema:
+#            type: number
+#            example: 10
 
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Search Symptoms"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/symptom.yaml#/components/schemas/Symptom"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/symptom.yaml#/components/examples/Symptom"
+                  - $ref: "../components/examples/symptom.yaml#/components/examples/Symptom"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchSymptom"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 

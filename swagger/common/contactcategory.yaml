@@ -1,5 +1,5 @@
 paths:
-  /contactCategory:
+  contactCategory:
     # [GET] GET ALL CATEGORIES
     get:
       tags:
@@ -23,7 +23,40 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Contact Categories"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/contactCategory.yaml#/components/schemas/contactCategory"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/contactCategory.yaml#/components/examples/contactCategory"
+                  - $ref: "../components/examples/contactCategory.yaml#/components/examples/contactCategory"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllContactCategories"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
@@ -46,15 +79,39 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '201':
-          description: 'Created'
-        '400':
-          description: 'Bad Request'
-        '409':
-          description: 'Conflict'
+          description: "Contact Categories created successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/contactCategory.yaml#/components/schemas/contactCategory"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contactCategory.yaml#/components/examples/contactCategory"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCreated"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
-          description: 'Server Error'
+          description: "Server Error"
 
-  /contactCategoryId:
+  contactCategoryId:
     # [GET] GET ONE CATEGORY
     get:
       tags:
@@ -73,13 +130,47 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get One Contact Category"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contactCategory.yaml#/components/schemas/contactCategory"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contactCategory.yaml#/components/examples/contactCategory"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneContactCategory"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContactCategory409"
         '500':
           description: "Server Error"
-        '400':
-          description: "Bad Request"
-        '409':
-          description: "Conflict"
 
     # [PUT] UPDATE CATEGORY
     put:
@@ -108,13 +199,47 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: 'OK'
-        '400':
-          description: 'Bad Request'
+          description: "update Contact Category"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/contactCategory.yaml#/components/schemas/contactCategory"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/contactCategory.yaml#/components/examples/contactCategory"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseUpdated"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '409':
-          description: 'Conflict'
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContactCategory409"
         '500':
-          description: 'Server Error'
+          description: "Server Error"
 
     # [DELETE] CATEGORY
     delete:
@@ -135,8 +260,43 @@ paths:
 
       responses:
         '200':
-          description: 'OK'
+          description: "deleted Contact Category"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseDeleted"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '409':
-          description: 'Conflict'
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContactCategory409"
         '500':
-          description: 'Server Error'
+          description: "Server Error"

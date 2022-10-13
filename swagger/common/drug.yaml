@@ -1,5 +1,5 @@
 paths:
-  /drug:
+  drug:
     # [GET] GET ALL
     get:
       tags:
@@ -23,11 +23,44 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Drugs"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/drug.yaml#/components/schemas/Drug"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/drug.yaml#/components/examples/Drug"
+                  - $ref: "../components/examples/drug.yaml#/components/examples/Drug"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllDrugs"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
-  /drugId:
+  drugId:
     # [GET] GET ONE
     get:
       tags:
@@ -45,15 +78,49 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get ONE Drug"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/drug.yaml#/components/schemas/Drug"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/drug.yaml#/components/examples/Drug"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneDrug"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictDrug409"
         '500':
           description: "Server Error"
-        '400':
-          description: "Bad Request"
-        '409':
-          description: "Conflict"
 
-  /drugSearch:
+  drugSearch:
     # [GET] SEARCH
     get:
       tags:
@@ -81,12 +148,43 @@ paths:
           example: 10
           schema:
             type: number
-
       security:
         - bearerAuth: [Authorization]
-
       responses:
         '200':
-          description: "OK"
+          description: "Search a Drug"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/drug.yaml#/components/schemas/Drug"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/drug.yaml#/components/examples/Drug"
+                  - $ref: "../components/examples/drug.yaml#/components/examples/Drug"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchDrugs"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"

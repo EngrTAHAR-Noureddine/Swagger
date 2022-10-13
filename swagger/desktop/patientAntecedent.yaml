@@ -1,6 +1,6 @@
 paths:
 
-  /patientAntecedent:
+  patientAntecedent:
     get:
       tags:
         - PatientAntecedent
@@ -30,7 +30,7 @@ paths:
         '200':
           description: OK
 
-  /patientAntecedentId:
+  patientAntecedentId:
     get:
       tags:
         - PatientAntecedent

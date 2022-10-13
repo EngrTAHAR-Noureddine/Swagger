@@ -1,5 +1,5 @@
 paths:
-  /disease:
+  disease:
     # [GET] GET ALL
     get:
       tags:
@@ -23,11 +23,44 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get All Diseases"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/disease.yaml#/components/schemas/disease"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/disease.yaml#/components/examples/disease"
+                  - $ref: "../components/examples/disease.yaml#/components/examples/disease"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllDiseases"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"
 
-  /diseaseId:
+  diseaseId:
     # [GET] GET ONE
     get:
       tags:
@@ -46,15 +79,49 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Get ONE Disease"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "../components/schemas/disease.yaml#/components/schemas/disease"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  $ref: "../components/examples/disease.yaml#/components/examples/disease"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneDisease"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+        '409':
+          description: 'Error: Conflict'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictDisease409"
         '500':
           description: "Server Error"
-        '400':
-          description: "Bad Request"
-        '409':
-          description: "Conflict"
 
-  /diseaseSearch:
+  diseaseSearch:
     # [GET] SEARCH
     get:
       tags:
@@ -89,6 +156,39 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "OK"
+          description: "Search successful"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "../components/schemas/disease.yaml#/components/schemas/disease"
+                  pagination:
+                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                data:
+                  - $ref: "../components/examples/disease.yaml#/components/examples/disease"
+                  - $ref: "../components/examples/disease.yaml#/components/examples/disease"
+                pagination:
+                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchDisease"
+        '401':
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
+              example:
+                message:
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '500':
           description: "Server Error"

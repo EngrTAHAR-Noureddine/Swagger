@@ -8,55 +8,55 @@ servers:
 paths:
   #Auth
   /api/v1/auth/signup:
-    $ref: './swagger/mobile/auth.yaml#/paths/~1SignUp'
+    $ref: './swagger/mobile/auth.yaml#/paths/SignUp'
   /api/v1/auth/login:
-    $ref: './swagger/mobile/auth.yaml#/paths/~1LogIn'
+    $ref: './swagger/mobile/auth.yaml#/paths/LogIn'
 
   #Doctor
   /api/v1/m/doctor:
-    $ref: './swagger/mobile/doctor.yaml#/paths/~1Doctor'
+    $ref: './swagger/mobile/doctor.yaml#/paths/Doctor'
   /api/v1/m/doctor/search:
-    $ref: './swagger/mobile/doctor.yaml#/paths/~1doctorSearch'
+    $ref: './swagger/mobile/doctor.yaml#/paths/doctorSearch'
 
   #patient Allergy
   /api/v1/m/patient/allergy:
-    $ref: './swagger/mobile/patientAllergy.yaml#/paths/~1patientAllergy'
+    $ref: './swagger/mobile/patientAllergy.yaml#/paths/patientAllergy'
   /api/v1/m/patient/allergy/{id}:
-    $ref: './swagger/mobile/patientAllergy.yaml#/paths/~1patientAllergyId'
+    $ref: './swagger/mobile/patientAllergy.yaml#/paths/patientAllergyId'
 
   #patient Disease
   /api/v1/m/patient/disease:
-    $ref: './swagger/mobile/patientDisease.yaml#/paths/~1patientDisease'
+    $ref: './swagger/mobile/patientDisease.yaml#/paths/patientDisease'
   /api/v1/m/patient/disease/{id}:
-    $ref: './swagger/mobile/patientDisease.yaml#/paths/~1patientDiseaseId'
+    $ref: './swagger/mobile/patientDisease.yaml#/paths/patientDiseaseId'
 
   #patient Habit
   /api/v1/m/patient/habit:
-    $ref: './swagger/mobile/patientHabit.yaml#/paths/~1patientHabit'
+    $ref: './swagger/mobile/patientHabit.yaml#/paths/patientHabit'
   /api/v1/m/patient/habit/{id}:
-    $ref: './swagger/mobile/patientHabit.yaml#/paths/~1patientHabitId'
+    $ref: './swagger/mobile/patientHabit.yaml#/paths/patientHabitId'
 
   #patient Measure
   /api/v1/m/patient/measure:
-    $ref: './swagger/mobile/patientMeasure.yaml#/paths/~1patientMeasure'
+    $ref: './swagger/mobile/patientMeasure.yaml#/paths/patientMeasure'
   /api/v1/m/patient/measure/{id}:
-    $ref: './swagger/mobile/patientMeasure.yaml#/paths/~1patientMeasureId'
+    $ref: './swagger/mobile/patientMeasure.yaml#/paths/patientMeasureId'
 
   #patient Symptom
   /api/v1/m/patient/symptom:
-    $ref: './swagger/mobile/patientSymptom.yaml#/paths/~1patientSymptom'
+    $ref: './swagger/mobile/patientSymptom.yaml#/paths/patientSymptom'
   /api/v1/m/patient/symptom/{id}:
-    $ref: './swagger/mobile/patientSymptom.yaml#/paths/~1patientSymptomId'
+    $ref: './swagger/mobile/patientSymptom.yaml#/paths/patientSymptomId'
 
   # Appointment
   /api/v1/m/appointment:
-    $ref: './swagger/mobile/appointment.yaml#/paths/~1appointment'
+    $ref: './swagger/mobile/appointment.yaml#/paths/appointment'
 
   /api/v1/m/appointment/{id}:
-    $ref: './swagger/mobile/appointment.yaml#/paths/~1appointmentId'
+    $ref: './swagger/mobile/appointment.yaml#/paths/appointmentId'
 
   /api/v1/m/appointment/search:
-    $ref: './swagger/mobile/appointment.yaml#/paths/~1appointmentSearch'
+    $ref: './swagger/mobile/appointment.yaml#/paths/appointmentSearch'
 
 
 components:

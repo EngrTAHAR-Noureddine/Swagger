@@ -1,6 +1,6 @@
 paths:
 
-  /patientBilan:
+  patientBilan:
     get:
       tags:
         - PatientBilan
@@ -30,7 +30,7 @@ paths:
         '200':
           description: OK
 
-  /patientBilanId:
+  patientBilanId:
     get:
       tags:
         - PatientBilan

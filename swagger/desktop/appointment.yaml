@@ -1,5 +1,5 @@
 paths:
-  /appointment:
+  appointment:
     # [GET] GET APPOINTMENTS
     get:
       tags:
@@ -64,7 +64,7 @@ paths:
         500:
           description: 'Server Error'
 
-  /appointmentId:
+  appointmentId:
     # [PUT] UPDATE APPOINTMENT
     put:
       tags:
@@ -101,7 +101,7 @@ paths:
         '500':
           description: 'Server Error'
 
-  /appointmentSearch:
+  appointmentSearch:
     # [GET] SEARCH FOR APPOINTMENT
     get:
       tags:

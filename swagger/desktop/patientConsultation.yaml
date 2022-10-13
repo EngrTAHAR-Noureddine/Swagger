@@ -1,6 +1,6 @@
 paths:
   # PATIENT MEDICAL ACTS
-  /consultationPatient:
+  consultationPatient:
     get:
       tags:
         - PatientConsultation
@@ -37,7 +37,7 @@ paths:
           description: "Server Error"
 
 
-  /consultationId:
+  consultationId:
     # [GET] GET ONE
     get:
       tags:
