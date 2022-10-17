@@ -23,42 +23,11 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get All Allergies"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
-                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllergies"
+          $ref: "../components/responses/200/allergy.yaml#/components/responses/responseGetAllAllergies"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   allergyId:
     # [GET] GET ALLERGIES
@@ -75,50 +44,15 @@ paths:
           required: true
           schema:
             type: string
-
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get Allergy by Id"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneAllergy"
+          $ref: "../components/responses/200/allergy.yaml#/components/responses/responseGetOneAllergy"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '404':
-          description: "Error: Not Found"
-          content:
-            text/html:
-              schema:
-                type: string
-              example:
-                $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
+          $ref: "../components/responses/404/notFound.yaml#/components/responses/NotFound"
         '409':
           description: "Error: Conflict"
           content:
@@ -128,12 +62,11 @@ paths:
                 properties:
                   message:
                     $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
+              examples:
                 message:
-                  $ref: "../components/examples/message.yaml#/components/examples/Erro\
-                        rConflictAllergy409"
+                  $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictAllergy409"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   allergySearch:
     # [GET] GET ALLERGIES
@@ -168,27 +101,6 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Search Allergy by query"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: "../components/schemas/allergy.yaml#/components/schemas/allergy"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
-                  - $ref: "../components/examples/allergy.yaml#/components/examples/allergy"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllergies"
+          $ref: "../components/responses/200/allergy.yaml#/components/responses/responseSearchAllergy"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"

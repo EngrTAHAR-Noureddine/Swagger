@@ -1,0 +1,59 @@
+components:
+  responses:
+
+    responseGetAllAllergies:
+      description: "Get All Allergies"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/allergy.yaml#/components/schemas/allergy"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getAllAllergiesResponseExample:
+              $ref: "../../examples/allergy.yaml#/components/examples/getAllAllergiesResponseExample"
+
+    responseGetOneAllergy:
+      description: "Get Allergy by Id"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/allergy.yaml#/components/schemas/allergy"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getOneAllergyResponseExample:
+              $ref: "../../examples/allergy.yaml#/components/examples/getOneAllergyResponseExample"
+
+    responseSearchAllergy:
+      description: "Search Allergy by query"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/allergy.yaml#/components/schemas/allergy"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            searchAllergiesResponseExample:
+              $ref: "../../examples/allergy.yaml#/components/examples/searchAllergiesResponseExample"
+
+
