@@ -1,0 +1,106 @@
+components:
+  responses:
+    #get all countries
+    responseGetAllCountries:
+      description: "Get All Countries"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/country.yaml#/components/schemas/country"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getAllCountriesResponseExample:
+              $ref: "../../examples/country.yaml#/components/examples/getAllCountriesResponseExample"
+
+    #Search country
+    responseCountrySearch:
+      description: "Get Countries that hold the specified name from query parameters."
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/country.yaml#/components/schemas/country"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            searchCountryResponseExample:
+              $ref: "../../examples/country.yaml#/components/examples/searchCountryResponseExample"
+
+    # get all states
+    responsesGetAllStates:
+      description: "Get States"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                - $ref: "../../schemas/state.yaml#/components/schemas/state"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getAllStatesResponseExample:
+              $ref: "../../examples/state.yaml#/components/examples/getAllStatesResponseExample"
+
+    responsesGetAllCities:
+      description: "Get Cities "
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/city.yaml#/components/schemas/city"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getAllCitiesResponseExample:
+              $ref: "../../examples/city.yaml#/components/examples/getAllCitiesResponseExample"
+
+    responsesSearchCities:
+      description: "Get cities by city name (query)"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/city.yaml#/components/schemas/city"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            searchCitiesResponseExample:
+              $ref: "../../examples/city.yaml#/components/examples/searchCitiesResponseExample"
+
+    responsesSearchCitiesByState:
+      description: "Get cities by state name (query)"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/city.yaml#/components/schemas/city"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            searchCitiesByStateResponseExample:
+              $ref: "../../examples/city.yaml#/components/examples/searchCitiesByStateResponseExample"

@@ -22,40 +22,11 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get All Countries"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/country.yaml#/components/schemas/country"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/country.yaml#/components/examples/country"
-                  - $ref: "../components/examples/country.yaml#/components/examples/country"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCountryFindAll"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responseGetAllCountries"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   countrySearch:
     get:
@@ -86,40 +57,11 @@ paths:
         - bearerAuth: [ Authorization ]
       responses:
         '200':
-          description: "Get Countries that hold the specified name from query parameters."
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/country.yaml#/components/schemas/country"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/country.yaml#/components/examples/country"
-                  - $ref: "../components/examples/country.yaml#/components/examples/country"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchCountry"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responseCountrySearch"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   state:
     # [GET] GET STATES
@@ -145,43 +87,14 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get States "
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/state.yaml#/components/schemas/state"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/state.yaml#/components/examples/state"
-                  - $ref: "../components/examples/state.yaml#/components/examples/state"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllState"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responsesGetAllStates"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   city:
-    # [GET] GET STATES
+    # [GET] GET CITIES
     get:
       tags:
         - Address
@@ -201,48 +114,18 @@ paths:
           example: 10
           schema:
             type: number
-
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get Cities "
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/city.yaml#/components/schemas/city"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllCities"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responsesGetAllCities"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   citySearch:
-    # [GET] GET STATES
+    # [GET] GET CITIES FROM SEARCH
     get:
       tags:
         - Address
@@ -267,48 +150,18 @@ paths:
           example: 10
           schema:
             type: number
-
       security:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get cities by city name (query)"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/city.yaml#/components/schemas/city"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchCities"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responsesSearchCities"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
   cityByState:
-    # [GET] GET STATES
+    # [GET] GET CITIES By State
     get:
       tags:
         - Address
@@ -344,44 +197,14 @@ paths:
           example: 10
           schema:
             type: number
-
       security:
         - bearerAuth: [ Authorization ]
       responses:
         '200':
-          description: "Get cities by state name (query)"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/city.yaml#/components/schemas/city"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                  - $ref: "../components/examples/city.yaml#/components/examples/city"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseSearchCities"
+          $ref: "../components/responses/200/address.yaml#/components/responses/responsesSearchCitiesByState"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
 
 
