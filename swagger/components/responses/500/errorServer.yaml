@@ -1,0 +1,4 @@
+components:
+  responses:
+    ErrorServer:
+      description: Server Error

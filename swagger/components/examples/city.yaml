@@ -1,15 +1,82 @@
 components:
   examples:
     city:
-      id: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
-      name: Kouba
-      state_code: 16
-      state_name: Algiers
-      country_code: DZ
-      country_name: Algieria
-      createdAt: "2022-10-04T14:37:56.663Z"
-      updatedAt: "2022-10-04T14:37:56.663Z"
-      state_id: ""
-      country_id: 0
-      latitude: ""
-      longitude: ""
+      value:
+        id: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
+        name: Kouba
+        state_code: 16
+        state_name: Algiers
+        country_code: DZ
+        country_name: Algieria
+        createdAt: "2022-10-04T14:37:56.663Z"
+        updatedAt: "2022-10-04T14:37:56.663Z"
+        state_id: ""
+        country_id: 0
+        latitude: ""
+        longitude: ""
+
+    getAllCitiesResponseExample:
+      value:
+        data:
+          - id: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
+            name: Kouba
+            state_code: 16
+            state_name: Algiers
+            country_code: DZ
+            country_name: Algieria
+            createdAt: "2022-10-04T14:37:56.663Z"
+            updatedAt: "2022-10-04T14:37:56.663Z"
+            state_id: ""
+            country_id: 0
+            latitude: ""
+            longitude: ""
+        pagination:
+          current_page: 1
+          per_page: 10
+          count: 250
+          total_pages: 25
+        message: "findAll Citys"
+
+    searchCitiesResponseExample:
+      value:
+        data:
+          - id: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
+            name: Kouba
+            state_code: 16
+            state_name: Algiers
+            country_code: DZ
+            country_name: Algieria
+            createdAt: "2022-10-04T14:37:56.663Z"
+            updatedAt: "2022-10-04T14:37:56.663Z"
+            state_id: ""
+            country_id: 0
+            latitude: ""
+            longitude: ""
+        pagination:
+          current_page: 1
+          per_page: 10
+          count: 250
+          total_pages: 25
+        message: "search Citys"
+
+    searchCitiesByStateResponseExample:
+      value:
+        data:
+          - id: 27d71aca-5a90-4a93-af0f-b94d6dbcf3eb
+            name: Kouba
+            state_code: 16
+            state_name: Algiers
+            country_code: DZ
+            country_name: Algieria
+            createdAt: "2022-10-04T14:37:56.663Z"
+            updatedAt: "2022-10-04T14:37:56.663Z"
+            state_id: ""
+            country_id: 0
+            latitude: ""
+            longitude: ""
+        pagination:
+          current_page: 1
+          per_page: 10
+          count: 250
+          total_pages: 25
+        message: "search Citys"

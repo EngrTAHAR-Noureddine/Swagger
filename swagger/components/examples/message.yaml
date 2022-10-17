@@ -3,9 +3,12 @@ components:
 
   #Good Response +200 && <300
     #Find ALL
-    goodResponseCountryFindAll: "findAll Countrys"
+    goodResponseCountryFindAll:
+      value :
+        message: "findAll Countrys"
     goodResponseFindAllState: "findAll States"
     goodResponseFindAllCities: "findAll Citys"
+
     goodResponseFindAllergies: "findAll Allergys"
     goodResponseFindAllContacts: "find All Contacts"
     goodResponseFindAllContactCategories: "find All Contact Categories"
@@ -50,16 +53,22 @@ components:
     #Updated
     goodResponseUpdated: "updated"
 
-    #Bad Responses 400
-    BadResponse400: "Bad Response 400"
+    #Bad Responses 404
+    BadResponse400: "Bad Response 404"
     BadJSONe400: "Unexpected token f in JSON at position 347"
 
     #Bad Responses 401
-    ErrorUnauthorized401: "Authentication token missing"
+    ErrorUnauthorized401:
+      value:
+        message: "Authentication token missing"
 
     #Bad Responses 409
-    ErrorConflictAllergy409: "You're not an allergy"
-    ErrorConflictContact409: "You're not a Contact"
+    ErrorConflictAllergy409:
+      value :
+       message: "You're not an allergy"
+    ErrorConflictContact409:
+      value:
+        message: "You're not a Contact"
     ErrorConflictContactCategory409: "You're not a ContactCategory"
     ErrorConflictDisease409: "You're not a Disease"
     ErrorConflictDrug409: "You're not a Drug"
@@ -68,6 +77,7 @@ components:
     ErrorConflictReason409: "You're not a Reason"
     ErrorConflictSpeciality409: "You're not a Speciality"
     ErrorConflictSymptom409: "You're not a Symptom"
+    ErrorConflictLOGIN409: "You're not a User"
 
     #Bad Responses 404
     ErrorNotFound404: '<!DOCTYPE html>

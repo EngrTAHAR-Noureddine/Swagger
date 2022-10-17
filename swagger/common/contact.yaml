@@ -23,42 +23,12 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Get All Contacts"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
-                  - $ref: "../components/examples/contact.yaml#/components/examples/contact"
-                pagination:
-                  $ref: "../components/examples/pagination.yaml#/components/examples/pagination"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindAllContacts"
+          $ref: "../components/responses/200/contact.yaml#/components/responses/responseGetAllContacts"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
       # [POST] CREATE CONTACT
     post:
       tags:
@@ -78,49 +48,14 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '201':
-          description: "Response of the create contact"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
-                  pagination:
-                    $ref: "../components/schemas/pagination.yaml#/components/schemas/pagination"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCreated"
+          $ref: "../components/responses/201/create.yaml#/components/responses/createContact"
         '400':
-          description: 'Error: Bad Request'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/BadJSONe400"
+          $ref: "../components/responses/400/badRequest.yaml#/components/responses/BadRequest"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
 
   contactId:
     # [GET] GET ONE CONTACT
@@ -141,41 +76,9 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Response of the get one contact"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseFindOneContact"
-        '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/200/contact.yaml#/components/responses/responseGetOneContact"
         '404':
-          description: "Error: Conflict"
-          content:
-            text/html:
-              schema:
-                type: string
-              example:
-                $ref: "../components/examples/message.yaml#/components/examples/ErrorNotFound404"
+          $ref: "../components/responses/404/notFound.yaml#/components/responses/NotFound"
         '409':
           description: 'Wrong ID'
           content:
@@ -188,8 +91,11 @@ paths:
               example:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
+        '401':
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
 
       # [PUT] UPDATE CONTACT
 
@@ -219,33 +125,7 @@ paths:
         - bearerAuth: [Authorization]
       responses:
         '200':
-          description: "Response of the update contact"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: "../components/schemas/contact.yaml#/components/schemas/contact"
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                data:
-                  $ref: "../components/examples/contact.yaml#/components/examples/contact"
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/goodResponseCreated"
-        '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+
         '404':
           description: "Error: Conflict"
           content:
@@ -266,8 +146,11 @@ paths:
               example:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
+        '401':
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
 
     delete:
       tags:
@@ -302,18 +185,6 @@ paths:
                 data: 0fc3a22a-7885-4747-8139-a24ca830e3c3
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/goodResponseDeleted"
-        '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
         '404':
           description: "Error: Conflict"
           content:
@@ -334,8 +205,11 @@ paths:
               example:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/ErrorConflictContact409"
+        '401':
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
 
   contactSearch:
     # [GET] SEARCH FOR CONTACT
@@ -401,18 +275,9 @@ paths:
                 message:
                   $ref: "../components/examples/message.yaml#/components/examples/BadJSONe400"
         '401':
-          description: 'Error: Unauthorized'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    $ref: "../components/schemas/message.yaml#/components/schemas/message"
-              example:
-                message:
-                  $ref: "../components/examples/message.yaml#/components/examples/ErrorUnauthorized401"
+          $ref: "../components/responses/401/errorUnauthorized.yaml#/components/responses/ErrorUnauthorized401"
         '500':
-          description: "Server Error"
+          $ref: "../components/responses/500/errorServer.yaml#/components/responses/ErrorServer"
+
 
 

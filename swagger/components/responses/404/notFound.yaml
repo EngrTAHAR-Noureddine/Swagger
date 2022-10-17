@@ -1,0 +1,18 @@
+components:
+  responses:
+    NotFound:
+      description: "Error: Not Found"
+      content:
+        text/html:
+          schema:
+            type: string
+          example: '<!DOCTYPE html>
+                      <html lang="en">
+                      <head>
+                      <meta charset="utf-8">
+                      <title>Error</title>
+                      </head>
+                      <body>
+                      <pre>Cannot GET /api/v1/................</pre>
+                      </body>
+                      </html>'

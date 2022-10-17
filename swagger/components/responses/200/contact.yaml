@@ -1,0 +1,52 @@
+components:
+  responses:
+
+    responseGetAllContacts:
+      description: "Get All Contacts"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/contact.yaml#/components/schemas/contact"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getAllContactsResponseExample:
+              $ref: "../../examples/contact.yaml#/components/examples/getAllContactsResponseExample"
+
+    responseGetOneContact:
+      description: "Response of the get one contact"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/contact.yaml#/components/schemas/contact"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            getOneContactResponseExample:
+              $ref: "../../examples/contact.yaml#/components/examples/getOneContactResponseExample"
+
+    responseUpdateContact:
+      description: "Response of the update contact"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/contact.yaml#/components/schemas/contact"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            postUpdateContactResponseExample:
+              $ref: "../../examples/contact.yaml#/components/examples/postUpdateContactResponseExample"
+

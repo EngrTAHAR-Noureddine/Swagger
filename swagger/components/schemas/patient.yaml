@@ -6,36 +6,50 @@ components:
       properties:
         id:
           type: string
+          example: fde015d4-b5be-46d2-86b8-f26c86fbae92
         full_name:
           type: string
+          example: Abdo PATIENT
         first_name:
           type: string
+          example: Abdo
         last_name:
           type: string
+          example: PATIENT
         phone:
           type: string
+          example: "+213 663 200 869"
         email:
           type: string
           format: nullable
+          example: null
         family_situation:
           type: string
           enum: [MARRIED,WIDOWED,SEPARATED,DIVORCED,SINGLE]
+          example: DIVORCED
         job:
           type: string
+          example: impressive
         blood_type:
           type: string
           enum: [ O-, O+, A-, A+, B-, B+, AB-, AB+ ]
+          example: O-
         gender:
           type: string
           enum: [ FEMALE, MALE ]
+          example: MALE
         birth_date:
           type: string
+          example: "1985-08-28T05:46:53.016Z"
         social_security_number:
           type: string
+          example: "83604073"
         national_cardid_number:
           type: string
+          example: "72645741"
         photo:
           type: string
+          example: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1092.jpg"
         metadata:
           type: array
           items:
@@ -43,7 +57,140 @@ components:
         address:
           $ref: "./address.yaml#/components/schemas/address"
 
-#        createdAt:
-#          type: string
-#        updatedAt:
-#          type: string
+    patientWithChildrenResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: fde015d4-b5be-46d2-86b8-f26c86fbae92
+        full_name:
+          type: string
+          example: Abdo PATIENT
+        first_name:
+          type: string
+          example: Abdo
+        last_name:
+          type: string
+          example: PATIENT
+        phone:
+          type: string
+          example: "+213 663 200 869"
+        email:
+          type: string
+          format: nullable
+          example: null
+        family_situation:
+          type: string
+          enum: [MARRIED,WIDOWED,SEPARATED,DIVORCED,SINGLE]
+          example: DIVORCED
+        job:
+          type: string
+          example: impressive
+        blood_type:
+          type: string
+          enum: [ O-, O+, A-, A+, B-, B+, AB-, AB+ ]
+          example: O-
+        gender:
+          type: string
+          enum: [ FEMALE, MALE ]
+          example: MALE
+        birth_date:
+          type: string
+          example: "1985-08-28T05:46:53.016Z"
+        social_security_number:
+          type: string
+          example: "83604073"
+        national_cardid_number:
+          type: string
+          example: "72645741"
+        photo:
+          type: string
+          example: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1092.jpg"
+        createdAt:
+          type: string
+          example: "2022-10-11T13:27:22.750Z"
+        updatedAt:
+          type: string
+          example: "2022-10-11T13:27:22.750Z"
+        children:
+          type: array
+          items:
+            $ref: "#/components/schemas/child"
+
+    patientResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: fde015d4-b5be-46d2-86b8-f26c86fbae92
+        full_name:
+          type: string
+          example: Abdo PATIENT
+        first_name:
+          type: string
+          example: Abdo
+        last_name:
+          type: string
+          example: PATIENT
+        phone:
+          type: string
+          example: "+213 663 200 869"
+        email:
+          type: string
+          format: nullable
+          example: null
+        family_situation:
+          type: string
+          enum: [MARRIED,WIDOWED,SEPARATED,DIVORCED,SINGLE]
+          example: DIVORCED
+        job:
+          type: string
+          example: impressive
+        blood_type:
+          type: string
+          enum: [ O-, O+, A-, A+, B-, B+, AB-, AB+ ]
+          example: O-
+        gender:
+          type: string
+          enum: [ FEMALE, MALE ]
+          example: MALE
+        birth_date:
+          type: string
+          example: "1985-08-28T05:46:53.016Z"
+        social_security_number:
+          type: string
+          example: "83604073"
+        national_cardid_number:
+          type: string
+          example: "72645741"
+        photo:
+          type: string
+          example: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1092.jpg"
+        createdAt:
+          type: string
+          example: "2022-10-11T13:27:22.750Z"
+        updatedAt:
+          type: string
+          example: "2022-10-11T13:27:22.750Z"
+
+    child:
+      type: object
+      properties:
+        id:
+          type: string
+          example: a76ae187-811d-4431-b25a-0c0e0105be93
+        createdAt:
+          type: string
+          example : "2022-10-11T13:30:12.720Z"
+        updatedAt:
+          type: string
+          example : "2022-10-11T13:30:12.720Z"
+        type:
+          type: string
+          example : DAUGHTER
+        token:
+          type: string
+          example : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM0OTM5YTczLTBlMjItNDliOC1iYTA0LTkzMDE2YWEyN2U4NiIsInBpZCI6ImU4OGVkZmQ5LTMzYWYtNDg0Ny1hNGU2LWNjN2U5ODBhZTRhMyIsImlhdCI6MTY2NTkxNDk0NSwiZXhwIjoxNjY2MDg3NzQ1fQ.hRyWUhZj8SF3qcRRk9WjgH7zix1QYqDttzXDa1D9blc"
+        child:
+          $ref: "#/components/schemas/patientResponse"
+

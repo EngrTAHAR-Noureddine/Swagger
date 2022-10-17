@@ -1,0 +1,18 @@
+components:
+  responses:
+    createContact:
+      description: "Response of the create contact"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../../schemas/contact.yaml#/components/schemas/contact"
+              pagination:
+                $ref: "../../schemas/pagination.yaml#/components/schemas/pagination"
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            postCreateContact:
+              $ref: "../../examples/contact.yaml#/components/examples/postCreateContactResponseExample"

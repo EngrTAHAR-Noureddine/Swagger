@@ -1,0 +1,14 @@
+components:
+  responses:
+    ErrorUnauthorized401:
+      description: 'Error: Unauthorized'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          examples:
+            ErrorUnauthorized401:
+              $ref: "../../examples/message.yaml#/components/examples/ErrorUnauthorized401"

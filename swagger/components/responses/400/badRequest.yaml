@@ -1,0 +1,14 @@
+components:
+  responses:
+    BadRequest:
+      description: 'Error: Bad Request'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                $ref: "../../schemas/message.yaml#/components/schemas/message"
+          example:
+            value:
+              message: "Unexpected token f in JSON at position 347"

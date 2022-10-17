@@ -24,3 +24,64 @@ components:
       lat: "-80.1127"
       lon: "-125.1860"
       favorite: false
+
+    getAllContactsResponseExample:
+      value:
+        data:
+          - id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+            name: Moen and Sons
+            phone: '431.607.1802'
+            email: Wayne56@gmail.com
+            photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+            note: Quod occaecati quis officia soluta debitis.
+            address: 6959 Maggio Plain Walnut Creek
+            lat: "-80.1127"
+            lon: "-125.1860"
+            favorite: false
+        pagination:
+          current_page: 1
+          per_page: 10
+          count: 250
+          total_pages: 25
+        message: "find All Contacts"
+
+    postCreateContactResponseExample:
+      data:
+        name: Moen and Sons
+        phone: '431.607.1802'
+        email: Wayne56@gmail.com
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+        note: Quod occaecati quis officia soluta debitis.
+        address: 6959 Maggio Plain Walnut Creek
+        lat: "-80.1127"
+        lon: "-125.1860"
+        favorite: false
+      message: "created"
+
+    getOneContactResponseExample:
+      data:
+        id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+        name: Moen and Sons
+        phone: '431.607.1802'
+        email: Wayne56@gmail.com
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+        note: Quod occaecati quis officia soluta debitis.
+        address: 6959 Maggio Plain Walnut Creek
+        lat: "-80.1127"
+        lon: "-125.1860"
+        favorite: false
+      message: "findOne Contact"
+
+    postUpdateContactResponseExample:
+      data:
+        id: d49a25cd-ded3-4ac6-8a09-6d0e3d521e6d
+        name: Moen and Sons
+        phone: '431.607.1802'
+        email: Wayne56@gmail.com
+        photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg
+        note: Quod occaecati quis officia soluta debitis.
+        address: 6959 Maggio Plain Walnut Creek
+        lat: "-80.1127"
+        lon: "-125.1860"
+        favorite: false
+      message: "updated"

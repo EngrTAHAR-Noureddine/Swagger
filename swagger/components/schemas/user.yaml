@@ -56,56 +56,61 @@ components:
       type: object
       description: user object with token
       properties:
-        id:
+        data:
+          $ref: "./patient.yaml#/components/schemas/patientWithChildrenResponse"
+        message:
           type: string
-          description: user id
-        first_name:
-          type: string
-          description: user first name
-        last_name:
-          type: string
-          description: user last name
-        email:
-          type: string
-          description: user email
-        password:
-          type: string
-          description: user password
-        createdAt:
-          type: string
-          description: date creation
-        updatedAt:
-          type: string
-          description: date update
+          example: login success
         token:
           type: string
-          description: token
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM0OTM5YTczLTBlMjItNDliOC1iYTA0LTkzMDE2YWEyN2U4NiIsInBpZCI6ImNkZjZkOGQwLTIwNjUtNDUwZi04YTc4LWY0NTYxNDU4MDkyMiIsImlhdCI6MTY2NTkxNDk0NSwiZXhwIjoxNjY2MDg3NzQ1fQ._uw38vVxRVrpqaRmKNMdDDuJv27zm9jrmUadHP714jQ
+
 
     userSignUpResponse:
       type: object
       description: user object with message.yaml
       properties:
-        id:
+        data:
+          type: object
+          properties:
+            full_name:
+              type: string
+            user:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                avatar:
+                  type: string
+                email:
+                  type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            phone:
+              type: string
+            email:
+              type: string
+            family_situation:
+              type: string
+            job:
+              type: string
+            social_security_number:
+              type: string
+            national_cardid_number:
+              type: string
+            blood_type:
+              type: string
+            gender:
+              type: string
+            birth_date:
+              type: string
+            photo:
+              type: string
+        token:
           type: string
-          description: user id
-        first_name:
-          type: string
-          description: user first name
-        last_name:
-          type: string
-          description: user last name
-        email:
-          type: string
-          description: user email
-        password:
-          type: string
-          description: user password
-        createdAt:
-          type: string
-          description: date creation
-        updatedAt:
-          type: string
-          description: date update
         message:
           type: string
-          description: response message.yaml

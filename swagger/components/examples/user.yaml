@@ -40,25 +40,30 @@ components:
         password: abdo@123
 
     #Response
-    userLoginResponse:
-      summary: Response for user login
-      value:
-        id: sakajkfd-kjhajkdfnda-knajkcbksc
-        first_name: abdo
-        last_name: abdo
-        email: patient@docta.io
-        password: abdo@123
-        token: kajsadsnchjbscjshhjsbjhsvkjscjks
-
     userSignUpResponse:
       summary: Response to user sign up
       value:
-        id: sakajkfd-kjhajkdfnda-knajkcbksc
-        first_name: abdo
-        last_name: abdo
-        email: patient@docta.io
-        password: abdo@123
+        data:
+          photo: https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/
+          first_name: abdo
+          last_name: abdo
+          email: patient@docta.io
+          family_situation: Married
+          job: job
+          social_security_number: kajsadsnchjbscjshhjsbjhsvkjscjks
+          national_cardid_number: kajsadsnch
+          blood_type: A+
+          gender: male
+          birth_date: 2015-07-07
+          phone: 1239803924
+          user:
+            first_name: abdo
+            last_name: abdo
+            avatar: avatar
+            email: patient@docta.io
+        message: sign up
         token: kajsadsnchjbscjshhjsbjhsvkjscjks
+
 
     doctorLoginResponse:
       summary: Response for doctor login
